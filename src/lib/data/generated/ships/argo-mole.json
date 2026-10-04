@@ -1,0 +1,68 @@
+{
+  "slug": "argo-mole",
+  "name": "MOLE",
+  "fullName": "Argo MOLE",
+  "className": "ARGO_MOLE",
+  "uuid": "ecdfd0df-6c5f-4183-a24b-9e1546e00a4e",
+  "manufacturer": {
+    "code": "ARGO",
+    "name": "Argo Astronautics"
+  },
+  "size": "Medium",
+  "role": "Medium Mining",
+  "career": "Industrial",
+  "dimensions": {
+    "x": 26,
+    "y": 45,
+    "z": 15
+  },
+  "cargoScu": 32,
+  "grids": [
+    {
+      "id": "elevator",
+      "name": "Elevator",
+      "className": "ARGO_MOTH_CargoGrid_Elevator",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "argo-mole-alliance",
+    "argo-mole-teachs-special"
+  ]
+}

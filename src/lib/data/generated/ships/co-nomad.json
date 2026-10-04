@@ -1,0 +1,56 @@
+{
+  "slug": "co-nomad",
+  "name": "Nomad",
+  "fullName": "C.O. Nomad",
+  "className": "CNOU_Nomad",
+  "uuid": "34506e83-b7b8-4804-a7bb-f31f11bb9214",
+  "manufacturer": {
+    "code": "CNOU",
+    "name": "Consolidated Outland"
+  },
+  "size": "Small",
+  "role": "Starter / Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 19,
+    "y": 27,
+    "z": 10
+  },
+  "cargoScu": 24,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "CNOU_Nomad_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 24,
+      "minBox": null,
+      "maxBox": null,
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": null,
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 8,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "misc-reliant-tana",
+  "name": "Reliant Tana",
+  "fullName": "MISC Reliant Tana",
+  "className": "MISC_Reliant_Tana",
+  "uuid": "c2956880-b82a-42d0-962b-eb736dac1536",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Medium",
+  "role": "Light Fighter",
+  "career": "Combat",
+  "dimensions": {
+    "x": 14.75,
+    "y": 28.5,
+    "z": 4.5
+  },
+  "cargoScu": 1,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "MISC_Reliant_CargoGrid_TANA",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_tana",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

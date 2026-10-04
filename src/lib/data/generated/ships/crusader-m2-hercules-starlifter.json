@@ -1,0 +1,107 @@
+{
+  "slug": "crusader-m2-hercules-starlifter",
+  "name": "M2 Hercules Starlifter",
+  "fullName": "Crusader M2 Hercules Starlifter",
+  "className": "CRUS_Starlifter_M2",
+  "uuid": "5cf39b3b-41d8-45c1-8ef2-d4678c7a7b85",
+  "manufacturer": {
+    "code": "CRUS",
+    "name": "Crusader Industries"
+  },
+  "size": "Extra large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 70,
+    "y": 94,
+    "z": 23
+  },
+  "cargoScu": 522,
+  "grids": [
+    {
+      "id": "large",
+      "name": "Large",
+      "className": "CRUS_Starlifter_CargoGrid_Large_M2",
+      "cells": {
+        "x": 8,
+        "y": 15,
+        "z": 3
+      },
+      "meters": {
+        "x": 10,
+        "y": 18.75,
+        "z": 3.75
+      },
+      "scu": 360,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 10,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_large",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "small",
+      "name": "Small",
+      "className": "CRUS_Starlifter_CargoGrid_Small_M2",
+      "cells": {
+        "x": 6,
+        "y": 9,
+        "z": 3
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 11.25,
+        "z": 3.75
+      },
+      "scu": 162,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 7.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_small",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

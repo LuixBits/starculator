@@ -1,0 +1,571 @@
+{
+  "slug": "misc-hull-c",
+  "name": "Hull C",
+  "fullName": "MISC Hull C",
+  "className": "MISC_Hull_C",
+  "uuid": "c4ceff45-d851-44b1-921b-bfef93a6cd6a",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Extra large",
+  "role": "Heavy Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 36.05,
+    "y": 91.17,
+    "z": 26.28
+  },
+  "cargoScu": 4608,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-3",
+      "name": "Main 3",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-4",
+      "name": "Main 4",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-5",
+      "name": "Main 5",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-6",
+      "name": "Main 6",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-7",
+      "name": "Main 7",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-8",
+      "name": "Main 8",
+      "className": "MISC_Hull_C_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 10,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 384,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-1",
+      "name": "Outer 1",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-2",
+      "name": "Outer 2",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-3",
+      "name": "Outer 3",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-4",
+      "name": "Outer 4",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-5",
+      "name": "Outer 5",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-6",
+      "name": "Outer 6",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-7",
+      "name": "Outer 7",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "outer-8",
+      "name": "Outer 8",
+      "className": "MISC_Hull_C_CargoGrid_Outer",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 6
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 7.5
+      },
+      "scu": 192,
+      "minBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        32
+      ],
+      "external": true,
+      "hardpoint": "Hardpoint_Cargo2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

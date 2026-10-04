@@ -1,0 +1,471 @@
+[
+  {
+    "slug": "aegis-avenger-titan-renegade",
+    "name": "Avenger Titan Renegade",
+    "fullName": "Aegis Avenger Titan Renegade",
+    "className": "AEGS_Avenger_Titan_Renegade",
+    "variantOf": "aegis-avenger-titan"
+  },
+  {
+    "slug": "aegis-hammerhead-gs",
+    "name": "Hammerhead",
+    "fullName": "Aegis Hammerhead",
+    "className": "AEGS_Hammerhead_GS",
+    "variantOf": "aegis-tiburon"
+  },
+  {
+    "slug": "aegis-idris-p-fw-25",
+    "name": "Idris-P",
+    "fullName": "Aegis Idris-P",
+    "className": "AEGS_Idris_P_FW_25",
+    "variantOf": "aegis-idris-p"
+  },
+  {
+    "slug": "aegis-idris-p-tsg",
+    "name": "Idris-P",
+    "fullName": "Aegis Idris-P",
+    "className": "AEGS_Idris_P_TSG",
+    "variantOf": "aegis-idris-p"
+  },
+  {
+    "slug": "aegis-idris-p-wikelo-war-special",
+    "name": "Idris-P Wikelo War Special",
+    "fullName": "Aegis Idris-P Wikelo War Special",
+    "className": "AEGS_Idris_P_Collector_Military",
+    "variantOf": "aegis-idris-p"
+  },
+  {
+    "slug": "aegis-reclaimer-2949-best-in-show-edition",
+    "name": "Reclaimer 2949 Best In Show Edition",
+    "fullName": "Aegis Reclaimer 2949 Best In Show Edition",
+    "className": "AEGS_Reclaimer_Showdown",
+    "variantOf": "aegis-reclaimer"
+  },
+  {
+    "slug": "aegis-reclaimer-teachs-special",
+    "name": "Reclaimer Teach's Special",
+    "fullName": "Aegis Reclaimer Teach's Special",
+    "className": "AEGS_Reclaimer_Teach",
+    "variantOf": "aegis-reclaimer"
+  },
+  {
+    "slug": "anvil-asgard-wikelo-war-special",
+    "name": "Asgard Wikelo War Special",
+    "fullName": "Anvil Asgard Wikelo War Special",
+    "className": "ANVL_Asgard_Collector_Military",
+    "variantOf": "anvil-asgard"
+  },
+  {
+    "slug": "anvil-c8x-pisces-expedition",
+    "name": "C8X Pisces Expedition",
+    "fullName": "Anvil C8X Pisces Expedition",
+    "className": "ANVL_C8X_Pisces_Expedition",
+    "variantOf": "anvil-c8-pisces"
+  },
+  {
+    "slug": "anvil-carrack-bis2950",
+    "name": "Carrack",
+    "fullName": "Anvil Carrack",
+    "className": "ANVL_Carrack_BIS2950",
+    "variantOf": "anvil-carrack"
+  },
+  {
+    "slug": "anvil-carrack-expedition",
+    "name": "Carrack Expedition",
+    "fullName": "Anvil Carrack Expedition",
+    "className": "ANVL_Carrack_Expedition",
+    "variantOf": "anvil-carrack"
+  },
+  {
+    "slug": "anvil-valkyrie-bis2950",
+    "name": "Valkyrie",
+    "fullName": "Anvil Valkyrie",
+    "className": "ANVL_Valkyrie_BIS2950",
+    "variantOf": "anvil-valkyrie"
+  },
+  {
+    "slug": "argo-mole-alliance",
+    "name": "MOLE Alliance",
+    "fullName": "ARGO MOLE Alliance",
+    "className": "ARGO_MOLE_BTALA",
+    "variantOf": "argo-mole"
+  },
+  {
+    "slug": "argo-mole-teachs-special",
+    "name": "MOLE Teach's Special",
+    "fullName": "Argo MOLE Teach's Special",
+    "className": "ARGO_MOLE_Teach",
+    "variantOf": "argo-mole"
+  },
+  {
+    "slug": "argo-raft-wikelo-work-special",
+    "name": "RAFT Wikelo Work Special",
+    "fullName": "Argo RAFT Wikelo Work Special",
+    "className": "ARGO_RAFT_Collector_Indust",
+    "variantOf": "argo-raft"
+  },
+  {
+    "slug": "co-mustang-citizencon-2948-edition",
+    "name": "Mustang CitizenCon 2948 Edition",
+    "fullName": "C.O. Mustang CitizenCon 2948 Edition",
+    "className": "CNOU_Mustang_Alpha_CitizenCon2018",
+    "variantOf": "co-mustang-alpha"
+  },
+  {
+    "slug": "corsair-pyam-exec",
+    "name": "Corsair PYAM Exec",
+    "fullName": "Corsair PYAM Exec",
+    "className": "DRAK_Corsair_Exec_Military",
+    "variantOf": "drake-corsair"
+  },
+  {
+    "slug": "corsair-pyam-exec-stealthindustrial",
+    "name": "Corsair PYAM Exec",
+    "fullName": "Corsair PYAM Exec",
+    "className": "DRAK_Corsair_Exec_StealthIndustrial",
+    "variantOf": "drake-corsair"
+  },
+  {
+    "slug": "crusader-a2-hercules-starlifter-wikelo-war-special",
+    "name": "A2 Hercules Starlifter Wikelo War Special",
+    "fullName": "Crusader A2 Hercules Starlifter Wikelo War Special",
+    "className": "CRUS_Starlifter_A2_Collector_Military",
+    "variantOf": "crusader-a2-hercules-starlifter"
+  },
+  {
+    "slug": "crusader-c1-spirit-wikelo-special",
+    "name": "C1 Spirit Wikelo Special",
+    "fullName": "Crusader C1 Spirit Wikelo Special",
+    "className": "CRUS_Spirit_C1_Civilian",
+    "variantOf": "crusader-c1-spirit"
+  },
+  {
+    "slug": "crusader-intrepid-wikelo-work-special",
+    "name": "Intrepid Wikelo Work Special",
+    "fullName": "Crusader Intrepid Wikelo Work Special",
+    "className": "CRUS_Intrepid_Collector_Indust",
+    "variantOf": "crusader-intrepid"
+  },
+  {
+    "slug": "cutlass-black-pyam-exec",
+    "name": "Cutlass Black PYAM Exec",
+    "fullName": "Cutlass Black PYAM Exec",
+    "className": "DRAK_Cutlass_Black_Exec_Stealth",
+    "variantOf": "drake-cutlass-black"
+  },
+  {
+    "slug": "cutlass-black-pyam-exec-military",
+    "name": "Cutlass Black PYAM Exec",
+    "fullName": "Cutlass Black PYAM Exec",
+    "className": "DRAK_Cutlass_Black_Exec_Military",
+    "variantOf": "drake-cutlass-black"
+  },
+  {
+    "slug": "drake-caterpillar-boarded",
+    "name": "Caterpillar",
+    "fullName": "Drake Caterpillar",
+    "className": "DRAK_Caterpillar_Boarded",
+    "variantOf": "drake-caterpillar"
+  },
+  {
+    "slug": "drake-caterpillar-pirate",
+    "name": "Caterpillar Pirate",
+    "fullName": "Drake Caterpillar Pirate",
+    "className": "DRAK_Caterpillar_Pirate",
+    "variantOf": "drake-caterpillar"
+  },
+  {
+    "slug": "drake-clipper-wikelo-war-special",
+    "name": "Clipper Wikelo War Special",
+    "fullName": "Drake Clipper Wikelo War Special",
+    "className": "DRAK_Clipper_Collector_Military",
+    "variantOf": "drake-clipper"
+  },
+  {
+    "slug": "drake-cutlass-black-bis2950",
+    "name": "Cutlass Black",
+    "fullName": "Drake Cutlass Black",
+    "className": "DRAK_Cutlass_Black_BIS2950",
+    "variantOf": "drake-cutlass-black"
+  },
+  {
+    "slug": "drake-cutlass-blue",
+    "name": "Cutlass Blue",
+    "fullName": "Drake Cutlass Blue",
+    "className": "DRAK_Cutlass_Blue",
+    "variantOf": "drake-cutlass-red"
+  },
+  {
+    "slug": "drake-cutlass-blue-bis2950",
+    "name": "Cutlass Blue",
+    "fullName": "Drake Cutlass Blue",
+    "className": "DRAK_Cutlass_Blue_BIS2950",
+    "variantOf": "drake-cutlass-red"
+  },
+  {
+    "slug": "drake-cutlass-red-bis2950",
+    "name": "Cutlass Red",
+    "fullName": "Drake Cutlass Red",
+    "className": "DRAK_Cutlass_Red_BIS2950",
+    "variantOf": "drake-cutlass-red"
+  },
+  {
+    "slug": "drake-cutter-rambler",
+    "name": "Cutter Rambler",
+    "fullName": "Drake Cutter Rambler",
+    "className": "DRAK_Cutter_Rambler",
+    "variantOf": "drake-cutter-scout"
+  },
+  {
+    "slug": "drake-vulture-teachs-special",
+    "name": "Vulture Teach's Special",
+    "fullName": "Drake Vulture Teach's Special",
+    "className": "DRAK_Vulture_Teach",
+    "variantOf": "drake-vulture"
+  },
+  {
+    "slug": "esperia-prowler-utility-wikelo-work-special",
+    "name": "Prowler Utility Wikelo Work Special",
+    "fullName": "Esperia Prowler Utility Wikelo Work Special",
+    "className": "ESPR_Prowler_Utility_Collector_Indust",
+    "variantOf": "esperia-prowler-utility"
+  },
+  {
+    "slug": "greys-shiv-temp-cosa",
+    "name": "Shiv",
+    "fullName": "Grey's Shiv",
+    "className": "GLSN_Shiv_TEMP_CosA",
+    "variantOf": "greys-shiv"
+  },
+  {
+    "slug": "greys-shiv-temp-cosb",
+    "name": "Shiv",
+    "fullName": "Grey's Shiv",
+    "className": "GLSN_Shiv_TEMP_CosB",
+    "variantOf": "greys-shiv"
+  },
+  {
+    "slug": "greys-shiv-temp-cosc",
+    "name": "Shiv",
+    "fullName": "Grey's Shiv",
+    "className": "GLSN_Shiv_TEMP_CosC",
+    "variantOf": "greys-shiv"
+  },
+  {
+    "slug": "misc-fortune-teachs-special",
+    "name": "Fortune Teach's Special",
+    "fullName": "MISC Fortune Teach's Special",
+    "className": "MISC_Fortune_Teach",
+    "variantOf": "misc-fortune"
+  },
+  {
+    "slug": "misc-fortune-wikelo-special",
+    "name": "Fortune Wikelo Special",
+    "fullName": "MISC Fortune Wikelo Special",
+    "className": "MISC_Fortune_Collector_Industrial",
+    "variantOf": "misc-fortune"
+  },
+  {
+    "slug": "misc-freelancer-mis",
+    "name": "Freelancer MIS",
+    "fullName": "MISC Freelancer MIS",
+    "className": "MISC_Freelancer_MIS",
+    "variantOf": "misc-freelancer-dur"
+  },
+  {
+    "slug": "misc-starfarer-gemini",
+    "name": "Starfarer Gemini",
+    "fullName": "MISC Starfarer Gemini",
+    "className": "MISC_Starfarer_Gemini",
+    "variantOf": "misc-starfarer"
+  },
+  {
+    "slug": "misc-starfarer-teachs-special",
+    "name": "Starfarer Teach's Special",
+    "fullName": "MISC Starfarer Teach's Special",
+    "className": "MISC_Starfarer_Teach",
+    "variantOf": "misc-starfarer"
+  },
+  {
+    "slug": "misc-starlancer-max-wikelo-work-special",
+    "name": "Starlancer MAX Wikelo Work Special",
+    "fullName": "MISC Starlancer MAX Wikelo Work Special",
+    "className": "MISC_Starlancer_Max_Collector_Indust",
+    "variantOf": "misc-starlancer-max"
+  },
+  {
+    "slug": "misc-starlancer-tac-wikelo-war-special",
+    "name": "Starlancer TAC Wikelo War Special",
+    "fullName": "MISC Starlancer TAC Wikelo War Special",
+    "className": "MISC_Starlancer_TAC_Collector_Military",
+    "variantOf": "misc-starlancer-tac"
+  },
+  {
+    "slug": "origin-125a",
+    "name": "125a",
+    "fullName": "Origin 125a",
+    "className": "ORIG_125a",
+    "variantOf": "origin-100i"
+  },
+  {
+    "slug": "origin-350r",
+    "name": "350r",
+    "fullName": "Origin 350r",
+    "className": "ORIG_350r",
+    "variantOf": "origin-325a"
+  },
+  {
+    "slug": "origin-600i-2951-bis",
+    "name": "600i 2951 BIS",
+    "fullName": "Origin 600i 2951 BIS",
+    "className": "ORIG_600i_BIS2951",
+    "variantOf": "origin-600i"
+  },
+  {
+    "slug": "origin-600i-executive-edition",
+    "name": "600i Executive Edition",
+    "fullName": "Origin 600i Executive Edition",
+    "className": "ORIG_600i_Executive_Edition",
+    "variantOf": "origin-600i"
+  },
+  {
+    "slug": "rsi-apollo-medivac",
+    "name": "Apollo Medivac",
+    "fullName": "RSI Apollo Medivac",
+    "className": "RSI_Apollo_Medivac",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-medivac-tier-1",
+    "name": "Apollo Medivac",
+    "fullName": "RSI Apollo Medivac",
+    "className": "RSI_Apollo_Medivac_Tier_1",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-medivac-tier-2",
+    "name": "Apollo Medivac",
+    "fullName": "RSI Apollo Medivac",
+    "className": "RSI_Apollo_Medivac_Tier_2",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-medivac-tier-3",
+    "name": "Apollo Medivac",
+    "fullName": "RSI Apollo Medivac",
+    "className": "RSI_Apollo_Medivac_Tier_3",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-triage-tier-1",
+    "name": "Apollo Triage",
+    "fullName": "RSI Apollo Triage",
+    "className": "RSI_Apollo_Triage_Tier_1",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-triage-tier-2",
+    "name": "Apollo Triage",
+    "fullName": "RSI Apollo Triage",
+    "className": "RSI_Apollo_Triage_Tier_2",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-triage-tier-3",
+    "name": "Apollo Triage",
+    "fullName": "RSI Apollo Triage",
+    "className": "RSI_Apollo_Triage_Tier_3",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-apollo-triage-wikelo-sneak-special",
+    "name": "Apollo Triage Wikelo Sneak Special",
+    "fullName": "RSI Apollo Triage Wikelo Sneak Special",
+    "className": "RSI_Apollo_Triage_Collector_Stealth",
+    "variantOf": "rsi-apollo-triage"
+  },
+  {
+    "slug": "rsi-aurora-mk-i-ln",
+    "name": "Aurora Mk I LN",
+    "fullName": "RSI Aurora Mk I LN",
+    "className": "RSI_Aurora_GS_LN",
+    "variantOf": "rsi-aurora-mk-i-es"
+  },
+  {
+    "slug": "rsi-aurora-mk-i-lx",
+    "name": "Aurora Mk I LX",
+    "fullName": "RSI Aurora Mk I LX",
+    "className": "RSI_Aurora_GS_LX",
+    "variantOf": "rsi-aurora-mk-i-es"
+  },
+  {
+    "slug": "rsi-aurora-mk-i-mr",
+    "name": "Aurora Mk I MR",
+    "fullName": "RSI Aurora Mk I MR",
+    "className": "RSI_Aurora_GS_MR",
+    "variantOf": "rsi-aurora-mk-i-es"
+  },
+  {
+    "slug": "rsi-aurora-mk-i-se",
+    "name": "Aurora Mk I SE",
+    "fullName": "RSI Aurora Mk I SE",
+    "className": "RSI_Aurora_GS_SE",
+    "variantOf": "rsi-aurora-mk-i-cl"
+  },
+  {
+    "slug": "rsi-constellation-andromeda",
+    "name": "Constellation Andromeda",
+    "fullName": "RSI Constellation Andromeda",
+    "className": "RSI_Constellation_Andromeda",
+    "variantOf": "rsi-constellation-aquila"
+  },
+  {
+    "slug": "rsi-constellation-phoenix-emerald",
+    "name": "Constellation Phoenix Emerald",
+    "fullName": "RSI Constellation Phoenix Emerald",
+    "className": "RSI_Constellation_Phoenix_Emerald",
+    "variantOf": "rsi-constellation-phoenix"
+  },
+  {
+    "slug": "rsi-constellation-taurus-wikelo-war-special",
+    "name": "Constellation Taurus Wikelo War Special",
+    "fullName": "RSI Constellation Taurus Wikelo War Special",
+    "className": "RSI_Constellation_Taurus_Military",
+    "variantOf": "rsi-constellation-taurus"
+  },
+  {
+    "slug": "rsi-polaris-collector-military",
+    "name": "Polaris",
+    "fullName": "RSI Polaris",
+    "className": "RSI_Polaris_Collector_Military",
+    "variantOf": "rsi-polaris"
+  },
+  {
+    "slug": "rsi-zeus-mk-ii-cl-collector-indust",
+    "name": "Zeus Mk II CL",
+    "fullName": "RSI Zeus Mk II CL",
+    "className": "RSI_Zeus_CL_Collector_Indust",
+    "variantOf": "rsi-zeus-mk-ii-cl"
+  },
+  {
+    "slug": "rsi-zeus-mk-ii-es-wikelo-work-special",
+    "name": "Zeus Mk II ES Wikelo Work Special",
+    "fullName": "RSI Zeus Mk II ES Wikelo Work Special",
+    "className": "RSI_Zeus_ES_Collector_Indust",
+    "variantOf": "rsi-zeus-mk-ii-es"
+  },
+  {
+    "slug": "syulen-pyam-exec",
+    "name": "Syulen PYAM Exec",
+    "fullName": "Syulen PYAM Exec",
+    "className": "GAMA_Syulen_Exec_Stealth",
+    "variantOf": "gatac-syulen"
+  },
+  {
+    "slug": "syulen-pyam-exec-military",
+    "name": "Syulen PYAM Exec",
+    "fullName": "Syulen PYAM Exec",
+    "className": "GAMA_Syulen_Exec_Military",
+    "variantOf": "gatac-syulen"
+  }
+]

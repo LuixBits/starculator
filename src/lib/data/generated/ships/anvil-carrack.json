@@ -1,0 +1,372 @@
+{
+  "slug": "anvil-carrack",
+  "name": "Carrack",
+  "fullName": "Anvil Carrack",
+  "className": "ANVL_Carrack",
+  "uuid": "f6d606c9-b324-4efa-814f-15a59047a6a5",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Extra large",
+  "role": "Expedition",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 74,
+    "y": 126,
+    "z": 30
+  },
+  "cargoScu": 456,
+  "grids": [
+    {
+      "id": "large-1",
+      "name": "Large 1",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_front_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "large-2",
+      "name": "Large 2",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_front_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "medium-1",
+      "name": "Medium 1",
+      "className": "ANVL_Carrack_CargoGrid_Medium",
+      "cells": {
+        "x": 4,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 24,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_front_mid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "large-3",
+      "name": "Large 3",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_mid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "large-4",
+      "name": "Large 4",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_mid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "medium-2",
+      "name": "Medium 2",
+      "className": "ANVL_Carrack_CargoGrid_Medium",
+      "cells": {
+        "x": 4,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 24,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_mid_mid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "large-5",
+      "name": "Large 5",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_rear_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "large-6",
+      "name": "Large 6",
+      "className": "ANVL_Carrack_CargoGrid_Large",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_rear_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "medium-3",
+      "name": "Medium 3",
+      "className": "ANVL_Carrack_CargoGrid_Medium",
+      "cells": {
+        "x": 4,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 24,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_rear_mid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "anvil-carrack-bis2950",
+    "anvil-carrack-expedition"
+  ]
+}

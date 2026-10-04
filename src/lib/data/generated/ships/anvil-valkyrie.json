@@ -1,0 +1,68 @@
+{
+  "slug": "anvil-valkyrie",
+  "name": "Valkyrie",
+  "fullName": "Anvil Valkyrie",
+  "className": "ANVL_Valkyrie",
+  "uuid": "881e3879-a186-44da-8b47-1d8f0a846438",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Large",
+  "role": "Dropship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 38,
+    "y": 48,
+    "z": 12
+  },
+  "cargoScu": 90,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ANVL_Valkyrie_CargoGrid",
+      "cells": {
+        "x": 5,
+        "y": 6,
+        "z": 3
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 7.5,
+        "z": 3.75
+      },
+      "scu": 90,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 24,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "anvil-valkyrie-bis2950"
+  ]
+}

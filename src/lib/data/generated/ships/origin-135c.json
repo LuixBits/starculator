@@ -1,0 +1,81 @@
+{
+  "slug": "origin-135c",
+  "name": "135c",
+  "fullName": "Origin 135c",
+  "className": "ORIG_135c",
+  "uuid": "2f231daa-95e5-4cb2-a32e-4db8f29a30d6",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Extra small",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 12,
+    "y": 19,
+    "z": 5
+  },
+  "cargoScu": 6,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ORIG_135c_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": null,
+      "maxBox": null,
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": null,
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "100i",
+      "name": "Secondary",
+      "className": "ORIG_100i_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": null,
+      "maxBox": null,
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": null,
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

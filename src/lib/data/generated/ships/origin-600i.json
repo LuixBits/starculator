@@ -1,0 +1,275 @@
+{
+  "slug": "origin-600i",
+  "name": "600i",
+  "fullName": "Origin 600i",
+  "className": "ORIG_600i",
+  "uuid": "f8ac4c26-8f4d-4cb3-9be2-7d867a95a877",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Extra large",
+  "role": "Expedition",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 52,
+    "y": 91.5,
+    "z": 17
+  },
+  "cargoScu": 44,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "ORIG_600i_CargoGrid_Main",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "ORIG_600i_CargoGrid_Main",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-large",
+      "name": "Module large",
+      "className": "ORIG_600i_CargoGrid_Module_Large",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 3
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 3.75
+      },
+      "scu": 12,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_module_centre",
+      "bay": "module",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-small-1",
+      "name": "Module small 1",
+      "className": "ORIG_600i_CargoGrid_Module_Small",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 3.75
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_module_left",
+      "bay": "module",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-small-2",
+      "name": "Module small 2",
+      "className": "ORIG_600i_CargoGrid_Module_Small",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 3.75
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_module_right",
+      "bay": "module",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-small-1",
+      "name": "Main small 1",
+      "className": "ORIG_600i_CargoGrid_Main_Small",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main_small_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-small-2",
+      "name": "Main small 2",
+      "className": "ORIG_600i_CargoGrid_Main_Small",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main_small_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 4,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "origin-600i-2951-bis",
+    "origin-600i-executive-edition"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "esperia-prowler-utility",
+  "name": "Prowler Utility",
+  "fullName": "Esperia Prowler Utility",
+  "className": "ESPR_Prowler_Utility",
+  "uuid": "528fdddc-c97f-4ae8-a00e-11a59fc3662d",
+  "manufacturer": {
+    "code": "ESPR",
+    "name": "Esperia"
+  },
+  "size": "Medium",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 32,
+    "y": 34,
+    "z": 15
+  },
+  "cargoScu": 32,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "ESPR_Prowler_Utility_CargoGrid_Main",
+      "cells": {
+        "x": 2,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 16,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "ESPR_Prowler_Utility_CargoGrid_Main",
+      "cells": {
+        "x": 2,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 16,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "esperia-prowler-utility-wikelo-work-special"
+  ]
+}

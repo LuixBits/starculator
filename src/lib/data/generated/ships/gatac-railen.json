@@ -1,0 +1,267 @@
+{
+  "slug": "gatac-railen",
+  "name": "Railen",
+  "fullName": "Gatac Railen",
+  "className": "GAMA_Railen",
+  "uuid": "7aed1f98-fa95-4166-b8d2-73c1704346ab",
+  "manufacturer": {
+    "code": "GAMA",
+    "name": "Gatac Manufacture"
+  },
+  "size": "Extra large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 53,
+    "y": 67,
+    "z": 52
+  },
+  "cargoScu": 640,
+  "grids": [
+    {
+      "id": "is-64-1",
+      "name": "Left side rack",
+      "className": "GAMA_Railen_CargoGrid_IS_64",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_left_side",
+      "bay": "left",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "is-64-2",
+      "name": "Right side rack",
+      "className": "GAMA_Railen_CargoGrid_IS_64",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_right_side",
+      "bay": "right",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "is-128-1",
+      "name": "Left bottom rack",
+      "className": "GAMA_Railen_CargoGrid_IS_128",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 5
+      },
+      "scu": 128,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_left_bottom",
+      "bay": "left",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "is-128-2",
+      "name": "Left top rack",
+      "className": "GAMA_Railen_CargoGrid_IS_128",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 5
+      },
+      "scu": 128,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_left_top",
+      "bay": "left",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "is-128-3",
+      "name": "Right bottom rack",
+      "className": "GAMA_Railen_CargoGrid_IS_128",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 5
+      },
+      "scu": 128,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_right_bottom",
+      "bay": "right",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "is-128-4",
+      "name": "Right top rack",
+      "className": "GAMA_Railen_CargoGrid_IS_128",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 5
+      },
+      "scu": 128,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_right_top",
+      "bay": "right",
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

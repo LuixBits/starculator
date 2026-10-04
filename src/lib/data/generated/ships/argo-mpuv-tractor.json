@@ -1,0 +1,61 @@
+{
+  "slug": "argo-mpuv-tractor",
+  "name": "MPUV Tractor",
+  "fullName": "Argo MPUV Tractor",
+  "className": "ARGO_MPUV_1T",
+  "uuid": "674e0a52-4469-4b55-ba0d-6aecc44d1728",
+  "manufacturer": {
+    "code": "ARGO",
+    "name": "Argo Astronautics"
+  },
+  "size": "Extra small",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 9,
+    "y": 10.5,
+    "z": 5.5
+  },
+  "cargoScu": 16,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ARGO_MPUV-1T_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 16,
+      "minBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        16
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

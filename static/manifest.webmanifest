@@ -1,0 +1,16 @@
+{
+	"name": "Starculator",
+	"short_name": "Starculator",
+	"description": "Free Star Citizen cargo planner: pick a ship, see its cargo grids, get a load plan.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#241046",
+	"theme_color": "#241046",
+	"lang": "en",
+	"icons": [
+		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+		{ "src": "/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+	]
+}

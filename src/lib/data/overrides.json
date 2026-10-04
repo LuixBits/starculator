@@ -1,0 +1,47 @@
+{
+	"DRAK_Ironclad": {
+		"note": "Game data reports MaxSize 1.25 m³ (1 SCU) for the four open-deck hold grids, which contradicts in-game use (32 SCU containers are loaded routinely; see docs/research/01-data-sources.md §12). Allow every size that fits. Names follow the hardpoints (rear/front, left/right).",
+		"grids": {
+			"hold-1": { "name": "Hold rear left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-2": { "name": "Hold rear right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-1-center": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-2-center": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+		}
+	},
+	"DRAK_Ironclad_Assault": {
+		"note": "Same open deck as the Ironclad (two 720 SCU hold grids with a bogus 1 SCU MaxSize). Allow every size that fits.",
+		"grids": {
+			"hold-center-1": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-center-2": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+		}
+	},
+	"CNOU_Nomad": {
+		"note": "MinSize/MaxSize are missing from the game data. The 3.75×5×2.5 m bed would geometrically take a 16 SCU box, but the open bed is capped at 8 SCU here until verified in-game.",
+		"grids": {
+			"main": { "allowedSizes": [1, 2, 4, 8] }
+		}
+	},
+	"DRAK_Cutlass_Black": {
+		"note": "Game data reports MaxSize 2.5×1.25×1.25 m (2 SCU) for the 40 SCU main grid, which is far too restrictive: in-game the bay takes larger boxes. Allow up to 8 SCU (unverified in-game; 16 SCU would fit the 5×6.25 m floor geometrically).",
+		"grids": {
+			"main": { "allowedSizes": [1, 2, 4, 8] }
+		}
+	},
+	"ORIG_135c": {
+		"note": "The 135c reuses the 100i grid class for its second compartment, so the inferred label was the class name. Game data also lacks MaxSize and hardpoints for both grids.",
+		"grids": {
+			"100i": { "name": "Secondary" }
+		}
+	},
+	"GAMA_Railen": {
+		"note": "Grid class names are capacity codes (IS_64 / IS_128) that humanise badly; names and left/right bays come from the matched hardpoints (left/right × bottom/side/top racks).",
+		"grids": {
+			"is-64-1": { "name": "Left side rack", "bay": "left" },
+			"is-64-2": { "name": "Right side rack", "bay": "right" },
+			"is-128-1": { "name": "Left bottom rack", "bay": "left" },
+			"is-128-2": { "name": "Left top rack", "bay": "left" },
+			"is-128-3": { "name": "Right bottom rack", "bay": "right" },
+			"is-128-4": { "name": "Right top rack", "bay": "right" }
+		}
+	}
+}

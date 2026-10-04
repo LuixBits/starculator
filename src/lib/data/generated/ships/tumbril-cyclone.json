@@ -1,0 +1,61 @@
+{
+  "slug": "tumbril-cyclone",
+  "name": "Cyclone",
+  "fullName": "Tumbril Cyclone",
+  "className": "TMBL_Cyclone",
+  "uuid": "8dbb42e4-e127-4153-9694-2845142c3e51",
+  "manufacturer": {
+    "code": "TMBL",
+    "name": "Tumbril Land Systems"
+  },
+  "size": "Extra small",
+  "role": "Passenger",
+  "career": "Combat",
+  "dimensions": {
+    "x": 6,
+    "y": 8.75,
+    "z": 3.5
+  },
+  "cargoScu": 1,
+  "grids": [
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "TMBL_Cyclone_CargoGrid_Rear",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": false,
+  "isGroundVehicle": true,
+  "variantOf": null,
+  "variants": []
+}

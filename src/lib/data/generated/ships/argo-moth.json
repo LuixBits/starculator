@@ -1,0 +1,139 @@
+{
+  "slug": "argo-moth",
+  "name": "MOTH",
+  "fullName": "Argo MOTH",
+  "className": "ARGO_MOTH",
+  "uuid": "aaa12a00-a1e7-4dfc-8626-3bebb005209f",
+  "manufacturer": {
+    "code": "ARGO",
+    "name": "Argo Astronautics"
+  },
+  "size": "Medium",
+  "role": "Medium Salvage",
+  "career": "Industrial",
+  "dimensions": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "cargoScu": 224,
+  "grids": [
+    {
+      "id": "elevator",
+      "name": "Elevator",
+      "className": "ARGO_MOTH_CargoGrid_Elevator",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "side",
+      "name": "Side",
+      "className": "ARGO_MOTH_CargoGrid_Side",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "right",
+      "name": "Right",
+      "className": "ARGO_MOTH_CargoGrid_Right",
+      "cells": {
+        "x": 6,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

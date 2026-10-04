@@ -1,0 +1,466 @@
+{
+  "slug": "aegis-reclaimer",
+  "name": "Reclaimer",
+  "fullName": "Aegis Reclaimer",
+  "className": "AEGS_Reclaimer",
+  "uuid": "f05b74b2-06cf-44d0-8607-c09487359384",
+  "manufacturer": {
+    "code": "AEGS",
+    "name": "Aegis Dynamics"
+  },
+  "size": "Capital",
+  "role": "Heavy Salvage",
+  "career": "Industrial",
+  "dimensions": {
+    "x": 120,
+    "y": 160,
+    "z": 55
+  },
+  "cargoScu": 420,
+  "grids": [
+    {
+      "id": "small-1",
+      "name": "Small 1",
+      "className": "AEGS_Reclaimer_CargoGrid_Small",
+      "cells": {
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 2.5,
+        "z": 3.75
+      },
+      "scu": 18,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_small_left_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "small-2",
+      "name": "Small 2",
+      "className": "AEGS_Reclaimer_CargoGrid_Small",
+      "cells": {
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 2.5,
+        "z": 3.75
+      },
+      "scu": 18,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_small_left_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "small-3",
+      "name": "Small 3",
+      "className": "AEGS_Reclaimer_CargoGrid_Small",
+      "cells": {
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 2.5,
+        "z": 3.75
+      },
+      "scu": 18,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_small_right_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "small-4",
+      "name": "Small 4",
+      "className": "AEGS_Reclaimer_CargoGrid_Small",
+      "cells": {
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 2.5,
+        "z": 3.75
+      },
+      "scu": 18,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_small_right_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "AEGS_Reclaimer_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 3,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 3.75,
+        "z": 3.75
+      },
+      "scu": 27,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_large_left_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "AEGS_Reclaimer_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 3,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 3.75,
+        "z": 3.75
+      },
+      "scu": 27,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_large_left_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-3",
+      "name": "Main 3",
+      "className": "AEGS_Reclaimer_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 3,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 3.75,
+        "z": 3.75
+      },
+      "scu": 27,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_large_right_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-4",
+      "name": "Main 4",
+      "className": "AEGS_Reclaimer_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 3,
+        "z": 3
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 3.75,
+        "z": 3.75
+      },
+      "scu": 27,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_large_right_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "salvage-1-front",
+      "name": "Salvage 1 front",
+      "className": "AEGS_Reclaimer_CargoGrid_Salvage_Front_TEMP",
+      "cells": {
+        "x": 7,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 8.75,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 70,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_salvage_room_left_front_TEMP",
+      "bay": "salvage-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "salvage-2-front",
+      "name": "Salvage 2 front",
+      "className": "AEGS_Reclaimer_CargoGrid_Salvage_Front_TEMP",
+      "cells": {
+        "x": 7,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 8.75,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 70,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_salvage_room_right_front_TEMP",
+      "bay": "salvage-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "salvage-1-rear",
+      "name": "Salvage 1 rear",
+      "className": "AEGS_Reclaimer_CargoGrid_Salvage_Rear_TEMP",
+      "cells": {
+        "x": 5,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 50,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_salvage_room_left_rear_TEMP",
+      "bay": "salvage-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "salvage-2-rear",
+      "name": "Salvage 2 rear",
+      "className": "AEGS_Reclaimer_CargoGrid_Salvage_Rear_TEMP",
+      "cells": {
+        "x": 5,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 50,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_salvage_room_right_rear_TEMP",
+      "bay": "salvage-2",
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 8,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "aegis-reclaimer-2949-best-in-show-edition",
+    "aegis-reclaimer-teachs-special"
+  ]
+}

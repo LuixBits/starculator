@@ -1,0 +1,95 @@
+{
+  "slug": "rsi-hermes",
+  "name": "Hermes",
+  "fullName": "RSI Hermes",
+  "className": "RSI_Hermes",
+  "uuid": "4ed10b1c-df4f-4ab0-430e-b5b9f33b0f94",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Extra large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 58,
+    "y": 73,
+    "z": 14
+  },
+  "cargoScu": 288,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "RSI_Hermes_CargoInventory_Main",
+      "cells": {
+        "x": 4,
+        "y": 18,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 22.5,
+        "z": 2.5
+      },
+      "scu": 144,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_left_hermes",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "RSI_Hermes_CargoInventory_Main",
+      "cells": {
+        "x": 4,
+        "y": 18,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 22.5,
+        "z": 2.5
+      },
+      "scu": 144,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_right_hermes",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

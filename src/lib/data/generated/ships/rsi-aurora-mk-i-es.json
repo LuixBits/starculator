@@ -1,0 +1,66 @@
+{
+  "slug": "rsi-aurora-mk-i-es",
+  "name": "Aurora Mk I ES",
+  "fullName": "RSI Aurora Mk I ES",
+  "className": "RSI_Aurora_GS_ES",
+  "uuid": "d8987dc2-340d-4312-8d4f-aee7e7fac823",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Small",
+  "role": "Starter / Pathfinder",
+  "career": "Multi-Role",
+  "dimensions": {
+    "x": 8.75,
+    "y": 19,
+    "z": 4.5
+  },
+  "cargoScu": 3,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Aurora_ES_CargoInventory_Main",
+      "cells": {
+        "x": 1,
+        "y": 3,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 3.75,
+        "z": 1.25
+      },
+      "scu": 3,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-aurora-mk-i-ln",
+    "rsi-aurora-mk-i-lx",
+    "rsi-aurora-mk-i-mr"
+  ]
+}

@@ -1,0 +1,667 @@
+{
+  "slug": "misc-hull-b",
+  "name": "Hull B",
+  "fullName": "MISC Hull B",
+  "className": "MISC_Hull_B",
+  "uuid": "0d690d1a-9f57-4976-bff1-ec46bf039e75",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 16.7,
+    "y": 71,
+    "z": 10.7
+  },
+  "cargoScu": 512,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_front_left_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_front_left_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-3",
+      "name": "Main 3",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_front_right_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-4",
+      "name": "Main 4",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_front_right_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-5",
+      "name": "Main 5",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_rear_left_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-6",
+      "name": "Main 6",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_rear_left_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-7",
+      "name": "Main 7",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_rear_right_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-8",
+      "name": "Main 8",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_bottom_rear_right_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-9",
+      "name": "Main 9",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_front_left_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-10",
+      "name": "Main 10",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_front_left_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-11",
+      "name": "Main 11",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_front_right_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-12",
+      "name": "Main 12",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_front_right_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-13",
+      "name": "Main 13",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_rear_left_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-14",
+      "name": "Main 14",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_rear_left_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-15",
+      "name": "Main 15",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_rear_right_lower",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-16",
+      "name": "Main 16",
+      "className": "MISC_Hull_B_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_top_rear_right_upper",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

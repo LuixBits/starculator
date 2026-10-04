@@ -1,0 +1,97 @@
+{
+  "slug": "crusader-intrepid",
+  "name": "Intrepid",
+  "fullName": "Crusader Intrepid",
+  "className": "CRUS_Intrepid",
+  "uuid": "16aa514f-12ac-43a4-b51d-44447252186e",
+  "manufacturer": {
+    "code": "CRUS",
+    "name": "Crusader Industries"
+  },
+  "size": "Small",
+  "role": "Starter / Light Freight",
+  "career": "Starter",
+  "dimensions": {
+    "x": 20.18,
+    "y": 23.07,
+    "z": 6.13
+  },
+  "cargoScu": 8,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "CRUS_Intrepid_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "CRUS_Intrepid_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "crusader-intrepid-wikelo-work-special"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "anvil-paladin",
+  "name": "Paladin",
+  "fullName": "Anvil Paladin",
+  "className": "ANVL_Paladin",
+  "uuid": "b617902a-6cab-457b-9eb8-494274f659b8",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Large",
+  "role": "Gunship",
+  "career": "Gunship",
+  "dimensions": {
+    "x": 38,
+    "y": 53.5,
+    "z": 15.5
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ANVL_Paladin_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

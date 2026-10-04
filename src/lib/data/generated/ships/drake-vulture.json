@@ -1,0 +1,66 @@
+{
+  "slug": "drake-vulture",
+  "name": "Vulture",
+  "fullName": "Drake Vulture",
+  "className": "DRAK_Vulture",
+  "uuid": "34077e67-5e2c-4903-a17c-2d0e163751c7",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Small",
+  "role": "Light Salvage",
+  "career": "Industrial",
+  "dimensions": {
+    "x": 16,
+    "y": 34,
+    "z": 9
+  },
+  "cargoScu": 12,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Vulture_CargoInventory_Main",
+      "cells": {
+        "x": 2,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 12,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 8,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "drake-vulture-teachs-special"
+  ]
+}

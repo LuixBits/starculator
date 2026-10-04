@@ -1,0 +1,814 @@
+{
+  "slug": "aegis-idris-m",
+  "name": "Idris-M",
+  "fullName": "Aegis Idris-M",
+  "className": "AEGS_Idris_M",
+  "uuid": "f0caa993-4c6b-4402-8ef1-d91879060f3b",
+  "manufacturer": {
+    "code": "AEGS",
+    "name": "Aegis Dynamics"
+  },
+  "size": "Capital",
+  "role": "Frigate",
+  "career": "Combat",
+  "dimensions": {
+    "x": 127,
+    "y": 243,
+    "z": 57.5
+  },
+  "cargoScu": 1326,
+  "grids": [
+    {
+      "id": "hangar-1",
+      "name": "Hangar 1",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-2",
+      "name": "Hangar 2",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-3",
+      "name": "Hangar 3",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_3",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-4",
+      "name": "Hangar 4",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_4",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-5",
+      "name": "Hangar 5",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_5",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-6",
+      "name": "Hangar 6",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_6",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-7",
+      "name": "Hangar 7",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_7",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-8",
+      "name": "Hangar 8",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Left_8",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-9",
+      "name": "Hangar 9",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-10",
+      "name": "Hangar 10",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-11",
+      "name": "Hangar 11",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_3",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-12",
+      "name": "Hangar 12",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_4",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-13",
+      "name": "Hangar 13",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_5",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-14",
+      "name": "Hangar 14",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_6",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-15",
+      "name": "Hangar 15",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_7",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-16",
+      "name": "Hangar 16",
+      "className": "AEGS_Idris_CargoGrid_Hangar",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_Hangar_Right_8",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "room-medium",
+      "name": "Room medium",
+      "className": "AEGS_Idris_CargoGrid_Cargo_Room_Medium",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 10,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_CargoRoom_Front_Medium",
+      "bay": "room",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "room-small-1",
+      "name": "Room small 1",
+      "className": "AEGS_Idris_CargoGrid_Cargo_Room_Small",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_CargoRoom_Front_Small_1",
+      "bay": "room",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "room-small-2",
+      "name": "Room small 2",
+      "className": "AEGS_Idris_CargoGrid_Cargo_Room_Small",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_CargoRoom_Front_Small_2",
+      "bay": "room",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "room-front",
+      "name": "Room front",
+      "className": "AEGS_Idris_CargoGrid_Cargo_Room_Front",
+      "cells": {
+        "x": 14,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 17.5,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 140,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_CargoRoom_Front",
+      "bay": "room",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "room-back",
+      "name": "Room back",
+      "className": "AEGS_Idris_CargoGrid_Cargo_Room_Back",
+      "cells": {
+        "x": 18,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 22.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 144,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "CargoGrid_CargoRoom_Back",
+      "bay": "room",
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

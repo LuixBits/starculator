@@ -1,0 +1,65 @@
+{
+  "slug": "origin-400i",
+  "name": "400i",
+  "fullName": "Origin 400i",
+  "className": "ORIG_400i",
+  "uuid": "718f4435-628b-4436-bb80-bf9cfef9a945",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Large",
+  "role": "Expedition",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 32,
+    "y": 56,
+    "z": 12.5
+  },
+  "cargoScu": 42,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ORIG_400i_CargoGrid",
+      "cells": {
+        "x": 3,
+        "y": 7,
+        "z": 2
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 8.75,
+        "z": 2.5
+      },
+      "scu": 42,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "Cargo_Grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

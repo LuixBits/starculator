@@ -1,0 +1,141 @@
+{
+  "slug": "rsi-zeus-mk-ii-cl",
+  "name": "Zeus Mk II CL",
+  "fullName": "RSI Zeus Mk II CL",
+  "className": "RSI_Zeus_CL",
+  "uuid": "02fe3279-3598-4ce6-96dc-0bc5cb90dfdc",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Medium",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 35,
+    "y": 46,
+    "z": 9
+  },
+  "cargoScu": 128,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Zeus_CargoGrid_Cargo_Main",
+      "cells": {
+        "x": 5,
+        "y": 8,
+        "z": 3
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 10,
+        "z": 3.75
+      },
+      "scu": 120,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_cargo_center",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "left",
+      "name": "Left",
+      "className": "RSI_Zeus_CargoGrid_Cargo_Left",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_cargo_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "right",
+      "name": "Right",
+      "className": "RSI_Zeus_CargoGrid_Cargo_Right",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_cargo_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-zeus-mk-ii-cl-collector-indust"
+  ]
+}

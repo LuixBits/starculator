@@ -1,0 +1,234 @@
+{
+  "slug": "gatac-syulen",
+  "name": "Syulen",
+  "fullName": "Gatac Syulen",
+  "className": "GAMA_Syulen",
+  "uuid": "11ebc47d-4763-4faa-9020-171cf6c2651f",
+  "manufacturer": {
+    "code": "GAMA",
+    "name": "Gatac Manufacture"
+  },
+  "size": "Medium",
+  "role": "Starter / Pathfinder",
+  "career": "Multi-Role",
+  "dimensions": {
+    "x": 25,
+    "y": 28,
+    "z": 16
+  },
+  "cargoScu": 6,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_1",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_1",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-3",
+      "name": "Main 3",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_1",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-4",
+      "name": "Main 4",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-5",
+      "name": "Main 5",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-6",
+      "name": "Main 6",
+      "className": "GAMA_Syulen_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "Hardpoint_cargo_2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "syulen-pyam-exec",
+    "syulen-pyam-exec-military"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "argo-mpuv-cargo",
+  "name": "MPUV Cargo",
+  "fullName": "Argo MPUV Cargo",
+  "className": "ARGO_MPUV",
+  "uuid": "e19fc6c3-f5fa-4623-9a17-b00a29b71500",
+  "manufacturer": {
+    "code": "ARGO",
+    "name": "Argo Astronautics"
+  },
+  "size": "Extra small",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 9,
+    "y": 10.5,
+    "z": 5
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ARGO_MPUV_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

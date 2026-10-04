@@ -1,0 +1,62 @@
+{
+  "slug": "origin-300i",
+  "name": "300i",
+  "fullName": "Origin 300i",
+  "className": "ORIG_300i",
+  "uuid": "ce937681-caa2-4cfa-ab80-f5bf2a5b9a6c",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Small",
+  "role": "Luxury Touring",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 17,
+    "y": 27,
+    "z": 8
+  },
+  "cargoScu": 8,
+  "grids": [
+    {
+      "id": "front",
+      "name": "Front",
+      "className": "ORIG_300i_CargoGrid_Front",
+      "cells": {
+        "x": 2,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "drake-ironclad-assault",
+  "name": "Ironclad Assault",
+  "fullName": "Drake Ironclad Assault",
+  "className": "DRAK_Ironclad_Assault",
+  "uuid": "4481572d-66c8-4f7a-90c3-0150052fde10",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Extra large",
+  "role": "Heavy Dropship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 50,
+    "y": 117,
+    "z": 25
+  },
+  "cargoScu": 1440,
+  "grids": [
+    {
+      "id": "hold-center-1",
+      "name": "Hold front left",
+      "className": "Drak_Ironclad_CargoGrid_Hold_Center",
+      "cells": {
+        "x": 6,
+        "y": 20,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 25,
+        "z": 7.5
+      },
+      "scu": 720,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_front_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hold-center-2",
+      "name": "Hold front right",
+      "className": "Drak_Ironclad_CargoGrid_Hold_Center",
+      "cells": {
+        "x": 6,
+        "y": 20,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 25,
+        "z": 7.5
+      },
+      "scu": 720,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_front_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

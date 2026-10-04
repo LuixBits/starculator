@@ -1,0 +1,357 @@
+{
+  "slug": "drake-ironclad",
+  "name": "Ironclad",
+  "fullName": "Drake Ironclad",
+  "className": "DRAK_Ironclad",
+  "uuid": "c42bf65e-f3f2-4234-8c19-8276bfd5de3a",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Extra large",
+  "role": "Heavy Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 50,
+    "y": 117,
+    "z": 25
+  },
+  "cargoScu": 2200,
+  "grids": [
+    {
+      "id": "hold-1",
+      "name": "Hold rear left",
+      "className": "Drak_Ironclad_CargoGrid_Hold",
+      "cells": {
+        "x": 6,
+        "y": 10,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 12.5,
+        "z": 7.5
+      },
+      "scu": 360,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_rear_left",
+      "bay": "hold-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hold-2",
+      "name": "Hold rear right",
+      "className": "Drak_Ironclad_CargoGrid_Hold",
+      "cells": {
+        "x": 6,
+        "y": 10,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 12.5,
+        "z": 7.5
+      },
+      "scu": 360,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_rear_right",
+      "bay": "hold-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hold-1-center",
+      "name": "Hold front left",
+      "className": "Drak_Ironclad_CargoGrid_Hold_Center",
+      "cells": {
+        "x": 6,
+        "y": 20,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 25,
+        "z": 7.5
+      },
+      "scu": 720,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_front_left",
+      "bay": "hold-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hold-2-center",
+      "name": "Hold front right",
+      "className": "Drak_Ironclad_CargoGrid_Hold_Center",
+      "cells": {
+        "x": 6,
+        "y": 20,
+        "z": 6
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 25,
+        "z": 7.5
+      },
+      "scu": 720,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_front_right",
+      "bay": "hold-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "secure-hold-1",
+      "name": "Secure hold 1",
+      "className": "Drak_Ironclad_CargoGrid_SecureHold",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_secure_front_left",
+      "bay": "secure-hold",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "secure-hold-2",
+      "name": "Secure hold 2",
+      "className": "Drak_Ironclad_CargoGrid_SecureHold",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_secure_front_right",
+      "bay": "secure-hold",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "secure-hold-center",
+      "name": "Secure hold center",
+      "className": "Drak_Ironclad_CargoGrid_SecureHold_Center",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_secure_front_middle",
+      "bay": "secure-hold",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "secure-hold-3",
+      "name": "Secure hold 3",
+      "className": "Drak_Ironclad_CargoGrid_SecureHold",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_secure_rear_left",
+      "bay": "secure-hold",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "secure-hold-4",
+      "name": "Secure hold 4",
+      "className": "Drak_Ironclad_CargoGrid_SecureHold",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_secure_rear_right",
+      "bay": "secure-hold",
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "crusader-c1-spirit",
+  "name": "C1 Spirit",
+  "fullName": "Crusader C1 Spirit",
+  "className": "CRUS_Spirit_C1",
+  "uuid": "9611b8ed-cc96-4b5c-aa1e-baefe7d5bb1c",
+  "manufacturer": {
+    "code": "CRUS",
+    "name": "Crusader Industries"
+  },
+  "size": "Medium",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 44,
+    "y": 47.5,
+    "z": 10
+  },
+  "cargoScu": 64,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "CRUS_Spirit_C1_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "CRUS_Spirit_C1_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "crusader-c1-spirit-wikelo-special"
+  ]
+}

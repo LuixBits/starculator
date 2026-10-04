@@ -1,0 +1,189 @@
+{
+  "slug": "misc-starlancer-max",
+  "name": "Starlancer MAX",
+  "fullName": "MISC Starlancer MAX",
+  "className": "MISC_Starlancer_Max",
+  "uuid": "ff873dda-2b79-4fa3-b3ce-535b8adff5e2",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Extra large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 60,
+    "y": 90,
+    "z": 20
+  },
+  "cargoScu": 224,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "MISC_Starlancer_CargoGrid_Template",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 3.75
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "MISC_Starlancer_CargoGrid_Template",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 3.75
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "max-1",
+      "name": "Max 1",
+      "className": "MISC_Starlancer_CargoGrid_Max_Template",
+      "cells": {
+        "x": 2,
+        "y": 16,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 20,
+        "z": 2.5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "cargo_grid_l",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "max-2",
+      "name": "Max 2",
+      "className": "MISC_Starlancer_CargoGrid_Max_Template",
+      "cells": {
+        "x": 2,
+        "y": 16,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 20,
+        "z": 2.5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "cargo_grid_r",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "misc-starlancer-max-wikelo-work-special"
+  ]
+}

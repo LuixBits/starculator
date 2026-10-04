@@ -1,0 +1,61 @@
+{
+  "slug": "drake-golem-ox",
+  "name": "Golem OX",
+  "fullName": "Drake Golem OX",
+  "className": "DRAK_Golem_OX",
+  "uuid": "ea2c22bc-c2f0-42dc-967d-3300f9232f91",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Small",
+  "role": "Light Freight",
+  "career": "Industrial",
+  "dimensions": {
+    "x": 7,
+    "y": 15.5,
+    "z": 5
+  },
+  "cargoScu": 64,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Golem_OX_CargoGrid",
+      "cells": {
+        "x": 4,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "greycat-utv",
+  "name": "UTV",
+  "fullName": "Greycat UTV",
+  "className": "GRIN_UTV",
+  "uuid": "bfdf94df-32fc-497c-b9fa-c98f3fa4c83b",
+  "manufacturer": {
+    "code": "GRIN",
+    "name": "Greycat Industrial"
+  },
+  "size": "Extra small",
+  "role": "Passenger",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 2.6,
+    "y": 4,
+    "z": 2.5
+  },
+  "cargoScu": 1,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "GRIN_UTV_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 1,
+      "minBox": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": false,
+  "isGroundVehicle": true,
+  "variantOf": null,
+  "variants": []
+}

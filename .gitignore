@@ -23,3 +23,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 # Playwright
 test-results
+
+# Review screenshots are generated locally; final ones are force-added deliberately
+docs/screenshots/

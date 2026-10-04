@@ -1,0 +1,69 @@
+{
+  "slug": "drake-corsair",
+  "name": "Corsair",
+  "fullName": "Drake Corsair",
+  "className": "DRAK_Corsair",
+  "uuid": "e1afb014-fe71-4da9-89ae-c30fcf9c0782",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Large",
+  "role": "Expedition",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 30,
+    "y": 53,
+    "z": 25
+  },
+  "cargoScu": 72,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Corsair_CargoGrid",
+      "cells": {
+        "x": 4,
+        "y": 9,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 11.25,
+        "z": 2.5
+      },
+      "scu": 72,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 24,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "corsair-pyam-exec",
+    "corsair-pyam-exec-stealthindustrial"
+  ]
+}

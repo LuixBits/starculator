@@ -1,0 +1,63 @@
+{
+  "slug": "origin-100i",
+  "name": "100i",
+  "fullName": "Origin 100i",
+  "className": "ORIG_100i",
+  "uuid": "6135a874-4cb1-4f49-9f29-5781e5991f2b",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Extra small",
+  "role": "Starter / Pathfinder",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 12,
+    "y": 19,
+    "z": 5
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ORIG_100i_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "origin-125a"
+  ]
+}

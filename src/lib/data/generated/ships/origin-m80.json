@@ -1,0 +1,62 @@
+{
+  "slug": "origin-m80",
+  "name": "M80",
+  "fullName": "Origin M80",
+  "className": "ORIG_m80",
+  "uuid": "01c24704-ae47-4b31-931c-d35655edaa05",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Small",
+  "role": "Heavy Fighter",
+  "career": "Combat",
+  "dimensions": {
+    "x": 11,
+    "y": 11.5,
+    "z": 3.5
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "Orig_m80_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

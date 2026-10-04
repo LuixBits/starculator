@@ -1,0 +1,102 @@
+{
+  "slug": "crusader-mercury-star-runner",
+  "name": "Mercury Star Runner",
+  "fullName": "Crusader Mercury Star Runner",
+  "className": "CRUS_Star_Runner",
+  "uuid": "c8e10f09-38a0-4730-9dd3-eb0a510c9e43",
+  "manufacturer": {
+    "code": "CRUS",
+    "name": "Crusader Industries"
+  },
+  "size": "Large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 51,
+    "y": 55,
+    "z": 19
+  },
+  "cargoScu": 114,
+  "grids": [
+    {
+      "id": "large",
+      "name": "Large",
+      "className": "CRUS_Star_Runner_CargoGrid_Large",
+      "cells": {
+        "x": 6,
+        "y": 6,
+        "z": 3
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 7.5,
+        "z": 3.75
+      },
+      "scu": 108,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 7.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_large",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "small",
+      "name": "Small",
+      "className": "CRUS_Star_Runner_CargoGrid_Small",
+      "cells": {
+        "x": 1,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_small",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 24,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

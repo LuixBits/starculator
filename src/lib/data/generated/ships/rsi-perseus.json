@@ -1,0 +1,67 @@
+{
+  "slug": "rsi-perseus",
+  "name": "Perseus",
+  "fullName": "RSI Perseus",
+  "className": "RSI_Perseus",
+  "uuid": "40a1f83b-3623-49e6-8168-ab8223998aa2",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Extra large",
+  "role": "Heavy Gunship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 50,
+    "y": 100,
+    "z": 25
+  },
+  "cargoScu": 96,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Perseus_CargoGrid",
+      "cells": {
+        "x": 8,
+        "y": 6,
+        "z": 2
+      },
+      "meters": {
+        "x": 10,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

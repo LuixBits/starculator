@@ -1,0 +1,61 @@
+{
+  "slug": "aegis-redeemer",
+  "name": "Redeemer",
+  "fullName": "Aegis Redeemer",
+  "className": "AEGS_Redeemer",
+  "uuid": "9a25d006-5706-4c70-9ac6-df795688fe09",
+  "manufacturer": {
+    "code": "AEGS",
+    "name": "Aegis Dynamics"
+  },
+  "size": "Large",
+  "role": "Gunship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 25,
+    "y": 51,
+    "z": 14
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "AEGS_Redeemer_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

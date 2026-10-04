@@ -1,0 +1,67 @@
+{
+  "slug": "rsi-zeus-mk-ii-es",
+  "name": "Zeus Mk II ES",
+  "fullName": "RSI Zeus Mk II ES",
+  "className": "RSI_Zeus_ES",
+  "uuid": "e4770804-b43a-4c2d-a4e4-fedd410e50fb",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Medium",
+  "role": "Expedition",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 35,
+    "y": 46,
+    "z": 9
+  },
+  "cargoScu": 32,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Zeus_CargoGrid_Base_Main",
+      "cells": {
+        "x": 4,
+        "y": 4,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 5,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_base_main",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-zeus-mk-ii-es-wikelo-work-special"
+  ]
+}

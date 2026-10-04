@@ -1,0 +1,1232 @@
+[
+  {
+    "slug": "aegis-avenger-titan",
+    "name": "Avenger Titan",
+    "fullName": "Aegis Avenger Titan",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Small",
+    "role": "Light Freight",
+    "cargoScu": 8,
+    "gridCount": 1,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-hammerhead",
+    "name": "Hammerhead",
+    "fullName": "Aegis Hammerhead",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Extra large",
+    "role": "Heavy Gunship",
+    "cargoScu": 40,
+    "gridCount": 1,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-idris-m",
+    "name": "Idris-M",
+    "fullName": "Aegis Idris-M",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Capital",
+    "role": "Frigate",
+    "cargoScu": 1326,
+    "gridCount": 21,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-idris-p",
+    "name": "Idris-P",
+    "fullName": "Aegis Idris-P",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Capital",
+    "role": "Frigate",
+    "cargoScu": 1374,
+    "gridCount": 25,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-reclaimer",
+    "name": "Reclaimer",
+    "fullName": "Aegis Reclaimer",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Capital",
+    "role": "Heavy Salvage",
+    "cargoScu": 420,
+    "gridCount": 12,
+    "maxContainer": 8,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-redeemer",
+    "name": "Redeemer",
+    "fullName": "Aegis Redeemer",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Large",
+    "role": "Gunship",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "aegis-tiburon",
+    "name": "Tiburon",
+    "fullName": "Aegis Tiburon",
+    "manufacturer": {
+      "code": "AEGS",
+      "name": "Aegis Dynamics"
+    },
+    "size": "Extra large",
+    "role": "Heavy Gunship",
+    "cargoScu": 64,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-asgard",
+    "name": "Asgard",
+    "fullName": "Anvil Asgard",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Large",
+    "role": "Dropship",
+    "cargoScu": 180,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-c8-pisces",
+    "name": "C8 Pisces",
+    "fullName": "Anvil C8 Pisces",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Extra small",
+    "role": "Pathfinder",
+    "cargoScu": 4,
+    "gridCount": 2,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-carrack",
+    "name": "Carrack",
+    "fullName": "Anvil Carrack",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Extra large",
+    "role": "Expedition",
+    "cargoScu": 456,
+    "gridCount": 9,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-f7c-hornet-mk-ii",
+    "name": "F7C Hornet Mk II",
+    "fullName": "Anvil F7C Hornet Mk II",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Small",
+    "role": "Medium Fighter",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-paladin",
+    "name": "Paladin",
+    "fullName": "Anvil Paladin",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Large",
+    "role": "Gunship",
+    "cargoScu": 4,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "anvil-valkyrie",
+    "name": "Valkyrie",
+    "fullName": "Anvil Valkyrie",
+    "manufacturer": {
+      "code": "ANVL",
+      "name": "Anvil Aerospace"
+    },
+    "size": "Large",
+    "role": "Dropship",
+    "cargoScu": 90,
+    "gridCount": 1,
+    "maxContainer": 24,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-csv-sm",
+    "name": "CSV-SM",
+    "fullName": "Argo CSV-SM",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Extra small",
+    "role": "Light Freight",
+    "cargoScu": 4,
+    "gridCount": 1,
+    "maxContainer": 4,
+    "isGroundVehicle": true
+  },
+  {
+    "slug": "argo-mole",
+    "name": "MOLE",
+    "fullName": "Argo MOLE",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Medium",
+    "role": "Medium Mining",
+    "cargoScu": 32,
+    "gridCount": 1,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-moth",
+    "name": "MOTH",
+    "fullName": "Argo MOTH",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Medium",
+    "role": "Medium Salvage",
+    "cargoScu": 224,
+    "gridCount": 3,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-mpuv-cargo",
+    "name": "MPUV Cargo",
+    "fullName": "Argo MPUV Cargo",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Extra small",
+    "role": "Light Freight",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-mpuv-tractor",
+    "name": "MPUV Tractor",
+    "fullName": "Argo MPUV Tractor",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Extra small",
+    "role": "Light Freight",
+    "cargoScu": 16,
+    "gridCount": 1,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-raft",
+    "name": "RAFT",
+    "fullName": "Argo RAFT",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Medium",
+    "role": "Medium Freight",
+    "cargoScu": 192,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "argo-srv",
+    "name": "SRV",
+    "fullName": "Argo SRV",
+    "manufacturer": {
+      "code": "ARGO",
+      "name": "Argo Astronautics"
+    },
+    "size": "Medium",
+    "role": "Recovery",
+    "cargoScu": 12,
+    "gridCount": 1,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "co-mustang-alpha",
+    "name": "Mustang Alpha",
+    "fullName": "C.O. Mustang Alpha",
+    "manufacturer": {
+      "code": "CNOU",
+      "name": "Consolidated Outland"
+    },
+    "size": "Small",
+    "role": "Starter / Light Freight",
+    "cargoScu": 4,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "co-nomad",
+    "name": "Nomad",
+    "fullName": "C.O. Nomad",
+    "manufacturer": {
+      "code": "CNOU",
+      "name": "Consolidated Outland"
+    },
+    "size": "Small",
+    "role": "Starter / Light Freight",
+    "cargoScu": 24,
+    "gridCount": 1,
+    "maxContainer": 8,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-a2-hercules-starlifter",
+    "name": "A2 Hercules Starlifter",
+    "fullName": "Crusader A2 Hercules Starlifter",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Extra large",
+    "role": "Heavy Bomber",
+    "cargoScu": 216,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-c1-spirit",
+    "name": "C1 Spirit",
+    "fullName": "Crusader C1 Spirit",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Medium",
+    "role": "Light Freight",
+    "cargoScu": 64,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-c2-hercules-starlifter",
+    "name": "C2 Hercules Starlifter",
+    "fullName": "Crusader C2 Hercules Starlifter",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 696,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-intrepid",
+    "name": "Intrepid",
+    "fullName": "Crusader Intrepid",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Small",
+    "role": "Starter / Light Freight",
+    "cargoScu": 8,
+    "gridCount": 2,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-m2-hercules-starlifter",
+    "name": "M2 Hercules Starlifter",
+    "fullName": "Crusader M2 Hercules Starlifter",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 522,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "crusader-mercury-star-runner",
+    "name": "Mercury Star Runner",
+    "fullName": "Crusader Mercury Star Runner",
+    "manufacturer": {
+      "code": "CRUS",
+      "name": "Crusader Industries"
+    },
+    "size": "Large",
+    "role": "Medium Freight",
+    "cargoScu": 114,
+    "gridCount": 2,
+    "maxContainer": 24,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-caterpillar",
+    "name": "Caterpillar",
+    "fullName": "Drake Caterpillar",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 576,
+    "gridCount": 14,
+    "maxContainer": 24,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-clipper",
+    "name": "Clipper",
+    "fullName": "Drake Clipper",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Small",
+    "role": "Generalist",
+    "cargoScu": 12,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-corsair",
+    "name": "Corsair",
+    "fullName": "Drake Corsair",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Large",
+    "role": "Expedition",
+    "cargoScu": 72,
+    "gridCount": 1,
+    "maxContainer": 24,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-cutlass-black",
+    "name": "Cutlass Black",
+    "fullName": "Drake Cutlass Black",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Medium",
+    "role": "Light Freight / Medium Fighter",
+    "cargoScu": 46,
+    "gridCount": 2,
+    "maxContainer": 8,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-cutlass-red",
+    "name": "Cutlass Red",
+    "fullName": "Drake Cutlass Red",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Medium",
+    "role": "Medical",
+    "cargoScu": 12,
+    "gridCount": 2,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-cutter",
+    "name": "Cutter",
+    "fullName": "Drake Cutter",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Small",
+    "role": "Starter / Pathfinder",
+    "cargoScu": 4,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-cutter-scout",
+    "name": "Cutter Scout",
+    "fullName": "Drake Cutter Scout",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Small",
+    "role": "Pathfinder",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-golem-ox",
+    "name": "Golem OX",
+    "fullName": "Drake Golem OX",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Small",
+    "role": "Light Freight",
+    "cargoScu": 64,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-ironclad",
+    "name": "Ironclad",
+    "fullName": "Drake Ironclad",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Extra large",
+    "role": "Heavy Freight",
+    "cargoScu": 2200,
+    "gridCount": 9,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-ironclad-assault",
+    "name": "Ironclad Assault",
+    "fullName": "Drake Ironclad Assault",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Extra large",
+    "role": "Heavy Dropship",
+    "cargoScu": 1440,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "drake-mule",
+    "name": "Mule",
+    "fullName": "Drake Mule",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Extra small",
+    "role": "Light Freight",
+    "cargoScu": 1,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": true
+  },
+  {
+    "slug": "drake-vulture",
+    "name": "Vulture",
+    "fullName": "Drake Vulture",
+    "manufacturer": {
+      "code": "DRAK",
+      "name": "Drake Interplanetary"
+    },
+    "size": "Small",
+    "role": "Light Salvage",
+    "cargoScu": 12,
+    "gridCount": 1,
+    "maxContainer": 8,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "esperia-prowler-utility",
+    "name": "Prowler Utility",
+    "fullName": "Esperia Prowler Utility",
+    "manufacturer": {
+      "code": "ESPR",
+      "name": "Esperia"
+    },
+    "size": "Medium",
+    "role": "Light Freight",
+    "cargoScu": 32,
+    "gridCount": 2,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "gatac-railen",
+    "name": "Railen",
+    "fullName": "Gatac Railen",
+    "manufacturer": {
+      "code": "GAMA",
+      "name": "Gatac Manufacture"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 640,
+    "gridCount": 6,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "gatac-syulen",
+    "name": "Syulen",
+    "fullName": "Gatac Syulen",
+    "manufacturer": {
+      "code": "GAMA",
+      "name": "Gatac Manufacture"
+    },
+    "size": "Medium",
+    "role": "Starter / Pathfinder",
+    "cargoScu": 6,
+    "gridCount": 6,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "gatac-tyilui",
+    "name": "Tyilui",
+    "fullName": "Gatac Tyilui",
+    "manufacturer": {
+      "code": "GAMA",
+      "name": "Gatac Manufacture"
+    },
+    "size": "Extra large",
+    "role": "Snub Carrier",
+    "cargoScu": 96,
+    "gridCount": 2,
+    "maxContainer": 24,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "greys-shiv",
+    "name": "Shiv",
+    "fullName": "Grey's Shiv",
+    "manufacturer": {
+      "code": "GLSN",
+      "name": "Grey's Market"
+    },
+    "size": "Medium",
+    "role": "Heavy Fighter",
+    "cargoScu": 32,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "greycat-utv",
+    "name": "UTV",
+    "fullName": "Greycat UTV",
+    "manufacturer": {
+      "code": "GRIN",
+      "name": "Greycat Industrial"
+    },
+    "size": "Extra small",
+    "role": "Passenger",
+    "cargoScu": 1,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": true
+  },
+  {
+    "slug": "misc-fortune",
+    "name": "Fortune",
+    "fullName": "MISC Fortune",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Small",
+    "role": "Light Salvage",
+    "cargoScu": 16,
+    "gridCount": 3,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-freelancer",
+    "name": "Freelancer",
+    "fullName": "MISC Freelancer",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Medium",
+    "role": "Light Freight",
+    "cargoScu": 66,
+    "gridCount": 3,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-freelancer-dur",
+    "name": "Freelancer DUR",
+    "fullName": "MISC Freelancer DUR",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Medium",
+    "role": "Expedition",
+    "cargoScu": 36,
+    "gridCount": 3,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-freelancer-max",
+    "name": "Freelancer MAX",
+    "fullName": "MISC Freelancer MAX",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Medium",
+    "role": "Medium Freight",
+    "cargoScu": 120,
+    "gridCount": 3,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-hull-a",
+    "name": "Hull A",
+    "fullName": "MISC Hull A",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Small",
+    "role": "Light Freight",
+    "cargoScu": 64,
+    "gridCount": 4,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-hull-b",
+    "name": "Hull B",
+    "fullName": "MISC Hull B",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Large",
+    "role": "Medium Freight",
+    "cargoScu": 512,
+    "gridCount": 16,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-hull-c",
+    "name": "Hull C",
+    "fullName": "MISC Hull C",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Extra large",
+    "role": "Heavy Freight",
+    "cargoScu": 4608,
+    "gridCount": 16,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-reliant-kore",
+    "name": "Reliant Kore",
+    "fullName": "MISC Reliant Kore",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Medium",
+    "role": "Starter / Light Freight",
+    "cargoScu": 6,
+    "gridCount": 2,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-reliant-tana",
+    "name": "Reliant Tana",
+    "fullName": "MISC Reliant Tana",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Medium",
+    "role": "Light Fighter",
+    "cargoScu": 1,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-starfarer",
+    "name": "Starfarer",
+    "fullName": "MISC Starfarer",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Extra large",
+    "role": "Heavy Refueling",
+    "cargoScu": 291,
+    "gridCount": 5,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-starlancer-max",
+    "name": "Starlancer MAX",
+    "fullName": "MISC Starlancer MAX",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 224,
+    "gridCount": 4,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "misc-starlancer-tac",
+    "name": "Starlancer TAC",
+    "fullName": "MISC Starlancer TAC",
+    "manufacturer": {
+      "code": "MISC",
+      "name": "Musashi Industrial and Starflight Concern"
+    },
+    "size": "Extra large",
+    "role": "Gunship",
+    "cargoScu": 96,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-100i",
+    "name": "100i",
+    "fullName": "Origin 100i",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Extra small",
+    "role": "Starter / Pathfinder",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-135c",
+    "name": "135c",
+    "fullName": "Origin 135c",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Extra small",
+    "role": "Light Freight",
+    "cargoScu": 6,
+    "gridCount": 2,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-300i",
+    "name": "300i",
+    "fullName": "Origin 300i",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Small",
+    "role": "Luxury Touring",
+    "cargoScu": 8,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-315p",
+    "name": "315p",
+    "fullName": "Origin 315p",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Small",
+    "role": "Pathfinder",
+    "cargoScu": 12,
+    "gridCount": 2,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-325a",
+    "name": "325a",
+    "fullName": "Origin 325a",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Small",
+    "role": "Interceptor",
+    "cargoScu": 4,
+    "gridCount": 1,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-400i",
+    "name": "400i",
+    "fullName": "Origin 400i",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Large",
+    "role": "Expedition",
+    "cargoScu": 42,
+    "gridCount": 1,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-600i",
+    "name": "600i",
+    "fullName": "Origin 600i",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Extra large",
+    "role": "Expedition",
+    "cargoScu": 44,
+    "gridCount": 7,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-600i-touring",
+    "name": "600i Touring",
+    "fullName": "Origin 600i Touring",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Extra large",
+    "role": "Luxury Touring",
+    "cargoScu": 20,
+    "gridCount": 4,
+    "maxContainer": 4,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-890-jump",
+    "name": "890 Jump",
+    "fullName": "Origin 890 Jump",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Capital",
+    "role": "Luxury Touring",
+    "cargoScu": 388,
+    "gridCount": 7,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "origin-m80",
+    "name": "M80",
+    "fullName": "Origin M80",
+    "manufacturer": {
+      "code": "ORIG",
+      "name": "Origin Jumpworks"
+    },
+    "size": "Small",
+    "role": "Heavy Fighter",
+    "cargoScu": 2,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-apollo-triage",
+    "name": "Apollo Triage",
+    "fullName": "RSI Apollo Triage",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Extra large",
+    "role": "Medical",
+    "cargoScu": 32,
+    "gridCount": 2,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-aurora-mk-i-cl",
+    "name": "Aurora Mk I CL",
+    "fullName": "RSI Aurora Mk I CL",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Small",
+    "role": "Light Freight",
+    "cargoScu": 6,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-aurora-mk-i-es",
+    "name": "Aurora Mk I ES",
+    "fullName": "RSI Aurora Mk I ES",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Small",
+    "role": "Starter / Pathfinder",
+    "cargoScu": 3,
+    "gridCount": 1,
+    "maxContainer": 2,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-aurora-mk-ii",
+    "name": "Aurora Mk II",
+    "fullName": "RSI Aurora Mk II",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Small",
+    "role": "Starter / Light Fighter",
+    "cargoScu": 2,
+    "gridCount": 2,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-constellation-aquila",
+    "name": "Constellation Aquila",
+    "fullName": "RSI Constellation Aquila",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Large",
+    "role": "Expedition",
+    "cargoScu": 96,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-constellation-phoenix",
+    "name": "Constellation Phoenix",
+    "fullName": "RSI Constellation Phoenix",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Large",
+    "role": "Luxury Touring",
+    "cargoScu": 80,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-constellation-taurus",
+    "name": "Constellation Taurus",
+    "fullName": "RSI Constellation Taurus",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Large",
+    "role": "Medium Freight",
+    "cargoScu": 174,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-hermes",
+    "name": "Hermes",
+    "fullName": "RSI Hermes",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Extra large",
+    "role": "Medium Freight",
+    "cargoScu": 288,
+    "gridCount": 2,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-perseus",
+    "name": "Perseus",
+    "fullName": "RSI Perseus",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Extra large",
+    "role": "Heavy Gunship",
+    "cargoScu": 96,
+    "gridCount": 1,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-polaris",
+    "name": "Polaris",
+    "fullName": "RSI Polaris",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Capital",
+    "role": "Corvette",
+    "cargoScu": 576,
+    "gridCount": 2,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-salvation",
+    "name": "Salvation",
+    "fullName": "RSI Salvation",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Small",
+    "role": "Starter / Light Salvage",
+    "cargoScu": 6,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-zeus-mk-ii-cl",
+    "name": "Zeus Mk II CL",
+    "fullName": "RSI Zeus Mk II CL",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Medium",
+    "role": "Medium Freight",
+    "cargoScu": 128,
+    "gridCount": 3,
+    "maxContainer": 32,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "rsi-zeus-mk-ii-es",
+    "name": "Zeus Mk II ES",
+    "fullName": "RSI Zeus Mk II ES",
+    "manufacturer": {
+      "code": "RSI",
+      "name": "Roberts Space Industries"
+    },
+    "size": "Medium",
+    "role": "Expedition",
+    "cargoScu": 32,
+    "gridCount": 1,
+    "maxContainer": 16,
+    "isGroundVehicle": false
+  },
+  {
+    "slug": "tumbril-cyclone",
+    "name": "Cyclone",
+    "fullName": "Tumbril Cyclone",
+    "manufacturer": {
+      "code": "TMBL",
+      "name": "Tumbril Land Systems"
+    },
+    "size": "Extra small",
+    "role": "Passenger",
+    "cargoScu": 1,
+    "gridCount": 1,
+    "maxContainer": 1,
+    "isGroundVehicle": true
+  }
+]

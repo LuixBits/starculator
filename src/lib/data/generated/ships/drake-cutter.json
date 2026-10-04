@@ -1,0 +1,62 @@
+{
+  "slug": "drake-cutter",
+  "name": "Cutter",
+  "fullName": "Drake Cutter",
+  "className": "DRAK_Cutter",
+  "uuid": "3ea9bcd8-1ddd-4714-a537-7b2675e8c2d2",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Small",
+  "role": "Starter / Pathfinder",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 16,
+    "y": 20,
+    "z": 6
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Cutter_CargoGrid_4SCU",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_1",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

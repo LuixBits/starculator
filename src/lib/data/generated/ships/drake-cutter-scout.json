@@ -1,0 +1,63 @@
+{
+  "slug": "drake-cutter-scout",
+  "name": "Cutter Scout",
+  "fullName": "Drake Cutter Scout",
+  "className": "DRAK_Cutter_Scout",
+  "uuid": "887cd720-7337-44ae-9708-828ccf808649",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Small",
+  "role": "Pathfinder",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 16,
+    "y": 20,
+    "z": 6
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Cutter_CargoGrid_2SCU",
+      "cells": {
+        "x": 1,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_3",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "drake-cutter-rambler"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "aegis-hammerhead",
+  "name": "Hammerhead",
+  "fullName": "Aegis Hammerhead",
+  "className": "AEGS_Hammerhead",
+  "uuid": "d46f4de1-8dc1-473b-9739-88c9ba7e75a6",
+  "manufacturer": {
+    "code": "AEGS",
+    "name": "Aegis Dynamics"
+  },
+  "size": "Extra large",
+  "role": "Heavy Gunship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 72,
+    "y": 120,
+    "z": 16
+  },
+  "cargoScu": 40,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "AEGS_Hammerhead_CargoGrid",
+      "cells": {
+        "x": 4,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 40,
+      "minBox": null,
+      "maxBox": null,
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": null,
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 16,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

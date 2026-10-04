@@ -1,0 +1,61 @@
+{
+  "slug": "argo-csv-sm",
+  "name": "CSV-SM",
+  "fullName": "Argo CSV-SM",
+  "className": "ARGO_CSV_Cargo",
+  "uuid": "e8efe30c-5a1e-4ca2-a956-424b352f80c2",
+  "manufacturer": {
+    "code": "ARGO",
+    "name": "Argo Astronautics"
+  },
+  "size": "Extra small",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 6,
+    "y": 8.75,
+    "z": 3.5
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ARGO_CSV_CargoGrid_Cargo_Main",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        4
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_main",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 4,
+  "isSpaceship": false,
+  "isGroundVehicle": true,
+  "variantOf": null,
+  "variants": []
+}

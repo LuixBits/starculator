@@ -1,0 +1,61 @@
+{
+  "slug": "anvil-f7c-hornet-mk-ii",
+  "name": "F7C Hornet Mk II",
+  "fullName": "Anvil F7C Hornet Mk II",
+  "className": "ANVL_Hornet_F7C_Mk2",
+  "uuid": "fb231ba1-dba1-4c9f-823a-746c772ae92f",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Small",
+  "role": "Medium Fighter",
+  "career": "Combat",
+  "dimensions": {
+    "x": 22,
+    "y": 22.5,
+    "z": 6.5
+  },
+  "cargoScu": 2,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ANVL_Hornet_F7C_Mk2_CargoGrid",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_scu",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 1,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

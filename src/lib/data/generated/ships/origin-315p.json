@@ -1,0 +1,98 @@
+{
+  "slug": "origin-315p",
+  "name": "315p",
+  "fullName": "Origin 315p",
+  "className": "ORIG_315p",
+  "uuid": "dc537d66-2abb-43aa-9d37-4e963fc6e9e2",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Small",
+  "role": "Pathfinder",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 17,
+    "y": 27,
+    "z": 8
+  },
+  "cargoScu": 12,
+  "grids": [
+    {
+      "id": "front",
+      "name": "Front",
+      "className": "ORIG_300i_CargoGrid_Front",
+      "cells": {
+        "x": 2,
+        "y": 4,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 5,
+        "z": 1.25
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid_front",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "ORIG_300i_CargoGrid_Rear",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 4,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

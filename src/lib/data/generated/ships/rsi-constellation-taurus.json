@@ -1,0 +1,105 @@
+{
+  "slug": "rsi-constellation-taurus",
+  "name": "Constellation Taurus",
+  "fullName": "RSI Constellation Taurus",
+  "className": "RSI_Constellation_Taurus",
+  "uuid": "d1c3fa10-b2d9-421e-8301-97dbf4d0c115",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 27.75,
+    "y": 70,
+    "z": 15.25
+  },
+  "cargoScu": 174,
+  "grids": [
+    {
+      "id": "tail",
+      "name": "Tail",
+      "className": "RSI_Constellation_Taurus_CargoGrid_Tail",
+      "cells": {
+        "x": 2,
+        "y": 3,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 3.75,
+        "z": 1.25
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_tail",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Constellation_Taurus_CargoGrid_Main",
+      "cells": {
+        "x": 4,
+        "y": 14,
+        "z": 3
+      },
+      "meters": {
+        "x": 5,
+        "y": 17.5,
+        "z": 3.75
+      },
+      "scu": 168,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-constellation-taurus-wikelo-war-special"
+  ]
+}

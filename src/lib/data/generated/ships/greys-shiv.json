@@ -1,0 +1,66 @@
+{
+  "slug": "greys-shiv",
+  "name": "Shiv",
+  "fullName": "Grey's Shiv",
+  "className": "GLSN_Shiv",
+  "uuid": "3a7bfe4f-7a6c-4818-aba8-0f1019c3a647",
+  "manufacturer": {
+    "code": "GLSN",
+    "name": "Grey's Market"
+  },
+  "size": "Medium",
+  "role": "Heavy Fighter",
+  "career": "Combat",
+  "dimensions": {
+    "x": 26.5,
+    "y": 37.5,
+    "z": 11.5
+  },
+  "cargoScu": 32,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "GLSN_Shiv_CargoGrid_Main_IC",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 2
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "scu": 32,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "greys-shiv-temp-cosa",
+    "greys-shiv-temp-cosb",
+    "greys-shiv-temp-cosc"
+  ]
+}

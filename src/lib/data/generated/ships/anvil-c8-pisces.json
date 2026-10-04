@@ -1,0 +1,99 @@
+{
+  "slug": "anvil-c8-pisces",
+  "name": "C8 Pisces",
+  "fullName": "Anvil C8 Pisces",
+  "className": "ANVL_C8_Pisces",
+  "uuid": "20d5f617-147a-4530-a753-a7afd1875fd1",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Extra small",
+  "role": "Pathfinder",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 12,
+    "y": 16,
+    "z": 8
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "ANVL_C8_Pisces_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "ANVL_C8_Pisces_CargoGrid",
+      "cells": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 2,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "anvil-c8x-pisces-expedition"
+  ]
+}

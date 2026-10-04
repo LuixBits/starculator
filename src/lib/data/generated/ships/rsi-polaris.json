@@ -1,0 +1,109 @@
+{
+  "slug": "rsi-polaris",
+  "name": "Polaris",
+  "fullName": "RSI Polaris",
+  "className": "RSI_Polaris",
+  "uuid": "a5a5b055-c5d7-4384-9951-f15d47b88789",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Capital",
+  "role": "Corvette",
+  "career": "Combat",
+  "dimensions": {
+    "x": 87,
+    "y": 181,
+    "z": 40
+  },
+  "cargoScu": 576,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "RSI_Polaris_CargoGrid_Main",
+      "cells": {
+        "x": 6,
+        "y": 12,
+        "z": 4
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 15,
+        "z": 5
+      },
+      "scu": 288,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "RSI_Polaris_CargoGrid_Main",
+      "cells": {
+        "x": 6,
+        "y": 12,
+        "z": 4
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 15,
+        "z": 5
+      },
+      "scu": 288,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-polaris-collector-military"
+  ]
+}

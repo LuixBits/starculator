@@ -1,0 +1,279 @@
+{
+  "slug": "origin-890-jump",
+  "name": "890 Jump",
+  "fullName": "Origin 890 Jump",
+  "className": "ORIG_890Jump",
+  "uuid": "50ddaf5e-a8e3-42fe-a1d3-7267f39b39b0",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Capital",
+  "role": "Luxury Touring",
+  "career": "Exploration",
+  "dimensions": {
+    "x": 80,
+    "y": 210,
+    "z": 45
+  },
+  "cargoScu": 388,
+  "grids": [
+    {
+      "id": "hangar-wide-1",
+      "name": "Hangar wide 1",
+      "className": "ORIG_890Jump_CargoGrid_Hangar_Wide",
+      "cells": {
+        "x": 3,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 30,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_001",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-1",
+      "name": "Hangar 1",
+      "className": "ORIG_890Jump_CargoGrid_Hangar",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 10,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_002",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-2",
+      "name": "Hangar 2",
+      "className": "ORIG_890Jump_CargoGrid_Hangar",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 10,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_003",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-wide-2",
+      "name": "Hangar wide 2",
+      "className": "ORIG_890Jump_CargoGrid_Hangar_Wide",
+      "cells": {
+        "x": 3,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 3.75,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 30,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_005",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-3",
+      "name": "Hangar 3",
+      "className": "ORIG_890Jump_CargoGrid_Hangar",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 10,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_006",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "hangar-4",
+      "name": "Hangar 4",
+      "className": "ORIG_890Jump_CargoGrid_Hangar",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 10,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_hangar_007",
+      "bay": "hangar",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "ORIG_890Jump_CargoGrid_Rear",
+      "cells": {
+        "x": 6,
+        "y": 12,
+        "z": 4
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 15,
+        "z": 5
+      },
+      "scu": 288,
+      "minBox": null,
+      "maxBox": null,
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": null,
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

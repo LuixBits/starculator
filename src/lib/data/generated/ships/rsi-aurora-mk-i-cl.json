@@ -1,0 +1,64 @@
+{
+  "slug": "rsi-aurora-mk-i-cl",
+  "name": "Aurora Mk I CL",
+  "fullName": "RSI Aurora Mk I CL",
+  "className": "RSI_Aurora_GS_CL",
+  "uuid": "c984fac2-06c0-4776-8f93-07ebd2c26ad3",
+  "manufacturer": {
+    "code": "RSI",
+    "name": "Roberts Space Industries"
+  },
+  "size": "Small",
+  "role": "Light Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 8.75,
+    "y": 19,
+    "z": 4.5
+  },
+  "cargoScu": 6,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "RSI_Aurora_CL_CargoInventory_Main",
+      "cells": {
+        "x": 1,
+        "y": 6,
+        "z": 1
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 7.5,
+        "z": 1.25
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "rsi-aurora-mk-i-se"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "drake-cutlass-black",
+  "name": "Cutlass Black",
+  "fullName": "Drake Cutlass Black",
+  "className": "DRAK_Cutlass_Black",
+  "uuid": "b58f7735-9454-4a0a-b724-2bc8d61961d7",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Medium",
+  "role": "Light Freight / Medium Fighter",
+  "career": "Multi-Role",
+  "dimensions": {
+    "x": 26.5,
+    "y": 37.5,
+    "z": 11.5
+  },
+  "cargoScu": 46,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "DRAK_Cutlass_CargoGrid_Main",
+      "cells": {
+        "x": 4,
+        "y": 5,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 6.25,
+        "z": 2.5
+      },
+      "scu": 40,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_main",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "DRAK_Cutlass_CargoGrid_Rear",
+      "cells": {
+        "x": 1,
+        "y": 3,
+        "z": 2
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 3.75,
+        "z": 2.5
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 8,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "cutlass-black-pyam-exec",
+    "cutlass-black-pyam-exec-military",
+    "drake-cutlass-black-bis2950"
+  ]
+}

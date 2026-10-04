@@ -1,0 +1,542 @@
+{
+  "slug": "drake-caterpillar",
+  "name": "Caterpillar",
+  "fullName": "Drake Caterpillar",
+  "className": "DRAK_Caterpillar",
+  "uuid": "dc39ca6b-1d76-4db5-9346-356f49954978",
+  "manufacturer": {
+    "code": "DRAK",
+    "name": "Drake Interplanetary"
+  },
+  "size": "Extra large",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 39.5,
+    "y": 111.5,
+    "z": 13.4
+  },
+  "cargoScu": 576,
+  "grids": [
+    {
+      "id": "nose",
+      "name": "Nose",
+      "className": "DRAK_Caterpillar_CargoInventory_Nose",
+      "cells": {
+        "x": 5,
+        "y": 4,
+        "z": 3
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 5,
+        "z": 3.75
+      },
+      "scu": 60,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 5,
+        "y": 5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_nose",
+      "bay": "nose",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "nose-access",
+      "name": "Nose access",
+      "className": "DRAK_Caterpillar_CargoInventory_Nose_Access",
+      "cells": {
+        "x": 5,
+        "y": 2,
+        "z": 2
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "scu": 20,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 5,
+        "y": 2.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_nose_access",
+      "bay": "nose",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-1",
+      "name": "Module 1",
+      "className": "DRAK_Caterpillar_CargoInventory_Module",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_01",
+      "bay": "module-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-1-walkway",
+      "name": "Module 1 walkway",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Walkway",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_01_walkway",
+      "bay": "module-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-1-ladder",
+      "name": "Module 1 ladder",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Ladder",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 4
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 5
+      },
+      "scu": 20,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_01_ladder",
+      "bay": "module-1",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-2",
+      "name": "Module 2",
+      "className": "DRAK_Caterpillar_CargoInventory_Module",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_02",
+      "bay": "module-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-2-walkway",
+      "name": "Module 2 walkway",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Walkway",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_02_walkway",
+      "bay": "module-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-2-ladder",
+      "name": "Module 2 ladder",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Ladder",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 4
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 5
+      },
+      "scu": 20,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_02_ladder",
+      "bay": "module-2",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-3",
+      "name": "Module 3",
+      "className": "DRAK_Caterpillar_CargoInventory_Module",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_03",
+      "bay": "module-3",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-3-walkway",
+      "name": "Module 3 walkway",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Walkway",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_03_walkway",
+      "bay": "module-3",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-3-ladder",
+      "name": "Module 3 ladder",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Ladder",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 4
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 5
+      },
+      "scu": 20,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_03_ladder",
+      "bay": "module-3",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-4",
+      "name": "Module 4",
+      "className": "DRAK_Caterpillar_CargoInventory_Module",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 4
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 5
+      },
+      "scu": 96,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_04",
+      "bay": "module-4",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-4-walkway",
+      "name": "Module 4 walkway",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Walkway",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 2.5
+      },
+      "scu": 8,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_04_walkway",
+      "bay": "module-4",
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "module-4-ladder",
+      "name": "Module 4 ladder",
+      "className": "DRAK_Caterpillar_CargoInventory_Module_Ladder",
+      "cells": {
+        "x": 1,
+        "y": 5,
+        "z": 4
+      },
+      "meters": {
+        "x": 1.25,
+        "y": 6.25,
+        "z": 5
+      },
+      "scu": 20,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 1.25,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid_module_04_ladder",
+      "bay": "module-4",
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 24,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "drake-caterpillar-boarded",
+    "drake-caterpillar-pirate"
+  ]
+}

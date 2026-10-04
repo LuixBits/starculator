@@ -1,0 +1,69 @@
+{
+  "slug": "crusader-a2-hercules-starlifter",
+  "name": "A2 Hercules Starlifter",
+  "fullName": "Crusader A2 Hercules Starlifter",
+  "className": "CRUS_Starlifter_A2",
+  "uuid": "3bee9f2d-4494-4560-b9f8-463bc90695cb",
+  "manufacturer": {
+    "code": "CRUS",
+    "name": "Crusader Industries"
+  },
+  "size": "Extra large",
+  "role": "Heavy Bomber",
+  "career": "Combat",
+  "dimensions": {
+    "x": 70,
+    "y": 94,
+    "z": 23
+  },
+  "cargoScu": 216,
+  "grids": [
+    {
+      "id": "small",
+      "name": "Small",
+      "className": "CRUS_Starlifter_CargoGrid_Small_A2",
+      "cells": {
+        "x": 6,
+        "y": 18,
+        "z": 2
+      },
+      "meters": {
+        "x": 7.5,
+        "y": 22.5,
+        "z": 2.5
+      },
+      "scu": 216,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 7.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_small_A2",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "crusader-a2-hercules-starlifter-wikelo-war-special"
+  ]
+}

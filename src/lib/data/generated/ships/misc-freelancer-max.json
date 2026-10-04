@@ -1,0 +1,137 @@
+{
+  "slug": "misc-freelancer-max",
+  "name": "Freelancer MAX",
+  "fullName": "MISC Freelancer MAX",
+  "className": "MISC_Freelancer_MAX",
+  "uuid": "6c6e9731-3d70-4f1b-84c2-9dbf3c1f97c7",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Medium",
+  "role": "Medium Freight",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 34,
+    "y": 38,
+    "z": 9.5
+  },
+  "cargoScu": 120,
+  "grids": [
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "MISC_Freelancer_CargoGrid_MAX_Rear",
+      "cells": {
+        "x": 4,
+        "y": 9,
+        "z": 3
+      },
+      "meters": {
+        "x": 5,
+        "y": 11.25,
+        "z": 3.75
+      },
+      "scu": 108,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "mid-1",
+      "name": "Mid 1",
+      "className": "MISC_Freelancer_CargoGrid_Mid",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 3.75
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_mid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "mid-2",
+      "name": "Mid 2",
+      "className": "MISC_Freelancer_CargoGrid_Mid",
+      "cells": {
+        "x": 2,
+        "y": 1,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 3.75
+      },
+      "scu": 6,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_mid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "origin-325a",
+  "name": "325a",
+  "fullName": "Origin 325a",
+  "className": "ORIG_325a",
+  "uuid": "039a2768-1aff-4969-b2a4-ed8aeb21dae1",
+  "manufacturer": {
+    "code": "ORIG",
+    "name": "Origin Jumpworks"
+  },
+  "size": "Small",
+  "role": "Interceptor",
+  "career": "Combat",
+  "dimensions": {
+    "x": 17,
+    "y": 27.5,
+    "z": 8
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "rear",
+      "name": "Rear",
+      "className": "ORIG_300i_CargoGrid_Rear",
+      "cells": {
+        "x": 2,
+        "y": 2,
+        "z": 1
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid_rear",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 4,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "origin-350r"
+  ]
+}

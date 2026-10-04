@@ -1,0 +1,64 @@
+{
+  "slug": "co-mustang-alpha",
+  "name": "Mustang Alpha",
+  "fullName": "C.O. Mustang Alpha",
+  "className": "CNOU_Mustang_Alpha",
+  "uuid": "a852bb00-e395-468f-9adc-78b3df9c82f6",
+  "manufacturer": {
+    "code": "CNOU",
+    "name": "Consolidated Outland"
+  },
+  "size": "Small",
+  "role": "Starter / Light Freight",
+  "career": "Multi-Role",
+  "dimensions": {
+    "x": 18,
+    "y": 21.5,
+    "z": 9
+  },
+  "cargoScu": 4,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "CNOU_Mustang_CargoGrid",
+      "cells": {
+        "x": 4,
+        "y": 1,
+        "z": 1
+      },
+      "meters": {
+        "x": 5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "scu": 4,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "allowedSizes": [
+        1,
+        2
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 2,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "co-mustang-citizencon-2948-edition"
+  ]
+}

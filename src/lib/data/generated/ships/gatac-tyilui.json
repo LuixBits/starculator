@@ -1,0 +1,105 @@
+{
+  "slug": "gatac-tyilui",
+  "name": "Tyilui",
+  "fullName": "Gatac Tyilui",
+  "className": "GAMA_Tyilui",
+  "uuid": "8c2730d4-52c1-43fb-9972-d9956fb7ea1f",
+  "manufacturer": {
+    "code": "GAMA",
+    "name": "Gatac Manufacture"
+  },
+  "size": "Extra large",
+  "role": "Snub Carrier",
+  "career": "Transporter",
+  "dimensions": {
+    "x": 58.75,
+    "y": 67.25,
+    "z": 52
+  },
+  "cargoScu": 96,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "GAMA_Tyilui_CargoGrid_IS_48",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_bottom",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "GAMA_Tyilui_CargoGrid_IS_48",
+      "cells": {
+        "x": 4,
+        "y": 6,
+        "z": 2
+      },
+      "meters": {
+        "x": 5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 7.5,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_top",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 24,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": []
+}

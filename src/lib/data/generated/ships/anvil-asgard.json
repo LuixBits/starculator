@@ -1,0 +1,69 @@
+{
+  "slug": "anvil-asgard",
+  "name": "Asgard",
+  "fullName": "Anvil Asgard",
+  "className": "ANVL_Asgard",
+  "uuid": "8ffde65b-ee9b-4a50-b386-3111175736b2",
+  "manufacturer": {
+    "code": "ANVL",
+    "name": "Anvil Aerospace"
+  },
+  "size": "Large",
+  "role": "Dropship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 38,
+    "y": 48,
+    "z": 12
+  },
+  "cargoScu": 180,
+  "grids": [
+    {
+      "id": "main",
+      "name": "Main",
+      "className": "ANVL_Asgard_CargoGrid_IC",
+      "cells": {
+        "x": 5,
+        "y": 9,
+        "z": 4
+      },
+      "meters": {
+        "x": 6.25,
+        "y": 11.25,
+        "z": 5
+      },
+      "scu": 180,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 2.5,
+        "z": 10
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": true,
+      "hardpoint": "hardpoint_cargo_grid",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "anvil-asgard-wikelo-war-special"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "misc-starlancer-tac",
+  "name": "Starlancer TAC",
+  "fullName": "MISC Starlancer TAC",
+  "className": "MISC_Starlancer_TAC",
+  "uuid": "14b8caeb-d5e1-4816-9537-86ef19afada8",
+  "manufacturer": {
+    "code": "MISC",
+    "name": "Musashi Industrial and Starflight Concern"
+  },
+  "size": "Extra large",
+  "role": "Gunship",
+  "career": "Combat",
+  "dimensions": {
+    "x": 60,
+    "y": 90,
+    "z": 20
+  },
+  "cargoScu": 96,
+  "grids": [
+    {
+      "id": "main-1",
+      "name": "Main 1",
+      "className": "MISC_Starlancer_CargoGrid_Template",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 3.75
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_left",
+      "bay": null,
+      "offset": null,
+      "door": null
+    },
+    {
+      "id": "main-2",
+      "name": "Main 2",
+      "className": "MISC_Starlancer_CargoGrid_Template",
+      "cells": {
+        "x": 2,
+        "y": 8,
+        "z": 3
+      },
+      "meters": {
+        "x": 2.5,
+        "y": 10,
+        "z": 3.75
+      },
+      "scu": 48,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
+      "allowedSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
+      ],
+      "external": false,
+      "hardpoint": "hardpoint_cargogrid_right",
+      "bay": null,
+      "offset": null,
+      "door": null
+    }
+  ],
+  "maxContainer": 32,
+  "isSpaceship": true,
+  "isGroundVehicle": false,
+  "variantOf": null,
+  "variants": [
+    "misc-starlancer-tac-wikelo-war-special"
+  ]
+}
