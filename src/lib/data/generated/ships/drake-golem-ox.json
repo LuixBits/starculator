@@ -44,7 +44,13 @@
         "z": 1.25
       },
       "allowedSizes": [
-        1
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32
       ],
       "external": true,
       "hardpoint": "hardpoint_cargo",
@@ -53,7 +59,7 @@
       "door": null
     }
   ],
-  "maxContainer": 1,
+  "maxContainer": 32,
   "isSpaceship": true,
   "isGroundVehicle": false,
   "variantOf": null,

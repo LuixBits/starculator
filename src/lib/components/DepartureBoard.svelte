@@ -80,11 +80,8 @@
 
 <section class="board" aria-labelledby="{uid}-title">
 	<div class="frame">
-		<span class="bolt b1" aria-hidden="true"></span>
-		<span class="bolt b2" aria-hidden="true"></span>
 		<header class="head">
 			<h2 id="{uid}-title" class="title">{title}</h2>
-			<div class="lamp" aria-hidden="true"></div>
 			<label class="search">
 				<span class="visually-hidden">Search ships</span>
 				<input
@@ -158,7 +155,6 @@
 			<p class="more muted">{hidden} more ships hidden by the limit.</p>
 		{/if}
 	</div>
-	<div class="bracket" aria-hidden="true"></div>
 </section>
 
 <style>
@@ -180,33 +176,9 @@
 			0 0 0 6px #110c1a,
 			0 0 0 7px #3a2d4e;
 	}
-	.bolt {
-		position: absolute;
-		top: 10px;
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		background: radial-gradient(circle at 35% 35%, #d9ccd6, #6d5c6b 55%, #241c2a);
-	}
-	.b1 {
-		left: 10px;
-	}
-	.b2 {
-		right: 10px;
-	}
-	.bracket {
-		position: absolute;
-		left: 12%;
-		right: 12%;
-		bottom: -14px;
-		height: 14px;
-		background: linear-gradient(#1a1426, #0b0812);
-		border-radius: 0 0 6px 6px;
-		box-shadow: 0 10px 20px -8px #000;
-	}
 	.head {
 		display: grid;
-		grid-template-columns: auto auto 1fr auto;
+		grid-template-columns: auto 1fr auto;
 		align-items: center;
 		gap: 0.75rem 1rem;
 		padding-bottom: 0.9rem;
@@ -218,15 +190,6 @@
 		text-shadow:
 			0 0 6px #72f0e7aa,
 			0 0 18px #35e6e655;
-	}
-	.lamp {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background: var(--sun);
-		box-shadow:
-			0 0 8px var(--sun),
-			0 0 18px #ffd36e80;
 	}
 	.search input {
 		width: 100%;

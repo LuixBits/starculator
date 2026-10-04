@@ -34,11 +34,9 @@
 	--font-display: 'Righteous', 'Arial Black', Impact, sans-serif;
 	--font-body: 'Space Mono', ui-monospace, 'Cascadia Mono', Menlo, monospace;
 
-	/* The six permitted sizes. Nothing else. */
-	--fs-hero: clamp(2.4rem, 6vw, 4.25rem);
-	--fs-h1: clamp(1.85rem, 4.2vw, 2.9rem);
-	--fs-h2: clamp(1.25rem, 2.6vw, 1.8rem);
-	--fs-h3: 1.15rem;
+	/* Four type sizes (owner feedback in docs/design.md): title, heading, body, small. */
+	--fs-title: clamp(2.2rem, 5.5vw, 3.6rem);
+	--fs-heading: clamp(1.25rem, 2.4vw, 1.75rem);
 	--fs-body: 1.06rem;
 	--fs-small: 0.85rem;
 	--lh-tight: 1.12;
@@ -98,14 +96,10 @@ h3,
 	letter-spacing: 0.06em;
 	margin: 0;
 }
-h1 {
-	font-size: var(--fs-h1);
-}
-h2 {
-	font-size: var(--fs-h2);
-}
+h1,
+h2,
 h3 {
-	font-size: var(--fs-h3);
+	font-size: var(--fs-heading);
 }
 p {
 	margin: 0;

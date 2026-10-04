@@ -7,13 +7,6 @@
     "variantOf": "aegis-avenger-titan"
   },
   {
-    "slug": "aegis-hammerhead-gs",
-    "name": "Hammerhead",
-    "fullName": "Aegis Hammerhead",
-    "className": "AEGS_Hammerhead_GS",
-    "variantOf": "aegis-tiburon"
-  },
-  {
     "slug": "aegis-idris-p-fw-25",
     "name": "Idris-P",
     "fullName": "Aegis Idris-P",
@@ -47,6 +40,13 @@
     "fullName": "Aegis Reclaimer Teach's Special",
     "className": "AEGS_Reclaimer_Teach",
     "variantOf": "aegis-reclaimer"
+  },
+  {
+    "slug": "aegis-tiburon",
+    "name": "Tiburon",
+    "fullName": "Aegis Tiburon",
+    "className": "AEGS_Tiburon",
+    "variantOf": "aegis-hammerhead"
   },
   {
     "slug": "anvil-asgard-wikelo-war-special",
@@ -112,20 +112,6 @@
     "variantOf": "co-mustang-alpha"
   },
   {
-    "slug": "corsair-pyam-exec",
-    "name": "Corsair PYAM Exec",
-    "fullName": "Corsair PYAM Exec",
-    "className": "DRAK_Corsair_Exec_Military",
-    "variantOf": "drake-corsair"
-  },
-  {
-    "slug": "corsair-pyam-exec-stealthindustrial",
-    "name": "Corsair PYAM Exec",
-    "fullName": "Corsair PYAM Exec",
-    "className": "DRAK_Corsair_Exec_StealthIndustrial",
-    "variantOf": "drake-corsair"
-  },
-  {
     "slug": "crusader-a2-hercules-starlifter-wikelo-war-special",
     "name": "A2 Hercules Starlifter Wikelo War Special",
     "fullName": "Crusader A2 Hercules Starlifter Wikelo War Special",
@@ -145,20 +131,6 @@
     "fullName": "Crusader Intrepid Wikelo Work Special",
     "className": "CRUS_Intrepid_Collector_Indust",
     "variantOf": "crusader-intrepid"
-  },
-  {
-    "slug": "cutlass-black-pyam-exec",
-    "name": "Cutlass Black PYAM Exec",
-    "fullName": "Cutlass Black PYAM Exec",
-    "className": "DRAK_Cutlass_Black_Exec_Stealth",
-    "variantOf": "drake-cutlass-black"
-  },
-  {
-    "slug": "cutlass-black-pyam-exec-military",
-    "name": "Cutlass Black PYAM Exec",
-    "fullName": "Cutlass Black PYAM Exec",
-    "className": "DRAK_Cutlass_Black_Exec_Military",
-    "variantOf": "drake-cutlass-black"
   },
   {
     "slug": "drake-caterpillar-boarded",
@@ -182,6 +154,20 @@
     "variantOf": "drake-clipper"
   },
   {
+    "slug": "drake-corsair-pyam-exec-military",
+    "name": "Corsair PYAM Exec Military",
+    "fullName": "Drake Corsair PYAM Exec Military",
+    "className": "DRAK_Corsair_Exec_Military",
+    "variantOf": "drake-corsair"
+  },
+  {
+    "slug": "drake-corsair-pyam-exec-stealth-industrial",
+    "name": "Corsair PYAM Exec Stealth Industrial",
+    "fullName": "Drake Corsair PYAM Exec Stealth Industrial",
+    "className": "DRAK_Corsair_Exec_StealthIndustrial",
+    "variantOf": "drake-corsair"
+  },
+  {
     "slug": "drake-cutlass-black-bis2950",
     "name": "Cutlass Black",
     "fullName": "Drake Cutlass Black",
@@ -189,25 +175,39 @@
     "variantOf": "drake-cutlass-black"
   },
   {
-    "slug": "drake-cutlass-blue",
-    "name": "Cutlass Blue",
-    "fullName": "Drake Cutlass Blue",
-    "className": "DRAK_Cutlass_Blue",
-    "variantOf": "drake-cutlass-red"
+    "slug": "drake-cutlass-black-pyam-exec-military",
+    "name": "Cutlass Black PYAM Exec Military",
+    "fullName": "Drake Cutlass Black PYAM Exec Military",
+    "className": "DRAK_Cutlass_Black_Exec_Military",
+    "variantOf": "drake-cutlass-black"
+  },
+  {
+    "slug": "drake-cutlass-black-pyam-exec-stealth",
+    "name": "Cutlass Black PYAM Exec Stealth",
+    "fullName": "Drake Cutlass Black PYAM Exec Stealth",
+    "className": "DRAK_Cutlass_Black_Exec_Stealth",
+    "variantOf": "drake-cutlass-black"
   },
   {
     "slug": "drake-cutlass-blue-bis2950",
     "name": "Cutlass Blue",
     "fullName": "Drake Cutlass Blue",
     "className": "DRAK_Cutlass_Blue_BIS2950",
-    "variantOf": "drake-cutlass-red"
+    "variantOf": "drake-cutlass-blue"
+  },
+  {
+    "slug": "drake-cutlass-red",
+    "name": "Cutlass Red",
+    "fullName": "Drake Cutlass Red",
+    "className": "DRAK_Cutlass_Red",
+    "variantOf": "drake-cutlass-blue"
   },
   {
     "slug": "drake-cutlass-red-bis2950",
     "name": "Cutlass Red",
     "fullName": "Drake Cutlass Red",
     "className": "DRAK_Cutlass_Red_BIS2950",
-    "variantOf": "drake-cutlass-red"
+    "variantOf": "drake-cutlass-blue"
   },
   {
     "slug": "drake-cutter-rambler",
@@ -229,6 +229,20 @@
     "fullName": "Esperia Prowler Utility Wikelo Work Special",
     "className": "ESPR_Prowler_Utility_Collector_Indust",
     "variantOf": "esperia-prowler-utility"
+  },
+  {
+    "slug": "gatac-syulen-pyam-exec-military",
+    "name": "Syulen PYAM Exec Military",
+    "fullName": "Gatac Syulen PYAM Exec Military",
+    "className": "GAMA_Syulen_Exec_Military",
+    "variantOf": "gatac-syulen"
+  },
+  {
+    "slug": "gatac-syulen-pyam-exec-stealth",
+    "name": "Syulen PYAM Exec Stealth",
+    "fullName": "Gatac Syulen PYAM Exec Stealth",
+    "className": "GAMA_Syulen_Exec_Stealth",
+    "variantOf": "gatac-syulen"
   },
   {
     "slug": "greys-shiv-temp-cosa",
@@ -329,60 +343,60 @@
     "variantOf": "origin-600i"
   },
   {
-    "slug": "rsi-apollo-medivac",
-    "name": "Apollo Medivac",
-    "fullName": "RSI Apollo Medivac",
-    "className": "RSI_Apollo_Medivac",
-    "variantOf": "rsi-apollo-triage"
-  },
-  {
     "slug": "rsi-apollo-medivac-tier-1",
     "name": "Apollo Medivac",
     "fullName": "RSI Apollo Medivac",
     "className": "RSI_Apollo_Medivac_Tier_1",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-medivac-tier-2",
     "name": "Apollo Medivac",
     "fullName": "RSI Apollo Medivac",
     "className": "RSI_Apollo_Medivac_Tier_2",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-medivac-tier-3",
     "name": "Apollo Medivac",
     "fullName": "RSI Apollo Medivac",
     "className": "RSI_Apollo_Medivac_Tier_3",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
+  },
+  {
+    "slug": "rsi-apollo-triage",
+    "name": "Apollo Triage",
+    "fullName": "RSI Apollo Triage",
+    "className": "RSI_Apollo_Triage",
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-triage-tier-1",
     "name": "Apollo Triage",
     "fullName": "RSI Apollo Triage",
     "className": "RSI_Apollo_Triage_Tier_1",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-triage-tier-2",
     "name": "Apollo Triage",
     "fullName": "RSI Apollo Triage",
     "className": "RSI_Apollo_Triage_Tier_2",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-triage-tier-3",
     "name": "Apollo Triage",
     "fullName": "RSI Apollo Triage",
     "className": "RSI_Apollo_Triage_Tier_3",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-apollo-triage-wikelo-sneak-special",
     "name": "Apollo Triage Wikelo Sneak Special",
     "fullName": "RSI Apollo Triage Wikelo Sneak Special",
     "className": "RSI_Apollo_Triage_Collector_Stealth",
-    "variantOf": "rsi-apollo-triage"
+    "variantOf": "rsi-apollo-medivac"
   },
   {
     "slug": "rsi-aurora-mk-i-ln",
@@ -413,11 +427,11 @@
     "variantOf": "rsi-aurora-mk-i-cl"
   },
   {
-    "slug": "rsi-constellation-andromeda",
-    "name": "Constellation Andromeda",
-    "fullName": "RSI Constellation Andromeda",
-    "className": "RSI_Constellation_Andromeda",
-    "variantOf": "rsi-constellation-aquila"
+    "slug": "rsi-constellation-aquila",
+    "name": "Constellation Aquila",
+    "fullName": "RSI Constellation Aquila",
+    "className": "RSI_Constellation_Aquila",
+    "variantOf": "rsi-constellation-andromeda"
   },
   {
     "slug": "rsi-constellation-phoenix-emerald",
@@ -453,19 +467,5 @@
     "fullName": "RSI Zeus Mk II ES Wikelo Work Special",
     "className": "RSI_Zeus_ES_Collector_Indust",
     "variantOf": "rsi-zeus-mk-ii-es"
-  },
-  {
-    "slug": "syulen-pyam-exec",
-    "name": "Syulen PYAM Exec",
-    "fullName": "Syulen PYAM Exec",
-    "className": "GAMA_Syulen_Exec_Stealth",
-    "variantOf": "gatac-syulen"
-  },
-  {
-    "slug": "syulen-pyam-exec-military",
-    "name": "Syulen PYAM Exec",
-    "fullName": "Syulen PYAM Exec",
-    "className": "GAMA_Syulen_Exec_Military",
-    "variantOf": "gatac-syulen"
   }
 ]

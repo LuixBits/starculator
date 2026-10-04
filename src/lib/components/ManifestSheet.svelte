@@ -1,9 +1,8 @@
 <script lang="ts">
 	/**
-	 * The manifest sheet: cream paper with ink-blue monospace text, a stamped
-	 * header, one row per container size with a stencil crate icon and −/+ steppers,
-	 * up to four contract groups, and the "Load plan" action. A PACKED stamp lands
-	 * once a plan is complete.
+	 * The manifest sheet: cream paper with ink-blue monospace text, one row per
+	 * container size with a crate icon and −/+ steppers, up to four contract
+	 * groups, a status line and the "Load plan" action.
 	 */
 	import { CONTAINER_SIZES, type ContainerSize, type Ship } from '../data/types.ts';
 	import type { Plan } from '../state/plan.svelte.ts';
@@ -11,7 +10,6 @@
 	import { crateColor, crateFootprint } from '../ui/crates.ts';
 	import { formatMs, formatScu } from '../ui/format.ts';
 	import CrateIcon from './CrateIcon.svelte';
-	import Stamp from './Stamp.svelte';
 
 	let {
 		plan,
@@ -70,21 +68,9 @@
 		onpack();
 	}}
 >
-	<div class="clip" aria-hidden="true"></div>
 	<header class="head">
-		<div class="titles">
-			<h2 id="{uid}-title" class="title">Manifest</h2>
-			<p class="sub">{ship.fullName} · {formatScu(ship.cargoScu)} SCU</p>
-		</div>
-		<div class="stamp-slot">
-			{#if plan.status === 'ready' && plan.result && plan.result.unplaced.length === 0}
-				<Stamp text="Packed" tone="red" tilt={-9} />
-			{:else if plan.status === 'ready'}
-				<Stamp text="Partial" tone="violet" tilt={-6} />
-			{:else if plan.status === 'stale'}
-				<Stamp text="Revise" tone="ink" tilt={5} />
-			{/if}
-		</div>
+		<h2 id="{uid}-title" class="title">Manifest</h2>
+		<p class="sub">{ship.fullName} · {formatScu(ship.cargoScu)} SCU</p>
 	</header>
 
 	<fieldset class="groups">
@@ -219,49 +205,20 @@
 			3px 3px 0 var(--paper-shadow);
 		font-variant-numeric: tabular-nums;
 	}
-	.sheet::before {
-		/* torn top edge */
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: -5px;
-		height: 6px;
-		background: linear-gradient(135deg, transparent 50%, var(--paper) 50%) 0 0 / 12px 6px repeat-x;
-	}
-	.clip {
-		position: absolute;
-		left: 50%;
-		top: -14px;
-		width: 56px;
-		height: 22px;
-		transform: translateX(-50%);
-		border-radius: 4px 4px 2px 2px;
-		background: linear-gradient(#3b3144, #1d1727);
-		border: 1px solid #5c4f68;
-		box-shadow: 0 4px 6px -2px #000;
-	}
 	.head {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 1rem;
+		display: grid;
+		gap: 0.1rem;
 		padding-bottom: 0.75rem;
 		border-bottom: 2px solid var(--paper-ink);
 	}
 	.title {
-		font-size: var(--fs-h2);
+		font-size: var(--fs-heading);
 		letter-spacing: 0.26em;
 		color: var(--paper-ink);
 	}
 	.sub {
 		font-size: var(--fs-small);
 		opacity: 0.75;
-	}
-	.stamp-slot {
-		min-height: 2.6rem;
-		display: flex;
-		align-items: center;
 	}
 	.groups {
 		margin: 0.9rem 0 0;

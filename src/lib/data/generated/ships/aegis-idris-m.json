@@ -19,8 +19,8 @@
   "cargoScu": 1326,
   "grids": [
     {
-      "id": "hangar-1",
-      "name": "Hangar 1",
+      "id": "hangar-left-1",
+      "name": "Hangar left 1",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -57,8 +57,8 @@
       "door": null
     },
     {
-      "id": "hangar-2",
-      "name": "Hangar 2",
+      "id": "hangar-left-2",
+      "name": "Hangar left 2",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -95,8 +95,8 @@
       "door": null
     },
     {
-      "id": "hangar-3",
-      "name": "Hangar 3",
+      "id": "hangar-left-3",
+      "name": "Hangar left 3",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -133,8 +133,8 @@
       "door": null
     },
     {
-      "id": "hangar-4",
-      "name": "Hangar 4",
+      "id": "hangar-left-4",
+      "name": "Hangar left 4",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -171,8 +171,8 @@
       "door": null
     },
     {
-      "id": "hangar-5",
-      "name": "Hangar 5",
+      "id": "hangar-left-5",
+      "name": "Hangar left 5",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -209,8 +209,8 @@
       "door": null
     },
     {
-      "id": "hangar-6",
-      "name": "Hangar 6",
+      "id": "hangar-left-6",
+      "name": "Hangar left 6",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -247,8 +247,8 @@
       "door": null
     },
     {
-      "id": "hangar-7",
-      "name": "Hangar 7",
+      "id": "hangar-left-7",
+      "name": "Hangar left 7",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -285,8 +285,8 @@
       "door": null
     },
     {
-      "id": "hangar-8",
-      "name": "Hangar 8",
+      "id": "hangar-left-8",
+      "name": "Hangar left 8",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -323,8 +323,8 @@
       "door": null
     },
     {
-      "id": "hangar-9",
-      "name": "Hangar 9",
+      "id": "hangar-right-1",
+      "name": "Hangar right 1",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -361,8 +361,8 @@
       "door": null
     },
     {
-      "id": "hangar-10",
-      "name": "Hangar 10",
+      "id": "hangar-right-2",
+      "name": "Hangar right 2",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -399,8 +399,8 @@
       "door": null
     },
     {
-      "id": "hangar-11",
-      "name": "Hangar 11",
+      "id": "hangar-right-3",
+      "name": "Hangar right 3",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -437,8 +437,8 @@
       "door": null
     },
     {
-      "id": "hangar-12",
-      "name": "Hangar 12",
+      "id": "hangar-right-4",
+      "name": "Hangar right 4",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -475,8 +475,8 @@
       "door": null
     },
     {
-      "id": "hangar-13",
-      "name": "Hangar 13",
+      "id": "hangar-right-5",
+      "name": "Hangar right 5",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -513,8 +513,8 @@
       "door": null
     },
     {
-      "id": "hangar-14",
-      "name": "Hangar 14",
+      "id": "hangar-right-6",
+      "name": "Hangar right 6",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -551,8 +551,8 @@
       "door": null
     },
     {
-      "id": "hangar-15",
-      "name": "Hangar 15",
+      "id": "hangar-right-7",
+      "name": "Hangar right 7",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,
@@ -589,8 +589,8 @@
       "door": null
     },
     {
-      "id": "hangar-16",
-      "name": "Hangar 16",
+      "id": "hangar-right-8",
+      "name": "Hangar right 8",
       "className": "AEGS_Idris_CargoGrid_Hangar",
       "cells": {
         "x": 4,

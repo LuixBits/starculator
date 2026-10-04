@@ -19,8 +19,8 @@
   "cargoScu": 6,
   "grids": [
     {
-      "id": "kore-1",
-      "name": "Kore 1",
+      "id": "left",
+      "name": "Left",
       "className": "MISC_Reliant_CargoGrid_KORE",
       "cells": {
         "x": 3,
@@ -54,8 +54,8 @@
       "door": null
     },
     {
-      "id": "kore-2",
-      "name": "Kore 2",
+      "id": "right",
+      "name": "Right",
       "className": "MISC_Reliant_CargoGrid_KORE",
       "cells": {
         "x": 3,

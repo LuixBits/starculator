@@ -1,7 +1,7 @@
 <script lang="ts">
 	/**
-	 * The holo-table: a drawn table with a dark bezel, cyan edge light, four feet
-	 * and a projection gradient rising from its surface. Whatever is rendered in
+	 * The holo-table: a dark bezel with a cyan edge light and a projection
+	 * gradient rising from its surface. Whatever is rendered in
 	 * `children` (the Threlte hold viewer) sits in the projection area.
 	 */
 	import type { Snippet } from 'svelte';
@@ -62,20 +62,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="legs" aria-hidden="true">
-		<span class="foot f1"></span>
-		<span class="foot f2"></span>
-		<span class="foot f3"></span>
-		<span class="foot f4"></span>
-		<span class="floor-shadow"></span>
-	</div>
 </div>
 
 <style>
 	.holo {
 		position: relative;
 		isolation: isolate;
-		padding-bottom: 2.2rem;
 	}
 	.projection-glow {
 		position: absolute;
@@ -189,55 +181,6 @@
 		display: flex;
 		gap: 0.4rem;
 		flex-shrink: 0;
-	}
-	.legs {
-		position: relative;
-		height: 0;
-	}
-	.foot {
-		position: absolute;
-		top: -2px;
-		width: 14px;
-		height: 30px;
-		background: linear-gradient(90deg, #2a2238, #171221 60%, #0f0b17);
-		border-radius: 0 0 3px 3px;
-		box-shadow: 0 6px 10px -4px #000;
-	}
-	.foot::after {
-		content: '';
-		position: absolute;
-		left: -4px;
-		right: -4px;
-		bottom: -3px;
-		height: 5px;
-		border-radius: 2px;
-		background: #110c1a;
-	}
-	.f1 {
-		left: 6%;
-	}
-	.f2 {
-		left: calc(6% + 22px);
-		height: 24px;
-		opacity: 0.6;
-	}
-	.f3 {
-		right: 6%;
-	}
-	.f4 {
-		right: calc(6% + 22px);
-		height: 24px;
-		opacity: 0.6;
-	}
-	.floor-shadow {
-		position: absolute;
-		left: 2%;
-		right: 2%;
-		top: 26px;
-		height: 18px;
-		border-radius: 50%;
-		background: radial-gradient(ellipse at center, #00000099, transparent 70%);
-		filter: blur(4px);
 	}
 	@media (max-width: 40rem) {
 		.bezel {

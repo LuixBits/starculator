@@ -12,11 +12,17 @@ pnpm dev          # http://localhost:5173
 pnpm check        # svelte-check
 pnpm lint         # prettier + eslint
 pnpm test:unit    # vitest (node + browser projects)
+pnpm test:e2e     # playwright specs in e2e/ against a fresh build on :4173
+pnpm test         # unit tests, then e2e (passes while e2e/ is still empty)
 pnpm build        # static site in build/ (every /cargo/<ship>/ page is prerendered)
 pnpm preview      # serves build/ on http://localhost:4173
 ```
 
-Requires Node ≥ 22.17 and pnpm 10. Playwright's Chromium is needed for the browser test project (`npx playwright install chromium`).
+Requires Node ≥ 22.17 and pnpm 10. Playwright's Chromium is needed for the browser test project and the e2e specs (`npx playwright install chromium`, one-time; a preinstalled binary is picked up from `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` or `/opt/pw-browsers/chromium`).
+
+### End-to-end tests
+
+`playwright.config.ts` serves the static build with `pnpm build && pnpm preview --port 4173` and points the browser at it (`baseURL`), with software WebGL enabled so the 3D hold renders headless. Set `E2E_PREBUILT=1` when `build/` is already current (the CI workflow does this right after its build step) to skip the rebuild. Because the build writes `build/` and `.svelte-kit/`, do not run `pnpm test:e2e` concurrently with `pnpm build`, `pnpm check` or a dev server. Specs go in `e2e/*.spec.ts` and are type-checked by `pnpm check`.
 
 ### Ship data
 

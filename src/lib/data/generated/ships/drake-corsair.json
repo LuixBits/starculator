@@ -63,7 +63,7 @@
   "isGroundVehicle": false,
   "variantOf": null,
   "variants": [
-    "corsair-pyam-exec",
-    "corsair-pyam-exec-stealthindustrial"
+    "drake-corsair-pyam-exec-military",
+    "drake-corsair-pyam-exec-stealth-industrial"
   ]
 }

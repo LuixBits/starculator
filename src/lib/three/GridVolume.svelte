@@ -1,8 +1,10 @@
 <script lang="ts">
 	/**
 	 * One cargo grid: a translucent cyan box with glowing edges, a thin lattice
-	 * on the floor face only (one LineSegments per grid) and, when the grid has
-	 * a door, a magenta chevron strip on the floor along that edge.
+	 * on the floor face only (one LineSegments per grid) and a magenta chevron
+	 * strip on the floor along the door edge. Grids without a curated door show
+	 * the packer's default face (doorOf) at reduced opacity, so the side the
+	 * load plan is built from is always visible and recognisably "assumed".
 	 *
 	 * Local frame: origin at the grid's minimum corner; the grid spans
 	 * x ∈ [0, W], y ∈ [0, H], z ∈ [-D, 0] (see space.ts).
@@ -19,6 +21,7 @@
 	} from 'three';
 	import { CELL_M } from '../data/types.ts';
 	import type { CargoGrid } from '../data/types.ts';
+	import { doorOf } from '../packer/geometry.ts';
 	import { SCENE_COLORS } from './palette.ts';
 	import { cellSizeToWorld, doorEdge, type WorldTuple } from './space.ts';
 
@@ -38,13 +41,14 @@
 	const box = $derived(new BoxGeometry(w, h, d));
 	const edges = $derived(new EdgesGeometry(box));
 	const lattice = $derived(buildLattice(grid.cells.x, grid.cells.y));
-	const door = $derived(grid.door ? doorEdge(grid.cells, grid.door) : null);
-	const strip = $derived(door ? new PlaneGeometry(door.length, CELL_M * 0.5) : null);
-	const chevrons = $derived(door ? buildChevrons(door.cells) : null);
+	const door = $derived(doorEdge(grid.cells, doorOf(grid)));
+	const assumed = $derived(grid.door === null);
+	const strip = $derived(new PlaneGeometry(door.length, CELL_M * 0.5));
+	const chevrons = $derived(buildChevrons(door.cells));
 
 	$effect(() => {
 		const owned = [box, edges, lattice, strip, chevrons];
-		return () => owned.forEach((g) => g?.dispose());
+		return () => owned.forEach((g) => g.dispose());
 	});
 
 	/** Lines every cell on the floor face, in local coordinates. */
@@ -94,6 +98,8 @@
 	const fillOpacity = $derived(highlighted ? 0.16 : 0.06);
 	const edgeOpacity = $derived(highlighted ? 1 : 0.6);
 	const edgeColor = $derived(highlighted ? SCENE_COLORS.fg : SCENE_COLORS.accent2);
+	const stripOpacity = $derived(assumed ? 0.12 : 0.22);
+	const chevronOpacity = $derived(assumed ? 0.5 : 0.9);
 </script>
 
 <T.Group {position}>
@@ -118,29 +124,22 @@
 		/>
 	</T.LineSegments>
 
-	{#if door && strip && chevrons}
-		<T.Group position={[door.center[0], 0.014, door.center[1]]} rotation.y={door.rotationY}>
-			<T.Mesh
-				geometry={strip}
-				rotation.x={-Math.PI / 2}
-				position.z={-CELL_M * 0.25}
-				renderOrder={1}
-			>
-				<T.MeshBasicMaterial
-					color={SCENE_COLORS.accent}
-					transparent
-					opacity={0.22}
-					depthWrite={false}
-				/>
-			</T.Mesh>
-			<T.Mesh geometry={chevrons} rotation.x={-Math.PI / 2} position.y={0.004} renderOrder={1}>
-				<T.MeshBasicMaterial
-					color={SCENE_COLORS.accent}
-					transparent
-					opacity={0.9}
-					depthWrite={false}
-				/>
-			</T.Mesh>
-		</T.Group>
-	{/if}
+	<T.Group position={[door.center[0], 0.014, door.center[1]]} rotation.y={door.rotationY}>
+		<T.Mesh geometry={strip} rotation.x={-Math.PI / 2} position.z={-CELL_M * 0.25} renderOrder={1}>
+			<T.MeshBasicMaterial
+				color={SCENE_COLORS.accent}
+				transparent
+				opacity={stripOpacity}
+				depthWrite={false}
+			/>
+		</T.Mesh>
+		<T.Mesh geometry={chevrons} rotation.x={-Math.PI / 2} position.y={0.004} renderOrder={1}>
+			<T.MeshBasicMaterial
+				color={SCENE_COLORS.accent}
+				transparent
+				opacity={chevronOpacity}
+				depthWrite={false}
+			/>
+		</T.Mesh>
+	</T.Group>
 </T.Group>

@@ -1,18 +1,42 @@
 {
+	"AEGS_Hammerhead": {
+		"note": "Legacy entry (40 SCU, 5×6.25×2.5 m grid, no MaxSize, no cargo hardpoints) superseded by AEGS_Hammerhead_GS, which carries the current 64 SCU grid. Hidden so the index has one Hammerhead.",
+		"hide": true
+	},
 	"DRAK_Ironclad": {
-		"note": "Game data reports MaxSize 1.25 m³ (1 SCU) for the four open-deck hold grids, which contradicts in-game use (32 SCU containers are loaded routinely; see docs/research/01-data-sources.md §12). Allow every size that fits. Names follow the hardpoints (rear/front, left/right).",
+		"note": "Game data reports MaxSize 1.25 m³ (1 SCU) for the four open-deck hold grids, which contradicts in-game use (32 SCU containers are loaded routinely; see docs/research/01-data-sources.md §12). Allow every size that fits. Names follow the hardpoints (rear/front × left/right); the automatic labels drop rear/front because every grid of a class shares them.",
 		"grids": {
-			"hold-1": { "name": "Hold rear left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
-			"hold-2": { "name": "Hold rear right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
-			"hold-1-center": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
-			"hold-2-center": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+			"hold-left": { "name": "Hold rear left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-right": { "name": "Hold rear right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-center-left": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-center-right": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
 		}
 	},
 	"DRAK_Ironclad_Assault": {
 		"note": "Same open deck as the Ironclad (two 720 SCU hold grids with a bogus 1 SCU MaxSize). Allow every size that fits.",
 		"grids": {
-			"hold-center-1": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
-			"hold-center-2": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+			"hold-center-left": { "name": "Hold front left", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"hold-center-right": { "name": "Hold front right", "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+		}
+	},
+	"RSI_Hermes": {
+		"note": "Both 144 SCU main grids (5×22.5×2.5 m, role Medium Freight) report MaxSize 1.25 m³ (1 SCU), the same defect as the Ironclad's open deck; taken literally the 288 SCU freighter would reject every 2+ SCU box. Allow every size that fits geometrically (unverified in-game).",
+		"grids": {
+			"main-left": { "allowedSizes": [1, 2, 4, 8, 16, 24, 32] },
+			"main-right": { "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+		}
+	},
+	"DRAK_Golem_OX": {
+		"note": "The 64 SCU external bed (5×10×2.5 m, role Light Freight) reports MaxSize 1.25 m³ (1 SCU), the same defect as the Ironclad's open deck. Allow every size that fits geometrically (unverified in-game).",
+		"grids": {
+			"main": { "allowedSizes": [1, 2, 4, 8, 16, 24, 32] }
+		}
+	},
+	"ESPR_Prowler_Utility": {
+		"note": "Both 16 SCU external grids (2.5×5×2.5 m) report MaxSize 1.25 m³ (1 SCU), the same defect as the Ironclad's open deck. Allow every size that fits the 2×4×2-cell grid (unverified in-game).",
+		"grids": {
+			"main-left": { "allowedSizes": [1, 2, 4, 8, 16] },
+			"main-right": { "allowedSizes": [1, 2, 4, 8, 16] }
 		}
 	},
 	"CNOU_Nomad": {
@@ -34,14 +58,21 @@
 		}
 	},
 	"GAMA_Railen": {
-		"note": "Grid class names are capacity codes (IS_64 / IS_128) that humanise badly; names and left/right bays come from the matched hardpoints (left/right × bottom/side/top racks).",
+		"note": "Grid class names are capacity codes (IS_64 / IS_128) that humanise badly ('IS 64 left'); the racks are named after their matched hardpoints (left/right × bottom/side/top) and grouped into left/right bays.",
 		"grids": {
-			"is-64-1": { "name": "Left side rack", "bay": "left" },
-			"is-64-2": { "name": "Right side rack", "bay": "right" },
-			"is-128-1": { "name": "Left bottom rack", "bay": "left" },
-			"is-128-2": { "name": "Left top rack", "bay": "left" },
-			"is-128-3": { "name": "Right bottom rack", "bay": "right" },
-			"is-128-4": { "name": "Right top rack", "bay": "right" }
+			"is-64-left": { "name": "Left side rack", "bay": "left" },
+			"is-64-right": { "name": "Right side rack", "bay": "right" },
+			"is-128-left-bottom": { "name": "Left bottom rack", "bay": "left" },
+			"is-128-left-top": { "name": "Left top rack", "bay": "left" },
+			"is-128-right-bottom": { "name": "Right bottom rack", "bay": "right" },
+			"is-128-right-top": { "name": "Right top rack", "bay": "right" }
+		}
+	},
+	"MISC_Starlancer_Max": {
+		"note": "The two 2.5×20×2.5 m grids the MAX adds over the TAC (hardpoints cargo_grid_l / cargo_grid_r, class MISC_Starlancer_CargoGrid_Max_Template) would otherwise be labelled 'Max left' / 'Max right'.",
+		"grids": {
+			"max-left": { "name": "MAX rack left" },
+			"max-right": { "name": "MAX rack right" }
 		}
 	}
 }

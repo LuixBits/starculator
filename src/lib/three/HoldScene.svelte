@@ -1,68 +1,71 @@
 <script lang="ts">
 	/**
 	 * The 3D hold viewer. The only component the app mounts from this folder.
-	 * SSR-safe: Threlte's <Canvas> renders nothing until it is in the browser.
+	 *
+	 * This is a thin shell: it renders the labelled wrapper on the server and
+	 * on first paint, then dynamically imports HoldViewer.svelte (three.js +
+	 * Threlte, ~900 kB minified) in the browser, so the manifest and the rest
+	 * of the page do not wait for the 3D bundle. While the import is in flight
+	 * the host's idle text behind the wrapper stays visible.
 	 */
-	import { Canvas } from '@threlte/core';
-	import { NoToneMapping } from 'three';
-	import type { PackGroup, PackItem, Placement, Ship } from '../data/types.ts';
-	import Scene from './Scene.svelte';
-	import { layoutGrids } from './layout.ts';
-
-	export interface HoldSceneProps {
-		ship: Ship;
-		placements: Placement[];
-		groups: PackGroup[];
-		items: PackItem[];
-		selectedItemId?: string | null;
-		onselect?: (itemId: string | null) => void;
-		/** Bindable. */
-		view?: 'perspective' | 'top';
-		highlightGridId?: string | null;
-		/** Grid name tags and door "RAMP" tags as HTML overlays (class `hold-label`). */
-		showLabels?: boolean;
-		/**
-		 * Wireframe hull bounding box for scale. Defaults to on only when the
-		 * grids have curated offsets; in a schematic layout the hull says nothing.
-		 */
-		showSilhouette?: boolean;
-		class?: string;
-	}
+	import { onMount, type Component } from 'svelte';
+	import type { HoldSceneProps, HoldViewerProps } from './props.ts';
 
 	let {
 		ship,
 		placements,
-		groups,
-		items,
-		selectedItemId = null,
-		onselect,
 		view = $bindable('perspective'),
-		highlightGridId = null,
-		showLabels = true,
-		showSilhouette,
-		class: className
+		class: className,
+		...rest
 	}: HoldSceneProps = $props();
 
-	const layout = $derived(layoutGrids(ship.grids));
-	const silhouette = $derived(showSilhouette ?? layout.curated);
+	let Viewer = $state.raw<Component<HoldViewerProps> | null>(null);
+	let failed = $state(false);
+
+	onMount(() => {
+		let cancelled = false;
+		import('./HoldViewer.svelte').then(
+			(module) => {
+				if (!cancelled) Viewer = module.default;
+			},
+			(error: unknown) => {
+				if (cancelled) return;
+				failed = true;
+				console.error('HoldScene: the 3D viewer failed to load', error);
+			}
+		);
+		return () => {
+			cancelled = true;
+		};
+	});
+
+	const label = $derived.by(() => {
+		const grids = ship.grids.length;
+		const boxes = placements.length;
+		return (
+			`${ship.fullName} hold: ${grids} cargo ${grids === 1 ? 'grid' : 'grids'}, ` +
+			`${boxes} ${boxes === 1 ? 'box' : 'boxes'} placed`
+		);
+	});
 </script>
 
-<div class={['hold-scene', className]} data-view={view}>
-	<Canvas renderMode="on-demand" dpr={[1, 2]} toneMapping={NoToneMapping}>
-		<Scene
-			{ship}
-			{layout}
-			{placements}
-			{groups}
-			{items}
-			{selectedItemId}
-			{onselect}
-			{view}
-			{highlightGridId}
-			{showLabels}
-			showSilhouette={silhouette}
-		/>
-	</Canvas>
+<!--
+	role="img": the canvas has no accessible content of its own, and the HTML
+	label overlays would otherwise be read as loose text. The loading order
+	and per-grid bars on the page carry the same data for assistive tech.
+-->
+<div
+	class={['hold-scene', className]}
+	data-view={view}
+	role="img"
+	aria-label={label}
+	aria-busy={Viewer === null && !failed}
+>
+	{#if Viewer}
+		<Viewer {ship} {placements} bind:view {...rest} />
+	{:else if failed}
+		<p class="hold-scene__error">3D viewer unavailable · the loading order below has the plan</p>
+	{/if}
 </div>
 
 <style>
@@ -81,5 +84,18 @@
 	 */
 	.hold-scene :global(canvas ~ div) {
 		pointer-events: none;
+	}
+	.hold-scene__error {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		margin: 0;
+		padding: 1rem;
+		text-align: center;
+		color: #8f7cab;
+		font-size: var(--fs-small);
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
 	}
 </style>

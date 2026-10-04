@@ -1,16 +1,16 @@
 {
-  "slug": "rsi-constellation-aquila",
-  "name": "Constellation Aquila",
-  "fullName": "RSI Constellation Aquila",
-  "className": "RSI_Constellation_Aquila",
-  "uuid": "e7b40f5c-4099-4aa6-b226-b5b08bd68413",
+  "slug": "rsi-constellation-andromeda",
+  "name": "Constellation Andromeda",
+  "fullName": "RSI Constellation Andromeda",
+  "className": "RSI_Constellation_Andromeda",
+  "uuid": "d95fb013-60d5-43ac-ab2d-daa082f45411",
   "manufacturer": {
     "code": "RSI",
     "name": "Roberts Space Industries"
   },
   "size": "Large",
-  "role": "Expedition",
-  "career": "Exploration",
+  "role": "Medium Freight / Gun Ship",
+  "career": "Multi-Role",
   "dimensions": {
     "x": 27.75,
     "y": 63.5,
@@ -64,6 +64,6 @@
   "isGroundVehicle": false,
   "variantOf": null,
   "variants": [
-    "rsi-constellation-andromeda"
+    "rsi-constellation-aquila"
   ]
 }

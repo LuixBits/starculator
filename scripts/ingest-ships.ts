@@ -7,7 +7,9 @@
  *                                [--out <dir>] [--ingested-at <iso>]
  *
  * The download is cached per commit SHA so re-runs are offline. Output is
- * deterministic (fixed key order, 2-space JSON) apart from meta.ingestedAt.
+ * deterministic (fixed key order, 2-space JSON): meta.ingestedAt is only
+ * renewed when some other output byte changed, so a re-run over unchanged data
+ * leaves `git diff src/lib/data/generated` empty. --ingested-at pins it.
  */
 
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
@@ -19,6 +21,7 @@ import type { CargoGrid, DataMeta, Ship, ShipIndexEntry } from '#lib/data/types.
 import { REPOSITORY, fetchShipsJson } from './ingest/download.ts';
 import { normalizeVehicle } from './ingest/normalize.ts';
 import { hasCargoGrids, isRawVehicle, type RawVehicle } from './ingest/raw.ts';
+import { PREFERRED_REPRESENTATIVES } from './ingest/representatives.ts';
 import { assignSlugs, foldVariants } from './ingest/variants.ts';
 
 const DEFAULTS = {
@@ -40,7 +43,7 @@ const { values: args } = parseArgs({
 		},
 		seed: { type: 'string' },
 		out: { type: 'string', default: path.join(root, 'src', 'lib', 'data', 'generated') },
-		'ingested-at': { type: 'string', default: new Date().toISOString() }
+		'ingested-at': { type: 'string' }
 	}
 });
 
@@ -112,8 +115,48 @@ function compareIndex(a: ShipIndexEntry, b: ShipIndexEntry): number {
 	);
 }
 
-async function writeJson(file: string, value: unknown): Promise<void> {
-	await writeFile(file, JSON.stringify(value, null, 2) + '\n');
+function toJson(value: unknown): string {
+	return JSON.stringify(value, null, 2) + '\n';
+}
+
+async function readText(file: string): Promise<string | null> {
+	try {
+		return await readFile(file, 'utf8');
+	} catch (error: unknown) {
+		if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+		throw error;
+	}
+}
+
+/** Relative output path → serialised content, for every file except meta.json. */
+type OutputFiles = Map<string, string>;
+
+/** True when every output file (and no other ship file) is already on disk byte for byte. */
+async function outputsUnchanged(outDir: string, files: OutputFiles): Promise<boolean> {
+	for (const [rel, content] of files)
+		if ((await readText(path.join(outDir, rel))) !== content) return false;
+	const existing = await readdir(path.join(outDir, 'ships')).catch(() => [] as string[]);
+	return existing.every((f) => !f.endsWith('.json') || files.has(`ships/${f}`));
+}
+
+/**
+ * The previous run's timestamp when nothing else changed, else now. An
+ * unchanged meta.json (ignoring its own ingestedAt) is part of "nothing".
+ */
+async function resolveIngestedAt(
+	outDir: string,
+	files: OutputFiles,
+	meta: Omit<DataMeta, 'ingestedAt'>
+): Promise<string> {
+	if (args['ingested-at']) return args['ingested-at'];
+	const previousText = await readText(path.join(outDir, 'meta.json'));
+	const previous: unknown = previousText === null ? null : JSON.parse(previousText);
+	if (typeof previous !== 'object' || previous === null) return new Date().toISOString();
+	const { ingestedAt, ...rest } = previous as Partial<DataMeta>;
+	const sameMeta = toJson(rest) === toJson(meta);
+	if (typeof ingestedAt === 'string' && sameMeta && (await outputsUnchanged(outDir, files)))
+		return ingestedAt;
+	return new Date().toISOString();
 }
 
 /* ---------- main ---------- */
@@ -147,6 +190,9 @@ async function main(): Promise<void> {
 		warnings.push(...result.warnings);
 		return result.ship;
 	});
+	for (const className of PREFERRED_REPRESENTATIVES.keys())
+		if (!normalized.some((s) => s.className === className))
+			warnings.push(`preferred representative ${className} is not in the data (stale entry?)`);
 	const slugged = assignSlugs(normalized);
 	const { representatives, variants } = foldVariants(slugged);
 	const { ships, applied } = applyOverrides(representatives, overrides);
@@ -154,15 +200,32 @@ async function main(): Promise<void> {
 	const index = ships.map(indexEntry).sort(compareIndex);
 	const bySlug = new Map(ships.map((s) => [s.slug, canonicalShip(s)] as const));
 	const gridCount = ships.reduce((sum, s) => sum + s.grids.length, 0);
-	const meta: DataMeta = {
+	const metaBody: Omit<DataMeta, 'ingestedAt'> = {
 		source: 'scunpacked-data',
 		repository: REPOSITORY,
 		commit: args.sha,
 		gameVersion: args.version,
 		publishedAt: args.date,
-		ingestedAt: args['ingested-at'],
 		shipCount: ships.length,
 		gridCount
+	};
+
+	const files: OutputFiles = new Map([
+		['index.json', toJson(index)],
+		['variants.json', toJson(variants satisfies VariantEntry[])],
+		...index.map((e) => [`ships/${e.slug}.json`, toJson(bySlug.get(e.slug))] as const)
+	]);
+	const ingestedAt = await resolveIngestedAt(args.out, files, metaBody);
+	// Key order of DataMeta as documented: ingestedAt sits after publishedAt.
+	const meta: DataMeta = {
+		source: metaBody.source,
+		repository: metaBody.repository,
+		commit: metaBody.commit,
+		gameVersion: metaBody.gameVersion,
+		publishedAt: metaBody.publishedAt,
+		ingestedAt,
+		shipCount: metaBody.shipCount,
+		gridCount: metaBody.gridCount
 	};
 
 	const shipsDir = path.join(args.out, 'ships');
@@ -170,11 +233,8 @@ async function main(): Promise<void> {
 	for (const stale of await readdir(shipsDir))
 		if (stale.endsWith('.json') && !bySlug.has(stale.slice(0, -5)))
 			await rm(path.join(shipsDir, stale));
-	await writeJson(path.join(args.out, 'meta.json'), meta);
-	await writeJson(path.join(args.out, 'index.json'), index);
-	await writeJson(path.join(args.out, 'variants.json'), variants satisfies VariantEntry[]);
-	for (const entry of index)
-		await writeJson(path.join(shipsDir, `${entry.slug}.json`), bySlug.get(entry.slug));
+	await writeFile(path.join(args.out, 'meta.json'), toJson(meta));
+	for (const [rel, content] of files) await writeFile(path.join(args.out, rel), content);
 
 	for (const warning of warnings) log(`warn: ${warning}`);
 	log(

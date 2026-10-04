@@ -1,14 +1,19 @@
 /**
  * Raw scunpacked vehicle → Ship.
  *
- * Besides unit conversion this does three inferences the game data does not
+ * Besides unit conversion this does four inferences the game data does not
  * spell out:
  *  - hardpoint ↔ grid matching (CargoGrids[] and Systems.CargoGrids.Ports[] are
  *    not in the same order; they are matched by class-name family and count),
  *  - stable grid ids and human names from the class-name suffix,
+ *  - position words for repeated grids of one class from their hardpoint names
+ *    (hardpoint_cargogrid_bottom_front_left_lower → "Bottom front left lower");
+ *    plain numbering (Main 1 … Main 4) is the fallback when hardpoints are
+ *    missing or identical,
  *  - bays: grid families that share a root token (Module, Module_Walkway,
  *    Module_Ladder) and repeat the same number of times are one physical bay
- *    per repeat index (module-1 … module-4).
+ *    per repeat index (module-1 … module-4, or hold-left when the position
+ *    words agree), and stacked grids (lower/upper) of one class share a bay.
  */
 
 import { allowedSizesFor, maxContainerOf } from '#lib/data/containers.ts';
@@ -16,9 +21,12 @@ import { CELL_M, type CargoGrid, type CellVec, type Ship, type Vec3 } from '#lib
 import {
 	classTokens,
 	familyKey,
+	hasManufacturerPrefix,
 	humanize,
 	kebab,
+	manufacturerPrefix,
 	normalizeWhitespace,
+	shipWords,
 	sizeLabel,
 	slugify,
 	splitCamel,
@@ -37,6 +45,9 @@ import {
 } from './raw.ts';
 
 const INTEGRAL_EPS = 1e-6;
+
+/** Grids at least this large with a 1-SCU MaxSize are almost certainly a data defect (see research §12). */
+const SUSPICIOUS_UNIT_LIMIT_SCU = 16;
 
 export class IngestError extends Error {
 	constructor(className: string, message: string) {
@@ -67,6 +78,15 @@ function toVec3(box: RawBox): Vec3 {
 
 function toBox(box: RawBox | null | undefined): Vec3 | null {
 	return box ? toVec3(box) : null;
+}
+
+function isUnitBox(box: Vec3 | null): boolean {
+	return (
+		box !== null &&
+		Math.abs(box.x - CELL_M) < INTEGRAL_EPS &&
+		Math.abs(box.y - CELL_M) < INTEGRAL_EPS &&
+		Math.abs(box.z - CELL_M) < INTEGRAL_EPS
+	);
 }
 
 /* ---------- hardpoint matching ---------- */
@@ -154,40 +174,123 @@ export function matchHardpoints(
 	return result;
 }
 
-/* ---------- naming ---------- */
+/* ---------- naming: class tokens ---------- */
+
+const MAIN: readonly string[] = ['Main'];
+
+/** Display tokens, or the "Main" placeholder when the class carries none of its own. */
+function orMain(tokens: readonly string[]): readonly string[] {
+	return tokens.length ? tokens : MAIN;
+}
 
 /**
- * Display tokens per distinct grid class. Stripping is relaxed level by level
- * until every class in the ship has a distinct label.
+ * Display tokens per distinct grid class (empty when the class has no tokens of
+ * its own). Stripping is relaxed level by level until every class in the ship
+ * has a distinct label.
  */
 export function displayTokensByClass(
 	classes: readonly string[],
-	shipClassName: string
+	ship: ReadonlySet<string>,
+	shipClassName = 'ship'
 ): Map<string, string[]> {
 	const levels: ((cls: string) => string[])[] = [
-		(cls) => stripShipTokens(stripNoise(splitGridClass(cls).after), shipClassName),
+		(cls) => stripShipTokens(stripNoise(splitGridClass(cls).after), ship),
 		(cls) => stripNoise(splitGridClass(cls).after),
 		(cls) => splitGridClass(cls).after,
 		(cls) => {
 			const { before, after } = splitGridClass(cls);
-			return [...stripShipTokens(before, shipClassName), ...after];
+			return [...stripShipTokens(before, ship), ...after];
 		},
 		(cls) => classTokens(cls)
 	];
 	for (const level of levels) {
 		const map = new Map(classes.map((cls) => [cls, level(cls)] as const));
-		const labels = [...map.values()].map((tokens) => kebab(tokens.length ? tokens : ['Main']));
-		if (new Set(labels).size === labels.length) {
-			return new Map([...map].map(([cls, tokens]) => [cls, tokens.length ? tokens : ['Main']]));
-		}
+		const labels = [...map.values()].map((tokens) => kebab(orMain(tokens)));
+		if (new Set(labels).size === labels.length) return new Map(map);
 	}
 	throw new Error(`${shipClassName}: cannot derive distinct grid labels for ${classes.join(', ')}`);
 }
+
+/* ---------- naming: position words from hardpoints ---------- */
+
+const HARDPOINT_NOISE = /^(hardpoint|cargogrid|cargoinventory|cargo|grid|ic|temp|template)$/i;
+const ABBREVIATIONS: Readonly<Record<string, string>> = { l: 'left', r: 'right' };
+
+/** Lower-case descriptive words of a hardpoint name, without noise, numbers and ship words. */
+export function hardpointWords(hardpoint: string, ship: ReadonlySet<string>): string[] {
+	return classTokens(hardpoint)
+		.map((t) => t.toLowerCase().replace(/\d+$/, ''))
+		.map((t) => ABBREVIATIONS[t] ?? t)
+		.filter((t) => t.length > 0 && !HARDPOINT_NOISE.test(t) && !ship.has(t));
+}
+
+interface CommonSplit {
+	/** Per member, the words that are not shared by every member (one occurrence of each common word removed). */
+	distinct: string[][];
+	/** Words every member carries. */
+	common: string[];
+}
+
+function dropCommonWords(lists: readonly string[][]): CommonSplit {
+	const common = lists[0].filter((w) => lists.every((l) => l.includes(w)));
+	const distinct = lists.map((list) => {
+		const remaining = [...common];
+		return list.filter((w) => {
+			const at = remaining.indexOf(w);
+			if (at < 0) return true;
+			remaining.splice(at, 1);
+			return false;
+		});
+	});
+	return { distinct, common: [...new Set(common)] };
+}
+
+/** Repeated word lists get a running number so that every member stays distinct. */
+function numberDuplicates(lists: readonly string[][]): string[][] {
+	const total = new Map<string, number>();
+	for (const l of lists) total.set(l.join(' '), (total.get(l.join(' ')) ?? 0) + 1);
+	const seen = new Map<string, number>();
+	return lists.map((l) => {
+		const key = l.join(' ');
+		if ((total.get(key) ?? 0) < 2) return l;
+		const n = (seen.get(key) ?? 0) + 1;
+		seen.set(key, n);
+		return [...l, String(n)];
+	});
+}
+
+export interface PositionWords {
+	/** Per grid of the class, in grid order; every list is distinct. */
+	words: string[][];
+	/** Words shared by all hardpoints of the class (e.g. "large" on the Reclaimer's unnamed grids). */
+	common: string[];
+}
+
+/**
+ * Position words for the grids of one class, derived from their hardpoints,
+ * or null when the class is not repeated, a hardpoint is missing or identical,
+ * or the hardpoints differ only by number (Caterpillar module_01 … module_04).
+ */
+export function positionWords(
+	hardpoints: readonly (string | null)[],
+	ship: ReadonlySet<string>
+): PositionWords | null {
+	if (hardpoints.length < 2) return null;
+	const named = hardpoints.filter((h): h is string => h !== null);
+	if (named.length !== hardpoints.length || new Set(named).size !== named.length) return null;
+	const { distinct, common } = dropCommonWords(named.map((h) => hardpointWords(h, ship)));
+	if (distinct.every((w) => w.length === 0)) return null;
+	return { words: numberDuplicates(distinct), common };
+}
+
+/* ---------- naming: bays ---------- */
 
 interface BayPlan {
 	root: string;
 	/** True when every family sharing the root repeats equally and the repeat index is part of the bay. */
 	indexed: boolean;
+	/** Every class sharing the root, in display order. */
+	classes: string[];
 }
 
 const BAY_ROOT_NOISE = /^(is|cargo|main)$/i;
@@ -197,17 +300,57 @@ export function planBays(
 	display: ReadonlyMap<string, readonly string[]>,
 	counts: ReadonlyMap<string, number>
 ): Map<string, BayPlan> {
-	const byRoot = groupBy([...display.keys()], (cls) => display.get(cls)![0].toLowerCase());
+	const byRoot = groupBy([...display.keys()], (cls) => orMain(display.get(cls)!)[0].toLowerCase());
 	const plan = new Map<string, BayPlan>();
 	for (const [root, classes] of byRoot) {
 		if (classes.length < 2 || BAY_ROOT_NOISE.test(root)) continue;
 		const sizes = new Set(classes.map((cls) => counts.get(cls)));
 		const n = counts.get(classes[0]) ?? 1;
 		const indexed = sizes.size === 1 && n > 1;
-		for (const cls of classes) plan.set(cls, { root: display.get(cls)![0], indexed });
+		for (const cls of classes)
+			plan.set(cls, { root: orMain(display.get(cls)!)[0], indexed, classes });
 	}
 	return plan;
 }
+
+/**
+ * Bay id of the k-th repeat of an indexed bay: the position words all members
+ * share when every class has them (hold-left), else the running number (module-1).
+ */
+function indexedBayId(
+	plan: BayPlan,
+	k: number,
+	positions: ReadonlyMap<string, PositionWords>
+): string {
+	const root = kebab([plan.root]);
+	const lists = plan.classes.map((cls) => positions.get(cls)?.words[k]);
+	const first = lists[0];
+	if (first === undefined || lists.some((l) => l === undefined)) return `${root}-${k + 1}`;
+	const shared = first.filter((w) => lists.every((l) => l !== undefined && l.includes(w)));
+	return shared.length ? `${root}-${shared.join('-')}` : `${root}-${k + 1}`;
+}
+
+const STACK_WORDS = new Set(['lower', 'upper', 'bottom', 'top']);
+
+/**
+ * Grids of one class whose position words end in a stacking word share a bay
+ * named after the rest of the words (Hull B: bottom-front-left holds the lower
+ * and the upper rack). Null when the words do not form such stacks.
+ */
+export function stackBays(
+	tokens: readonly string[],
+	words: readonly string[][]
+): (string | null)[] {
+	const stacked = words.every((w) => w.length >= 2 && STACK_WORDS.has(w[w.length - 1]));
+	if (!stacked) return words.map(() => null);
+	const bays = words.map((w) => kebab([...tokens, ...w.slice(0, -1)]));
+	const members = new Map<string, number>();
+	for (const b of bays) members.set(b, (members.get(b) ?? 0) + 1);
+	if ([...members.values()].some((n) => n < 2)) return words.map(() => null);
+	return bays;
+}
+
+/* ---------- naming: labels ---------- */
 
 interface GridLabel {
 	id: string;
@@ -215,27 +358,65 @@ interface GridLabel {
 	bay: string | null;
 }
 
-function labelGrid(
-	tokens: readonly string[],
-	index: number,
-	count: number,
-	bay: BayPlan | undefined
-): GridLabel {
-	const root = tokens[0];
-	const rest = tokens.slice(1);
+interface LabelContext {
+	tokens: readonly string[];
+	count: number;
+	plan: BayPlan | undefined;
+	position: PositionWords | undefined;
+	positions: ReadonlyMap<string, PositionWords>;
+}
+
+/** Label of the `index`-th (1-based) grid of a class. */
+function labelGrid(index: number, ctx: LabelContext): GridLabel {
+	const { tokens, count, plan, position } = ctx;
+	const k = index - 1;
+	if (position) {
+		const words = position.words[k];
+		const all = [...tokens, ...words];
+		const bay = plan
+			? plan.indexed
+				? indexedBayId(plan, k, ctx.positions)
+				: kebab([plan.root])
+			: stackBays(tokens, position.words)[k];
+		return { id: kebab(all), name: humanize(all), bay };
+	}
+	const named = orMain(tokens);
+	const root = named[0];
+	const rest = named.slice(1);
 	const restName = rest.length ? ' ' + humanize(rest).toLowerCase() : '';
 	const restId = rest.length ? '-' + kebab(rest) : '';
-	if (bay?.indexed) {
+	if (plan?.indexed) {
 		return {
 			id: `${kebab([root])}-${index}${restId}`,
 			name: `${humanize([root])} ${index}${restName}`,
-			bay: `${kebab([root])}-${index}`
+			bay: indexedBayId(plan, k, ctx.positions)
 		};
 	}
-	const bayId = bay ? kebab([bay.root]) : null;
+	const bayId = plan ? kebab([plan.root]) : null;
 	if (count > 1)
-		return { id: `${kebab(tokens)}-${index}`, name: `${humanize(tokens)} ${index}`, bay: bayId };
-	return { id: kebab(tokens), name: humanize(tokens), bay: bayId };
+		return { id: `${kebab(named)}-${index}`, name: `${humanize(named)} ${index}`, bay: bayId };
+	return { id: kebab(named), name: humanize(named), bay: bayId };
+}
+
+/**
+ * A class without tokens of its own takes the words all its hardpoints share
+ * (Reclaimer: hardpoint_cargogrid_large_* → "Large"), unless that collides with
+ * another class's label.
+ */
+function promoteCommonWords(
+	display: Map<string, string[]>,
+	positions: ReadonlyMap<string, PositionWords>
+): void {
+	const labels = new Set([...display.values()].map((t) => kebab(orMain(t))));
+	for (const [cls, tokens] of display) {
+		const common = positions.get(cls)?.common ?? [];
+		if (tokens.length > 0 || common.length === 0) continue;
+		const promoted = common.map((w) => humanize([w]));
+		if (labels.has(kebab(promoted))) continue;
+		labels.delete('main');
+		labels.add(kebab(promoted));
+		display.set(cls, promoted);
+	}
 }
 
 /* ---------- the normaliser ---------- */
@@ -253,18 +434,35 @@ export function normalizeVehicle(raw: RawVehicle): NormalizeResult {
 	if (grids.length === 0) throw new IngestError(className, 'has no cargo grids');
 	const hardpoints = matchHardpoints(grids, rawPorts(raw));
 
+	const ship = shipWords(className, raw.Name);
 	const classes = [...new Set(grids.map((g) => g.Class))];
-	const counts = new Map(
-		classes.map((cls) => [cls, grids.filter((g) => g.Class === cls).length] as const)
+	const membersByClass = new Map(
+		classes.map((cls) => [cls, grids.flatMap((g, i) => (g.Class === cls ? [i] : []))] as const)
 	);
-	const display = displayTokensByClass(classes, className);
+	const counts = new Map([...membersByClass].map(([cls, m]) => [cls, m.length] as const));
+	const display = displayTokensByClass(classes, ship, className);
+	const positions = new Map<string, PositionWords>();
+	for (const [cls, members] of membersByClass) {
+		const position = positionWords(
+			members.map((i) => hardpoints[i]),
+			ship
+		);
+		if (position) positions.set(cls, position);
+	}
+	promoteCommonWords(display, positions);
 	const bays = planBays(display, counts);
 
 	const seenPerClass = new Map<string, number>();
 	const cargoGrids: CargoGrid[] = grids.map((g, i) => {
 		const index = (seenPerClass.get(g.Class) ?? 0) + 1;
 		seenPerClass.set(g.Class, index);
-		const label = labelGrid(display.get(g.Class)!, index, counts.get(g.Class)!, bays.get(g.Class));
+		const label = labelGrid(index, {
+			tokens: display.get(g.Class)!,
+			count: counts.get(g.Class)!,
+			plan: bays.get(g.Class),
+			position: positions.get(g.Class),
+			positions
+		});
 
 		const cells: CellVec = {
 			x: toCells(g.X, `${g.Class} X`, className),
@@ -279,6 +477,10 @@ export function normalizeVehicle(raw: RawVehicle): NormalizeResult {
 		const maxBox = toBox(g.MaxSize);
 		if (!maxBox)
 			warnings.push(`${className}/${g.Class}: MaxSize missing, allowing every size that fits`);
+		else if (isUnitBox(maxBox) && g.SCU >= SUSPICIOUS_UNIT_LIMIT_SCU)
+			warnings.push(
+				`${className}/${g.Class}: MaxSize is 1 SCU on a ${g.SCU} SCU grid (likely a data defect; consider an override)`
+			);
 		const allowedSizes = allowedSizesFor(cells, minBox, maxBox);
 		if (allowedSizes.length === 0) warnings.push(`${className}/${g.Class}: no container size fits`);
 		if (hardpoints[i] === null) warnings.push(`${className}/${g.Class}: no hardpoint matched`);
@@ -313,8 +515,12 @@ export function normalizeVehicle(raw: RawVehicle): NormalizeResult {
 	if (Math.abs(gridSum - cargoScu) > INTEGRAL_EPS)
 		throw new IngestError(className, `grid SCU sum ${gridSum} ≠ Cargo ${cargoScu}`);
 
-	const fullName = normalizeWhitespace(raw.Name);
-	const ship: Ship = {
+	// The PYAM Exec editions are published without "Drake"/"Gatac"; give them the prefix their siblings carry.
+	const publishedName = normalizeWhitespace(raw.Name);
+	const fullName = hasManufacturerPrefix(publishedName, manufacturer)
+		? publishedName
+		: `${manufacturerPrefix(manufacturer)} ${publishedName}`;
+	const result: Ship = {
 		slug: slugify(fullName),
 		name: stripManufacturer(fullName, manufacturer),
 		fullName,
@@ -333,5 +539,5 @@ export function normalizeVehicle(raw: RawVehicle): NormalizeResult {
 		variantOf: null,
 		variants: []
 	};
-	return { ship, warnings };
+	return { ship: result, warnings };
 }

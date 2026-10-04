@@ -1,16 +1,19 @@
 <script lang="ts">
 	/**
-	 * HTML overlays: name tags above the hold and a "RAMP" tag at each door.
+	 * HTML overlays: name tags above the hold and "RAMP" tags at the doors.
 	 * Only class names are set; the host page styles `.hold-label`.
 	 *
-	 * Density policy, so a 25-grid capital ship does not drown in tags: up to
-	 * MAX_GRID_TAGS grids get one tag each; otherwise, when the ship has bays,
-	 * one tag per bay; otherwise no name tags at all. The highlighted grid
-	 * always gets its own tag (in bay mode its bay's tag takes the grid's name).
+	 * Density (labels.ts): up to MAX_GRID_TAGS grids get one full-name tag
+	 * each; otherwise, when the ship has bays, one tag per bay; otherwise every
+	 * grid gets a compact abbreviation (M1, O1, …) so a Hull C or an Idris
+	 * stays readable instead of going silent. The highlighted grid always shows
+	 * its full name. Door tags follow the same density; a tag for a grid whose
+	 * door is not curated (the packer's default) carries `hold-label--assumed`.
 	 */
 	import { HTML } from '@threlte/extras';
 	import type { HoldLayout } from './layout.ts';
-	import { cellToWorld, doorEdge, type WorldTuple } from './space.ts';
+	import { abbreviateGridNames, doorSites, labelMode, type DoorSite } from './labels.ts';
+	import { cellToWorld, doorEdge, type CellPoint, type WorldTuple } from './space.ts';
 
 	interface Props {
 		layout: HoldLayout;
@@ -19,59 +22,46 @@
 
 	let { layout, highlightGridId = null }: Props = $props();
 
-	const MAX_GRID_TAGS = 8;
-	const MAX_BAY_TAGS = 10;
-
 	interface Tag {
 		id: string;
 		text: string;
 		kind: 'grid' | 'door';
 		position: WorldTuple;
 		active: boolean;
+		compact: boolean;
+		assumed: boolean;
 	}
 
-	type Mode = 'grid' | 'bay' | 'none';
-
-	const mode = $derived.by<Mode>(() => {
-		const grids = layout.grids.length;
-		const bays = layout.bays.length;
-		if (grids <= MAX_GRID_TAGS) return 'grid';
-		if (bays < grids && bays <= MAX_BAY_TAGS) return 'bay';
-		return 'none';
-	});
+	const mode = $derived(labelMode(layout.grids.length, layout.bays.length));
 
 	/** Tag position above a box of cells: centred on x/y, `rise` metres over the top. */
-	function above(
-		min: { x: number; y: number },
-		max: { x: number; y: number; z: number },
-		rise: number
-	): WorldTuple {
+	function above(min: CellPoint, max: CellPoint, rise: number): WorldTuple {
 		const [x, y, z] = cellToWorld({ x: (min.x + max.x) / 2, y: (min.y + max.y) / 2, z: max.z });
 		return [x, y + rise, z];
 	}
 
-	const tags = $derived.by<Tag[]>(() => {
-		const out: Tag[] = [];
-		const nameOf = new Map(layout.grids.map(({ grid }) => [grid.id, grid.name]));
+	/** Just inside the door edge of a box of cells, on the floor. */
+	function atDoor(site: DoorSite): WorldTuple {
+		const [ox, oy, oz] = cellToWorld(site.min);
+		const edge = doorEdge(
+			{ x: site.max.x - site.min.x, y: site.max.y - site.min.y, z: site.max.z - site.min.z },
+			site.face
+		);
+		return [
+			ox + edge.center[0] + edge.inward[0] * 0.4,
+			oy + 0.02,
+			oz + edge.center[1] + edge.inward[1] * 0.4
+		];
+	}
 
-		if (mode === 'grid') {
-			layout.grids.forEach(({ grid, origin }, index) => {
-				// Alternate two heights so neighbouring tags do not sit on one line.
-				const rise = index % 2 === 0 ? 0.6 : 2.1;
-				const max = {
-					x: origin.x + grid.cells.x,
-					y: origin.y + grid.cells.y,
-					z: origin.z + grid.cells.z
-				};
-				out.push({
-					id: `grid:${grid.id}`,
-					text: grid.name,
-					kind: 'grid',
-					position: above(origin, max, rise),
-					active: grid.id === highlightGridId
-				});
-			});
-		} else if (mode === 'bay') {
+	function maxOf(origin: CellPoint, cells: CellPoint): CellPoint {
+		return { x: origin.x + cells.x, y: origin.y + cells.y, z: origin.z + cells.z };
+	}
+
+	const nameTags = $derived.by<Tag[]>(() => {
+		const out: Tag[] = [];
+		if (mode === 'bay') {
+			const nameOf = new Map(layout.grids.map(({ grid }) => [grid.id, grid.name]));
 			for (const bay of layout.bays) {
 				const highlighted = highlightGridId !== null && bay.gridIds.includes(highlightGridId);
 				out.push({
@@ -79,46 +69,45 @@
 					text: highlighted ? (nameOf.get(highlightGridId) ?? bay.label) : bay.label,
 					kind: 'grid',
 					position: above(bay.min, bay.max, 0.8),
-					active: highlighted
+					active: highlighted,
+					compact: false,
+					assumed: false
 				});
 			}
-		} else if (highlightGridId !== null) {
-			const slot = layout.byId.get(highlightGridId);
-			if (slot) {
-				const { grid, origin } = slot;
-				const max = {
-					x: origin.x + grid.cells.x,
-					y: origin.y + grid.cells.y,
-					z: origin.z + grid.cells.z
-				};
-				out.push({
-					id: `grid:${grid.id}`,
-					text: grid.name,
-					kind: 'grid',
-					position: above(origin, max, 0.8),
-					active: true
-				});
-			}
+			return out;
 		}
-
-		for (const { grid, origin } of layout.grids) {
-			if (!grid.door) continue;
-			const [ox, oy, oz] = cellToWorld(origin);
-			const edge = doorEdge(grid.cells, grid.door);
+		const compact = mode === 'compact';
+		const short = compact ? abbreviateGridNames(layout.grids.map(({ grid }) => grid.name)) : null;
+		layout.grids.forEach(({ grid, origin }, index) => {
+			const active = grid.id === highlightGridId;
+			// Alternate two heights so neighbouring tags do not sit on one line.
+			const rise = compact ? (index % 2 === 0 ? 0.5 : 1.5) : index % 2 === 0 ? 0.6 : 2.1;
 			out.push({
-				id: `door:${grid.id}`,
-				text: 'RAMP',
-				kind: 'door',
-				position: [
-					ox + edge.center[0] + edge.inward[0] * 0.4,
-					oy + 0.02,
-					oz + edge.center[1] + edge.inward[1] * 0.4
-				],
-				active: grid.id === highlightGridId
+				id: `grid:${grid.id}`,
+				text: short && !active ? short[index] : grid.name,
+				kind: 'grid',
+				position: above(origin, maxOf(origin, grid.cells), rise),
+				active,
+				compact: compact && !active,
+				assumed: false
 			});
-		}
+		});
 		return out;
 	});
+
+	const doorTags = $derived.by<Tag[]>(() =>
+		doorSites(layout, mode, highlightGridId).map((site) => ({
+			id: site.id,
+			text: 'RAMP',
+			kind: 'door',
+			position: atDoor(site),
+			active: site.active,
+			compact: false,
+			assumed: site.assumed
+		}))
+	);
+
+	const tags = $derived([...nameTags, ...doorTags]);
 </script>
 
 {#each tags as tag (tag.id)}
@@ -127,8 +116,11 @@
 			class={[
 				'hold-label',
 				tag.kind === 'door' ? 'hold-label--door' : 'hold-label--grid',
+				tag.compact && 'hold-label--compact',
+				tag.assumed && 'hold-label--assumed',
 				tag.active && 'hold-label--active'
-			]}>{tag.text}</span
+			]}
+			data-assumed={tag.assumed ? 'true' : undefined}>{tag.text}</span
 		>
 	</HTML>
 {/each}

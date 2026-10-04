@@ -95,8 +95,8 @@
   "isGroundVehicle": false,
   "variantOf": null,
   "variants": [
-    "cutlass-black-pyam-exec",
-    "cutlass-black-pyam-exec-military",
-    "drake-cutlass-black-bis2950"
+    "drake-cutlass-black-bis2950",
+    "drake-cutlass-black-pyam-exec-military",
+    "drake-cutlass-black-pyam-exec-stealth"
   ]
 }

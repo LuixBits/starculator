@@ -19,6 +19,17 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: pnpm vitest run
       - run: pnpm build
+      # End-to-end specs run against the build/ produced above (E2E_PREBUILT makes
+      # the Playwright web server a plain `vite preview` instead of a second build).
+      - run: pnpm exec playwright test --pass-with-no-tests
+        env:
+          E2E_PREBUILT: '1'
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-traces
+          path: test-results
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
         with:
           name: site

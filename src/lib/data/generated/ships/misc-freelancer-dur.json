@@ -57,8 +57,8 @@
       "door": null
     },
     {
-      "id": "mid-1",
-      "name": "Mid 1",
+      "id": "mid-left",
+      "name": "Mid left",
       "className": "MISC_Freelancer_CargoGrid_Mid",
       "cells": {
         "x": 2,
@@ -92,8 +92,8 @@
       "door": null
     },
     {
-      "id": "mid-2",
-      "name": "Mid 2",
+      "id": "mid-right",
+      "name": "Mid right",
       "className": "MISC_Freelancer_CargoGrid_Mid",
       "cells": {
         "x": 2,

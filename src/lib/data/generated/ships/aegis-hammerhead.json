@@ -2,8 +2,8 @@
   "slug": "aegis-hammerhead",
   "name": "Hammerhead",
   "fullName": "Aegis Hammerhead",
-  "className": "AEGS_Hammerhead",
-  "uuid": "d46f4de1-8dc1-473b-9739-88c9ba7e75a6",
+  "className": "AEGS_Hammerhead_GS",
+  "uuid": "395f30ae-f930-4929-b881-d711fde7e70f",
   "manufacturer": {
     "code": "AEGS",
     "name": "Aegis Dynamics"
@@ -16,42 +16,54 @@
     "y": 120,
     "z": 16
   },
-  "cargoScu": 40,
+  "cargoScu": 64,
   "grids": [
     {
       "id": "main",
       "name": "Main",
-      "className": "AEGS_Hammerhead_CargoGrid",
+      "className": "AEGS_Hammerhead_GS_CargoGrid_IC",
       "cells": {
         "x": 4,
-        "y": 5,
+        "y": 8,
         "z": 2
       },
       "meters": {
         "x": 5,
-        "y": 6.25,
+        "y": 10,
         "z": 2.5
       },
-      "scu": 40,
-      "minBox": null,
-      "maxBox": null,
+      "scu": 64,
+      "minBox": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      },
+      "maxBox": {
+        "x": 2.5,
+        "y": 10,
+        "z": 2.5
+      },
       "allowedSizes": [
         1,
         2,
         4,
         8,
-        16
+        16,
+        24,
+        32
       ],
-      "external": false,
-      "hardpoint": null,
+      "external": true,
+      "hardpoint": "hardpoint_cargogrid",
       "bay": null,
       "offset": null,
       "door": null
     }
   ],
-  "maxContainer": 16,
+  "maxContainer": 32,
   "isSpaceship": true,
   "isGroundVehicle": false,
   "variantOf": null,
-  "variants": []
+  "variants": [
+    "aegis-tiburon"
+  ]
 }

@@ -213,16 +213,78 @@ describe('research expectations', () => {
 
 	it('overrides from the research are in effect', () => {
 		const ironclad = shipByClass('DRAK_Ironclad');
-		for (const id of ['hold-1', 'hold-2', 'hold-1-center', 'hold-2-center'])
+		for (const id of ['hold-left', 'hold-right', 'hold-center-left', 'hold-center-right'])
 			expect(ironclad.grids.find((g) => g.id === id)?.allowedSizes).toEqual([
 				1, 2, 4, 8, 16, 24, 32
 			]);
 		expect(ironclad.maxContainer).toBe(32);
+		// The same 1 SCU MaxSize defect on other open-deck grids (research §12).
+		expect(shipByClass('RSI_Hermes').maxContainer).toBe(32);
+		expect(shipByClass('DRAK_Golem_OX').maxContainer).toBe(32);
+		expect(shipByClass('ESPR_Prowler_Utility').maxContainer).toBe(16);
+		for (const g of shipByClass('RSI_Hermes').grids)
+			expect(g.allowedSizes).toEqual([1, 2, 4, 8, 16, 24, 32]);
 		expect(shipByClass('CNOU_Nomad').grids[0].allowedSizes).toEqual([1, 2, 4, 8]);
 		expect(
 			shipByClass('DRAK_Cutlass_Black').grids.find((g) => g.id === 'main')?.allowedSizes
 		).toEqual([1, 2, 4, 8]);
 		expect(shipByClass('AEGS_Avenger_Titan').grids[0].allowedSizes).toEqual([1, 2, 4]);
+	});
+
+	it('Aegis Hammerhead: one entry, the current 64 SCU hull, with the Tiburon as its alias', () => {
+		const hammerheads = index.filter((e) => /hammerhead/i.test(e.fullName));
+		expect(hammerheads.map((e) => e.slug)).toEqual(['aegis-hammerhead']);
+		const hammerhead = shipByClass('AEGS_Hammerhead_GS');
+		expect(hammerhead.slug).toBe('aegis-hammerhead');
+		expect(hammerhead.cargoScu).toBe(64);
+		expect(hammerhead.maxContainer).toBe(32);
+		expect(hammerhead.variants).toEqual(['aegis-tiburon']);
+		expect(ships.some((s) => s.className === 'AEGS_Hammerhead')).toBe(false);
+	});
+
+	it('well-known hulls represent their fold group instead of same-hold siblings', () => {
+		expect(shipByClass('RSI_Constellation_Andromeda').variants).toEqual([
+			'rsi-constellation-aquila'
+		]);
+		expect(shipByClass('DRAK_Cutlass_Blue').variants).toContain('drake-cutlass-red');
+		expect(shipByClass('RSI_Apollo_Medivac').variants).toContain('rsi-apollo-triage');
+		expect(resolveSlug('rsi-constellation-aquila')).toBe('rsi-constellation-andromeda');
+	});
+
+	it('repeated grids are named after their hardpoint positions', () => {
+		const hullB = shipByClass('MISC_Hull_B');
+		expect(hullB.grids.map((g) => g.name)).toContain('Bottom front left lower');
+		expect(hullB.grids.filter((g) => g.bay === 'bottom-front-left')).toHaveLength(2);
+		expect(new Set(hullB.grids.map((g) => g.bay)).size).toBe(8);
+		expect(
+			shipByClass('ANVL_Carrack')
+				.grids.map((g) => g.name)
+				.sort()
+		).toEqual([
+			'Large front left',
+			'Large front right',
+			'Large mid left',
+			'Large mid right',
+			'Large rear left',
+			'Large rear right',
+			'Medium front',
+			'Medium mid',
+			'Medium rear'
+		]);
+		expect(shipByClass('RSI_Polaris').grids.map((g) => g.id)).toEqual(['main-left', 'main-right']);
+		expect(shipByClass('MISC_Reliant').grids.map((g) => g.name)).toEqual(['Left', 'Right']);
+		expect(
+			shipByClass('AEGS_Idris_P').grids.filter((g) => g.id.startsWith('hangar-left-'))
+		).toHaveLength(8);
+		// Identical hardpoints keep the numbering fallback.
+		expect(shipByClass('MISC_Hull_C').grids.map((g) => g.id)).toContain('main-1');
+	});
+
+	it('PYAM Exec editions carry the manufacturer and are told apart', () => {
+		const exec = variantsJson.filter((v) => /PYAM/.test(v.fullName));
+		expect(exec.length).toBeGreaterThanOrEqual(6);
+		for (const v of exec) expect(v.slug, v.slug).toMatch(/^(drake|gatac)-/);
+		expect(new Set(exec.map((v) => v.fullName)).size).toBe(exec.length);
 	});
 
 	it('ground vehicles are flagged', () => {

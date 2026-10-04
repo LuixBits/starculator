@@ -19,8 +19,8 @@
   "cargoScu": 224,
   "grids": [
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "left",
+      "name": "Left",
       "className": "MISC_Starlancer_CargoGrid_Template",
       "cells": {
         "x": 2,
@@ -59,8 +59,8 @@
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "right",
+      "name": "Right",
       "className": "MISC_Starlancer_CargoGrid_Template",
       "cells": {
         "x": 2,
@@ -99,8 +99,8 @@
       "door": null
     },
     {
-      "id": "max-1",
-      "name": "Max 1",
+      "id": "max-left",
+      "name": "MAX rack left",
       "className": "MISC_Starlancer_CargoGrid_Max_Template",
       "cells": {
         "x": 2,
@@ -139,8 +139,8 @@
       "door": null
     },
     {
-      "id": "max-2",
-      "name": "Max 2",
+      "id": "max-right",
+      "name": "MAX rack right",
       "className": "MISC_Starlancer_CargoGrid_Max_Template",
       "cells": {
         "x": 2,

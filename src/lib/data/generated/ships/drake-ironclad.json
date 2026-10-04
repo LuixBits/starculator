@@ -19,7 +19,7 @@
   "cargoScu": 2200,
   "grids": [
     {
-      "id": "hold-1",
+      "id": "hold-left",
       "name": "Hold rear left",
       "className": "Drak_Ironclad_CargoGrid_Hold",
       "cells": {
@@ -54,12 +54,12 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_rear_left",
-      "bay": "hold-1",
+      "bay": "hold-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "hold-2",
+      "id": "hold-right",
       "name": "Hold rear right",
       "className": "Drak_Ironclad_CargoGrid_Hold",
       "cells": {
@@ -94,12 +94,12 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_rear_right",
-      "bay": "hold-2",
+      "bay": "hold-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "hold-1-center",
+      "id": "hold-center-left",
       "name": "Hold front left",
       "className": "Drak_Ironclad_CargoGrid_Hold_Center",
       "cells": {
@@ -134,12 +134,12 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_front_left",
-      "bay": "hold-1",
+      "bay": "hold-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "hold-2-center",
+      "id": "hold-center-right",
       "name": "Hold front right",
       "className": "Drak_Ironclad_CargoGrid_Hold_Center",
       "cells": {
@@ -174,13 +174,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_front_right",
-      "bay": "hold-2",
+      "bay": "hold-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "secure-hold-1",
-      "name": "Secure hold 1",
+      "id": "secure-hold-front-left",
+      "name": "Secure hold front left",
       "className": "Drak_Ironclad_CargoGrid_SecureHold",
       "cells": {
         "x": 2,
@@ -213,8 +213,8 @@
       "door": null
     },
     {
-      "id": "secure-hold-2",
-      "name": "Secure hold 2",
+      "id": "secure-hold-front-right",
+      "name": "Secure hold front right",
       "className": "Drak_Ironclad_CargoGrid_SecureHold",
       "cells": {
         "x": 2,
@@ -281,8 +281,8 @@
       "door": null
     },
     {
-      "id": "secure-hold-3",
-      "name": "Secure hold 3",
+      "id": "secure-hold-rear-left",
+      "name": "Secure hold rear left",
       "className": "Drak_Ironclad_CargoGrid_SecureHold",
       "cells": {
         "x": 2,
@@ -315,8 +315,8 @@
       "door": null
     },
     {
-      "id": "secure-hold-4",
-      "name": "Secure hold 4",
+      "id": "secure-hold-rear-right",
+      "name": "Secure hold rear right",
       "className": "Drak_Ironclad_CargoGrid_SecureHold",
       "cells": {
         "x": 2,

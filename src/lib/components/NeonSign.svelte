@@ -113,14 +113,10 @@
 		gap: 0.35rem;
 		max-width: 100%;
 		color: var(--neon-pink);
-		/* Section signs are sized from the h2 token; the hero from the hero token. */
-		font-size: var(--fs-h2);
-	}
-	.sign.level-1 {
-		font-size: var(--fs-h1);
+		font-size: var(--fs-heading);
 	}
 	.sign.hero {
-		font-size: var(--fs-hero);
+		font-size: var(--fs-title);
 	}
 	.neon-cyan {
 		color: var(--neon-cyan);
@@ -184,6 +180,15 @@
 		font-size: var(--fs-small);
 		color: var(--fg-muted);
 		letter-spacing: 0.3em;
+	}
+	/* The hero sign's tubes already spell the title; keep the heading for assistive tech only. */
+	.sign.hero .label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
 	}
 	.plate {
 		font-size: var(--fs-small);

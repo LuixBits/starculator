@@ -1,6 +1,4 @@
 <script lang="ts">
-	import NeonSign from '#lib/components/NeonSign.svelte';
-	import MetalPlate from '#lib/components/MetalPlate.svelte';
 	import { getDataMeta } from '#lib/state/adapters.ts';
 
 	const meta = getDataMeta();
@@ -15,8 +13,9 @@
 </svelte:head>
 
 <article class="about">
-	<header>
-		<NeonSign text="About" level={1} color="violet" plate="Read me" />
+	<header class="about-head">
+		<p class="eyebrow">Read me</p>
+		<h1>About</h1>
 	</header>
 
 	<section class="section" aria-labelledby="what">
@@ -93,14 +92,6 @@
 			never models or textures.
 		</p>
 	</section>
-
-	<MetalPlate>
-		<p>
-			This is an unofficial Star Citizen fan site, not affiliated with the Cloud Imperium group of
-			companies. Star Citizen®, Roberts Space Industries® and Cloud Imperium® are registered
-			trademarks of Cloud Imperium Rights LLC.
-		</p>
-	</MetalPlate>
 </article>
 
 <style>
@@ -108,6 +99,10 @@
 		max-width: 46rem;
 		display: grid;
 		gap: 2rem;
+	}
+	.about-head {
+		display: grid;
+		gap: 0.3rem;
 	}
 	.section {
 		display: grid;

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import DepartureBoard from '#lib/components/DepartureBoard.svelte';
 	import CrateIcon from '#lib/components/CrateIcon.svelte';
-	import NeonSign from '#lib/components/NeonSign.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -53,7 +52,7 @@
 </section>
 
 <section class="how" aria-labelledby="how-title">
-	<NeonSign text="How it works" level={2} color="cyan" plate={null} id="how-title" />
+	<h2 id="how-title">How it works</h2>
 	<ol class="steps">
 		{#each steps as step (step.n)}
 			<li class="step">
@@ -148,16 +147,6 @@
 			linear-gradient(135deg, #ffffff08, transparent 40%),
 			linear-gradient(#2a2238, #1a1426 70%, #150f1f);
 		box-shadow: 0 20px 30px -24px #000;
-	}
-	.step::after {
-		/* stencilled strap across the crate */
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0.8rem;
-		height: 3px;
-		background: repeating-linear-gradient(90deg, #ffd36e66 0 10px, transparent 10px 20px);
 	}
 	.step-no {
 		position: absolute;

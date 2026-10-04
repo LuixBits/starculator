@@ -19,8 +19,8 @@
   "cargoScu": 512,
   "grids": [
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "bottom-front-left-lower",
+      "name": "Bottom front left lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -54,13 +54,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_front_left_lower",
-      "bay": null,
+      "bay": "bottom-front-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "bottom-front-left-upper",
+      "name": "Bottom front left upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -94,13 +94,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_front_left_upper",
-      "bay": null,
+      "bay": "bottom-front-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-3",
-      "name": "Main 3",
+      "id": "bottom-front-right-lower",
+      "name": "Bottom front right lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -134,13 +134,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_front_right_lower",
-      "bay": null,
+      "bay": "bottom-front-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-4",
-      "name": "Main 4",
+      "id": "bottom-front-right-upper",
+      "name": "Bottom front right upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -174,13 +174,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_front_right_upper",
-      "bay": null,
+      "bay": "bottom-front-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-5",
-      "name": "Main 5",
+      "id": "bottom-rear-left-lower",
+      "name": "Bottom rear left lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -214,13 +214,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_rear_left_lower",
-      "bay": null,
+      "bay": "bottom-rear-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-6",
-      "name": "Main 6",
+      "id": "bottom-rear-left-upper",
+      "name": "Bottom rear left upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -254,13 +254,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_rear_left_upper",
-      "bay": null,
+      "bay": "bottom-rear-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-7",
-      "name": "Main 7",
+      "id": "bottom-rear-right-lower",
+      "name": "Bottom rear right lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -294,13 +294,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_rear_right_lower",
-      "bay": null,
+      "bay": "bottom-rear-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-8",
-      "name": "Main 8",
+      "id": "bottom-rear-right-upper",
+      "name": "Bottom rear right upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -334,13 +334,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_bottom_rear_right_upper",
-      "bay": null,
+      "bay": "bottom-rear-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-9",
-      "name": "Main 9",
+      "id": "top-front-left-lower",
+      "name": "Top front left lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -374,13 +374,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_front_left_lower",
-      "bay": null,
+      "bay": "top-front-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-10",
-      "name": "Main 10",
+      "id": "top-front-left-upper",
+      "name": "Top front left upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -414,13 +414,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_front_left_upper",
-      "bay": null,
+      "bay": "top-front-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-11",
-      "name": "Main 11",
+      "id": "top-front-right-lower",
+      "name": "Top front right lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -454,13 +454,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_front_right_lower",
-      "bay": null,
+      "bay": "top-front-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-12",
-      "name": "Main 12",
+      "id": "top-front-right-upper",
+      "name": "Top front right upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -494,13 +494,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_front_right_upper",
-      "bay": null,
+      "bay": "top-front-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-13",
-      "name": "Main 13",
+      "id": "top-rear-left-lower",
+      "name": "Top rear left lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -534,13 +534,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_rear_left_lower",
-      "bay": null,
+      "bay": "top-rear-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-14",
-      "name": "Main 14",
+      "id": "top-rear-left-upper",
+      "name": "Top rear left upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -574,13 +574,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_rear_left_upper",
-      "bay": null,
+      "bay": "top-rear-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-15",
-      "name": "Main 15",
+      "id": "top-rear-right-lower",
+      "name": "Top rear right lower",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -614,13 +614,13 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_rear_right_lower",
-      "bay": null,
+      "bay": "top-rear-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "main-16",
-      "name": "Main 16",
+      "id": "top-rear-right-upper",
+      "name": "Top rear right upper",
       "className": "MISC_Hull_B_CargoGrid",
       "cells": {
         "x": 2,
@@ -654,7 +654,7 @@
       ],
       "external": true,
       "hardpoint": "hardpoint_cargogrid_top_rear_right_upper",
-      "bay": null,
+      "bay": "top-rear-right",
       "offset": null,
       "door": null
     }

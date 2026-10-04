@@ -24,9 +24,9 @@
     },
     "size": "Extra large",
     "role": "Heavy Gunship",
-    "cargoScu": 40,
+    "cargoScu": 64,
     "gridCount": 1,
-    "maxContainer": 16,
+    "maxContainer": 32,
     "isGroundVehicle": false
   },
   {
@@ -87,21 +87,6 @@
     "cargoScu": 2,
     "gridCount": 1,
     "maxContainer": 1,
-    "isGroundVehicle": false
-  },
-  {
-    "slug": "aegis-tiburon",
-    "name": "Tiburon",
-    "fullName": "Aegis Tiburon",
-    "manufacturer": {
-      "code": "AEGS",
-      "name": "Aegis Dynamics"
-    },
-    "size": "Extra large",
-    "role": "Heavy Gunship",
-    "cargoScu": 64,
-    "gridCount": 1,
-    "maxContainer": 32,
     "isGroundVehicle": false
   },
   {
@@ -480,15 +465,15 @@
     "isGroundVehicle": false
   },
   {
-    "slug": "drake-cutlass-red",
-    "name": "Cutlass Red",
-    "fullName": "Drake Cutlass Red",
+    "slug": "drake-cutlass-blue",
+    "name": "Cutlass Blue",
+    "fullName": "Drake Cutlass Blue",
     "manufacturer": {
       "code": "DRAK",
       "name": "Drake Interplanetary"
     },
     "size": "Medium",
-    "role": "Medical",
+    "role": "Interdiction",
     "cargoScu": 12,
     "gridCount": 2,
     "maxContainer": 1,
@@ -536,7 +521,7 @@
     "role": "Light Freight",
     "cargoScu": 64,
     "gridCount": 1,
-    "maxContainer": 1,
+    "maxContainer": 32,
     "isGroundVehicle": false
   },
   {
@@ -611,7 +596,7 @@
     "role": "Light Freight",
     "cargoScu": 32,
     "gridCount": 2,
-    "maxContainer": 1,
+    "maxContainer": 16,
     "isGroundVehicle": false
   },
   {
@@ -1020,9 +1005,9 @@
     "isGroundVehicle": false
   },
   {
-    "slug": "rsi-apollo-triage",
-    "name": "Apollo Triage",
-    "fullName": "RSI Apollo Triage",
+    "slug": "rsi-apollo-medivac",
+    "name": "Apollo Medivac",
+    "fullName": "RSI Apollo Medivac",
     "manufacturer": {
       "code": "RSI",
       "name": "Roberts Space Industries"
@@ -1080,15 +1065,15 @@
     "isGroundVehicle": false
   },
   {
-    "slug": "rsi-constellation-aquila",
-    "name": "Constellation Aquila",
-    "fullName": "RSI Constellation Aquila",
+    "slug": "rsi-constellation-andromeda",
+    "name": "Constellation Andromeda",
+    "fullName": "RSI Constellation Andromeda",
     "manufacturer": {
       "code": "RSI",
       "name": "Roberts Space Industries"
     },
     "size": "Large",
-    "role": "Expedition",
+    "role": "Medium Freight / Gun Ship",
     "cargoScu": 96,
     "gridCount": 1,
     "maxContainer": 32,
@@ -1136,7 +1121,7 @@
     "role": "Medium Freight",
     "cargoScu": 288,
     "gridCount": 2,
-    "maxContainer": 1,
+    "maxContainer": 32,
     "isGroundVehicle": false
   },
   {

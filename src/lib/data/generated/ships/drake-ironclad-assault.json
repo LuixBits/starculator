@@ -19,7 +19,7 @@
   "cargoScu": 1440,
   "grids": [
     {
-      "id": "hold-center-1",
+      "id": "hold-center-left",
       "name": "Hold front left",
       "className": "Drak_Ironclad_CargoGrid_Hold_Center",
       "cells": {
@@ -59,7 +59,7 @@
       "door": null
     },
     {
-      "id": "hold-center-2",
+      "id": "hold-center-right",
       "name": "Hold front right",
       "className": "Drak_Ironclad_CargoGrid_Hold_Center",
       "cells": {

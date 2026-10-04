@@ -1,19 +1,71 @@
 /**
- * Slug allocation and variant folding.
+ * Slug allocation, edition-name disambiguation and variant folding.
  *
  * Vehicles of one manufacturer with the same cargo capacity and the same
  * multiset of grids (cells + allowed sizes) are one ship for cargo purposes.
- * The base hull (fewest edition tokens, then shortest ClassName) becomes the
- * representative; the others are recorded as variants and not emitted as ships.
+ * The representative is the preferred hull (representatives.ts) or else the
+ * base hull (fewest edition tokens, then shortest ClassName); the others are
+ * recorded as variants and not emitted as ships.
  */
 
 import type { VariantEntry } from '#lib/data/ships.ts';
 import type { Ship } from '#lib/data/types.ts';
-import { classTokens, compareByBaseness, slugify } from './naming.ts';
+import {
+	classTokens,
+	compareByBaseness,
+	slugify,
+	stripManufacturer,
+	titleCase,
+	variantScore
+} from './naming.ts';
+import { preferenceRank } from './representatives.ts';
 
-/** Base hulls first so they claim the plain slug; the order is also the fold tiebreak. */
+/** Preferred and base hulls first so they claim the plain slug; the order is also the fold tiebreak. */
 export function sortByBaseness(ships: readonly Ship[]): Ship[] {
-	return [...ships].sort((a, b) => compareByBaseness(a.className, b.className));
+	return [...ships].sort(
+		(a, b) =>
+			preferenceRank(a.className) - preferenceRank(b.className) ||
+			compareByBaseness(a.className, b.className)
+	);
+}
+
+/** ClassName tokens after manufacturer and hull that the name does not already spell out. */
+function extraClassTokens(ship: Ship): string[] {
+	const nameWords = new Set(slugify(ship.fullName).split('-'));
+	return classTokens(ship.className)
+		.slice(2)
+		.filter((t) => slugify(t).length > 0 && !nameWords.has(slugify(t)));
+}
+
+/**
+ * Editions that share a published Name with a sibling edition of equal
+ * standing (no base hull among them, e.g. the two "Corsair PYAM Exec" ships)
+ * get their distinguishing ClassName tokens appended: "Corsair PYAM Exec
+ * Military" / "Corsair PYAM Exec Stealth Industrial". Re-releases that share
+ * the base hull's name are left alone; they fold into it anyway.
+ */
+export function disambiguateNames(ships: readonly Ship[]): Ship[] {
+	const groups = new Map<string, Ship[]>();
+	for (const ship of ships) {
+		const key = `${ship.manufacturer.code}|${ship.fullName}`;
+		groups.set(key, [...(groups.get(key) ?? []), ship]);
+	}
+	const renamed = new Map<string, Ship>();
+	for (const group of groups.values()) {
+		if (group.length < 2 || group.some((s) => variantScore(s.className) === 0)) continue;
+		for (const ship of group) {
+			const extra = extraClassTokens(ship);
+			if (extra.length === 0) continue;
+			const fullName = `${ship.fullName} ${titleCase(extra)}`;
+			renamed.set(ship.className, {
+				...ship,
+				fullName,
+				name: stripManufacturer(fullName, ship.manufacturer),
+				slug: slugify(fullName)
+			});
+		}
+	}
+	return ships.map((s) => renamed.get(s.className) ?? s);
 }
 
 /**
@@ -22,12 +74,9 @@ export function sortByBaseness(ships: readonly Ship[]): Ship[] {
  */
 export function assignSlugs(ships: readonly Ship[]): Ship[] {
 	const taken = new Set<string>();
-	return sortByBaseness(ships).map((ship) => {
+	return sortByBaseness(disambiguateNames(ships)).map((ship) => {
 		const base = slugify(ship.fullName);
-		const extra = classTokens(ship.className)
-			.slice(2)
-			.map(slugify)
-			.filter((t) => t.length > 0 && !base.split('-').includes(t));
+		const extra = extraClassTokens(ship).map(slugify);
 		const candidates = [base, extra.length ? `${base}-${extra.join('-')}` : null];
 		let slug = candidates.find((c): c is string => c !== null && !taken.has(c));
 		for (let n = 2; slug === undefined; n++) if (!taken.has(`${base}-${n}`)) slug = `${base}-${n}`;

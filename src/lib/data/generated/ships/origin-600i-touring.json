@@ -19,8 +19,8 @@
   "cargoScu": 20,
   "grids": [
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "main-left",
+      "name": "Main left",
       "className": "ORIG_600i_CargoGrid_Main",
       "cells": {
         "x": 4,
@@ -55,8 +55,8 @@
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "main-right",
+      "name": "Main right",
       "className": "ORIG_600i_CargoGrid_Main",
       "cells": {
         "x": 4,
@@ -91,8 +91,8 @@
       "door": null
     },
     {
-      "id": "main-small-1",
-      "name": "Main small 1",
+      "id": "main-small-left",
+      "name": "Main small left",
       "className": "ORIG_600i_CargoGrid_Main_Small",
       "cells": {
         "x": 1,
@@ -125,8 +125,8 @@
       "door": null
     },
     {
-      "id": "main-small-2",
-      "name": "Main small 2",
+      "id": "main-small-right",
+      "name": "Main small right",
       "className": "ORIG_600i_CargoGrid_Main_Small",
       "cells": {
         "x": 1,

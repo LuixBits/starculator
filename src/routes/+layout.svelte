@@ -10,7 +10,6 @@
 	import NeonSign from '#lib/components/NeonSign.svelte';
 	import DeckEdge from '#lib/components/DeckEdge.svelte';
 	import MetalPlate from '#lib/components/MetalPlate.svelte';
-	import CrateStencil from '#lib/components/CrateStencil.svelte';
 	import { getDataMeta } from '#lib/state/adapters.ts';
 
 	let { children }: LayoutProps = $props();
@@ -67,6 +66,10 @@
 						registered trademarks of Cloud Imperium Rights LLC. Ship geometry comes from game data
 						published by the Star Citizen Wiki team. No game meshes are shipped.
 					</p>
+					<p class="foot-data">
+						Ship data: game version <strong>{meta.gameVersion}</strong>, published {dataDate}, from
+						<a href={meta.repository} rel="noopener">scunpacked-data</a>.
+					</p>
 					<p class="foot-links">
 						<a href="/about/">About &amp; data</a> ·
 						<a href="https://github.com/LuixBits/starculator" rel="noopener">Source (MIT)</a> ·
@@ -75,12 +78,6 @@
 						>
 					</p>
 				</MetalPlate>
-			</div>
-			<div class="foot-crate">
-				<CrateStencil
-					lines={[`DATA ${meta.gameVersion}`, dataDate, 'SCUNPACKED']}
-					title={`Data from game version ${meta.gameVersion}, published ${dataDate}, source scunpacked-data`}
-				/>
 			</div>
 		</div>
 	</footer>
@@ -158,10 +155,6 @@
 	.foot-content {
 		position: relative;
 		z-index: 1;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto;
-		gap: 2rem;
-		align-items: end;
 	}
 	.foot-plate {
 		max-width: 46rem;
@@ -169,24 +162,19 @@
 	.foot-plate p + p {
 		margin-top: 0.5rem;
 	}
+	.foot-data strong {
+		color: var(--fg);
+	}
+	.foot-data a {
+		/* 44 px hit area for the inline link without moving the text. */
+		padding: 0.75rem 0;
+		margin: -0.75rem 0;
+	}
 	.foot-links a {
 		display: inline-flex;
 		align-items: center;
 		min-height: 44px;
 		padding: 0.55rem 0;
 		color: var(--neon-cyan);
-	}
-	.foot-crate {
-		justify-self: end;
-		width: 22rem;
-		max-width: 100%;
-	}
-	@media (max-width: 56rem) {
-		.foot-content {
-			grid-template-columns: 1fr;
-		}
-		.foot-crate {
-			justify-self: start;
-		}
 	}
 </style>

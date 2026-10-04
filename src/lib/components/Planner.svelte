@@ -20,7 +20,6 @@
 	import HoloTable from './HoloTable.svelte';
 	import ManifestSheet from './ManifestSheet.svelte';
 	import CargoScale from './CargoScale.svelte';
-	import HazardTag from './HazardTag.svelte';
 	import GridLegend from './GridLegend.svelte';
 	import LoadingOrder from './LoadingOrder.svelte';
 	import PlanTools from './PlanTools.svelte';
@@ -203,18 +202,18 @@
 		<PlanTools {plan} {shareUrl} onimport={runPlan} />
 		<CargoScale {ship} result={plan.result} manifestScu={plan.totalScu} />
 		{#if unplacedSummary.length > 0}
-			<HazardTag title="Does not fit">
+			<section class="unplaced" aria-labelledby="unplaced-title">
+				<h3 id="unplaced-title">Does not fit</h3>
 				<ul>
 					{#each unplacedSummary as row (row.reason)}
 						<li>
 							<strong>{row.count}</strong>
 							{row.count === 1 ? 'box' : 'boxes'} ({row.sizes.join('/')} SCU, {formatScu(row.scu)} SCU
-							total):
-							{row.reason.toLowerCase()}
+							total): {row.reason.toLowerCase()}
 						</li>
 					{/each}
 				</ul>
-			</HazardTag>
+			</section>
 		{/if}
 		<GridLegend {ship} />
 	</aside>
@@ -385,6 +384,27 @@
 		box-shadow: 0 0 12px #ffe9ff66;
 	}
 
+	.unplaced {
+		padding: 0.9rem 1rem;
+		border-radius: 6px;
+		border: 1px solid #ffd36e80;
+		background: #ffd36e12;
+		font-size: var(--fs-small);
+	}
+	.unplaced h3 {
+		color: var(--sun);
+		margin-bottom: 0.4rem;
+	}
+	.unplaced ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		display: grid;
+		gap: 0.3rem;
+	}
+	.unplaced strong {
+		color: var(--fg);
+	}
+
 	.fill-strip {
 		display: none;
 	}
@@ -417,7 +437,7 @@
 		}
 		.strip-pct {
 			font-family: var(--font-display);
-			font-size: var(--fs-h3);
+			font-size: var(--fs-heading);
 			color: var(--neon-cyan);
 		}
 		.strip-text {

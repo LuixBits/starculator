@@ -1,13 +1,12 @@
 # Starculator design brief
 
-> **Owner feedback, 2026-10-04 (overrides everything below where they conflict):** the first prototype's look was judged *terrible*: too much signage and decoration. Direction for now and for the redesign later:
+> **Owner feedback, 2026-10-04 (overrides everything below where they conflict):** the first prototype's look was judged _terrible_: too much signage and decoration. Direction for now and for the redesign later:
 >
 > - **Function and UX first.** Easy to use, interesting interaction, no clutter. Every decorative object must earn its place; when in doubt, remove it.
 > - **Signs:** at most ONE neon sign on the whole site (the site title). No neon section headings, no stencil text blocks, no "ASCII"-style lettering, no hazard-tape tags, no stamps. Section headings are plain text.
 > - **Type:** a small set of font sizes, three or four in total (e.g. title, heading, body, small). Not six.
 > - **Keep:** the palette (deep violet, magenta, cyan, amber), Righteous for the title/headings and Space Mono for body, the 3D hold as the hero of the planner page, the departure board as the ship picker, the manifest as the entry form.
 > - The remainder of this brief describes the original "freight deck" concept; treat it as a mood reference, not a checklist. The full visual rework happens in a later phase.
-
 
 **Purpose.** Starculator should look like a sibling of the Projects room in the owner's portfolio (`LuixBits/lupe-webfolio`, `/projects`): a handcrafted, illustrated place built from semantic HTML, original SVG and CSS materials, not a generic dashboard. This brief translates that room into a Star Citizen cargo setting. A local clone of the portfolio sits at `/home/user/luixbits/lupe-webfolio` during development; the files named below are the technique references.
 

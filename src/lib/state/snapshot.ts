@@ -59,6 +59,7 @@ export function parseSnapshot(raw: unknown, fallbackSlug?: string): PlanSnapshot
 	if (!shipSlug) return null;
 	const groupsRaw = Array.isArray(obj.groups) ? obj.groups : [];
 	const groups: GroupSnapshot[] = [];
+	const usedIds = new Set<string>();
 	groupsRaw.slice(0, MAX_GROUPS).forEach((g, i) => {
 		if (typeof g !== 'object' || g === null) return;
 		const rec = g as Record<string, unknown>;
@@ -69,8 +70,12 @@ export function parseSnapshot(raw: unknown, fallbackSlug?: string): PlanSnapshot
 				if (isContainerSize(size) && typeof v === 'number') counts[size] = clampCount(v);
 			}
 		}
+		// Imported or stored files may carry duplicate ids; keyed each blocks need unique ones.
+		let id = typeof rec.id === 'string' && rec.id ? rec.id : `g${i + 1}`;
+		while (usedIds.has(id)) id = `${id}-${i + 1}`;
+		usedIds.add(id);
 		groups.push({
-			id: typeof rec.id === 'string' && rec.id ? rec.id : `g${i + 1}`,
+			id,
 			label:
 				typeof rec.label === 'string' && rec.label.trim()
 					? rec.label.slice(0, 40)

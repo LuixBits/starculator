@@ -1,16 +1,16 @@
 {
-  "slug": "drake-cutlass-red",
-  "name": "Cutlass Red",
-  "fullName": "Drake Cutlass Red",
-  "className": "DRAK_Cutlass_Red",
-  "uuid": "7780e93d-1cc3-43b4-9b32-9923af19775a",
+  "slug": "drake-cutlass-blue",
+  "name": "Cutlass Blue",
+  "fullName": "Drake Cutlass Blue",
+  "className": "DRAK_Cutlass_Blue",
+  "uuid": "13c3f610-7bbd-4464-bd36-d716de49a125",
   "manufacturer": {
     "code": "DRAK",
     "name": "Drake Interplanetary"
   },
   "size": "Medium",
-  "role": "Medical",
-  "career": "Support",
+  "role": "Interdiction",
+  "career": "Combat",
   "dimensions": {
     "x": 26.5,
     "y": 37.5,
@@ -92,8 +92,8 @@
   "isGroundVehicle": false,
   "variantOf": null,
   "variants": [
-    "drake-cutlass-blue",
     "drake-cutlass-blue-bis2950",
+    "drake-cutlass-red",
     "drake-cutlass-red-bis2950"
   ]
 }

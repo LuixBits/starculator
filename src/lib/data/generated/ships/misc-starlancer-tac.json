@@ -19,8 +19,8 @@
   "cargoScu": 96,
   "grids": [
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "left",
+      "name": "Left",
       "className": "MISC_Starlancer_CargoGrid_Template",
       "cells": {
         "x": 2,
@@ -59,8 +59,8 @@
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "right",
+      "name": "Right",
       "className": "MISC_Starlancer_CargoGrid_Template",
       "cells": {
         "x": 2,

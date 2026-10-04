@@ -19,8 +19,8 @@
   "cargoScu": 420,
   "grids": [
     {
-      "id": "small-1",
-      "name": "Small 1",
+      "id": "small-left-front",
+      "name": "Small left front",
       "className": "AEGS_Reclaimer_CargoGrid_Small",
       "cells": {
         "x": 3,
@@ -56,8 +56,8 @@
       "door": null
     },
     {
-      "id": "small-2",
-      "name": "Small 2",
+      "id": "small-left-rear",
+      "name": "Small left rear",
       "className": "AEGS_Reclaimer_CargoGrid_Small",
       "cells": {
         "x": 3,
@@ -93,8 +93,8 @@
       "door": null
     },
     {
-      "id": "small-3",
-      "name": "Small 3",
+      "id": "small-right-front",
+      "name": "Small right front",
       "className": "AEGS_Reclaimer_CargoGrid_Small",
       "cells": {
         "x": 3,
@@ -130,8 +130,8 @@
       "door": null
     },
     {
-      "id": "small-4",
-      "name": "Small 4",
+      "id": "small-right-rear",
+      "name": "Small right rear",
       "className": "AEGS_Reclaimer_CargoGrid_Small",
       "cells": {
         "x": 3,
@@ -167,8 +167,8 @@
       "door": null
     },
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "large-left-front",
+      "name": "Large left front",
       "className": "AEGS_Reclaimer_CargoGrid",
       "cells": {
         "x": 3,
@@ -204,8 +204,8 @@
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "large-left-rear",
+      "name": "Large left rear",
       "className": "AEGS_Reclaimer_CargoGrid",
       "cells": {
         "x": 3,
@@ -241,8 +241,8 @@
       "door": null
     },
     {
-      "id": "main-3",
-      "name": "Main 3",
+      "id": "large-right-front",
+      "name": "Large right front",
       "className": "AEGS_Reclaimer_CargoGrid",
       "cells": {
         "x": 3,
@@ -278,8 +278,8 @@
       "door": null
     },
     {
-      "id": "main-4",
-      "name": "Main 4",
+      "id": "large-right-rear",
+      "name": "Large right rear",
       "className": "AEGS_Reclaimer_CargoGrid",
       "cells": {
         "x": 3,
@@ -315,8 +315,8 @@
       "door": null
     },
     {
-      "id": "salvage-1-front",
-      "name": "Salvage 1 front",
+      "id": "salvage-front-left",
+      "name": "Salvage front left",
       "className": "AEGS_Reclaimer_CargoGrid_Salvage_Front_TEMP",
       "cells": {
         "x": 7,
@@ -345,13 +345,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_salvage_room_left_front_TEMP",
-      "bay": "salvage-1",
+      "bay": "salvage-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "salvage-2-front",
-      "name": "Salvage 2 front",
+      "id": "salvage-front-right",
+      "name": "Salvage front right",
       "className": "AEGS_Reclaimer_CargoGrid_Salvage_Front_TEMP",
       "cells": {
         "x": 7,
@@ -380,13 +380,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_salvage_room_right_front_TEMP",
-      "bay": "salvage-2",
+      "bay": "salvage-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "salvage-1-rear",
-      "name": "Salvage 1 rear",
+      "id": "salvage-rear-left",
+      "name": "Salvage rear left",
       "className": "AEGS_Reclaimer_CargoGrid_Salvage_Rear_TEMP",
       "cells": {
         "x": 5,
@@ -415,13 +415,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_salvage_room_left_rear_TEMP",
-      "bay": "salvage-1",
+      "bay": "salvage-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "salvage-2-rear",
-      "name": "Salvage 2 rear",
+      "id": "salvage-rear-right",
+      "name": "Salvage rear right",
       "className": "AEGS_Reclaimer_CargoGrid_Salvage_Rear_TEMP",
       "cells": {
         "x": 5,
@@ -450,7 +450,7 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_salvage_room_right_rear_TEMP",
-      "bay": "salvage-2",
+      "bay": "salvage-right",
       "offset": null,
       "door": null
     }

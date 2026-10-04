@@ -19,8 +19,8 @@
   "cargoScu": 456,
   "grids": [
     {
-      "id": "large-1",
-      "name": "Large 1",
+      "id": "large-front-left",
+      "name": "Large front left",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -57,8 +57,8 @@
       "door": null
     },
     {
-      "id": "large-2",
-      "name": "Large 2",
+      "id": "large-front-right",
+      "name": "Large front right",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -95,8 +95,8 @@
       "door": null
     },
     {
-      "id": "medium-1",
-      "name": "Medium 1",
+      "id": "medium-front",
+      "name": "Medium front",
       "className": "ANVL_Carrack_CargoGrid_Medium",
       "cells": {
         "x": 4,
@@ -133,8 +133,8 @@
       "door": null
     },
     {
-      "id": "large-3",
-      "name": "Large 3",
+      "id": "large-mid-left",
+      "name": "Large mid left",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -171,8 +171,8 @@
       "door": null
     },
     {
-      "id": "large-4",
-      "name": "Large 4",
+      "id": "large-mid-right",
+      "name": "Large mid right",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -209,8 +209,8 @@
       "door": null
     },
     {
-      "id": "medium-2",
-      "name": "Medium 2",
+      "id": "medium-mid",
+      "name": "Medium mid",
       "className": "ANVL_Carrack_CargoGrid_Medium",
       "cells": {
         "x": 4,
@@ -247,8 +247,8 @@
       "door": null
     },
     {
-      "id": "large-5",
-      "name": "Large 5",
+      "id": "large-rear-left",
+      "name": "Large rear left",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -285,8 +285,8 @@
       "door": null
     },
     {
-      "id": "large-6",
-      "name": "Large 6",
+      "id": "large-rear-right",
+      "name": "Large rear right",
       "className": "ANVL_Carrack_CargoGrid_Large",
       "cells": {
         "x": 4,
@@ -323,8 +323,8 @@
       "door": null
     },
     {
-      "id": "medium-3",
-      "name": "Medium 3",
+      "id": "medium-rear",
+      "name": "Medium rear",
       "className": "ANVL_Carrack_CargoGrid_Medium",
       "cells": {
         "x": 4,

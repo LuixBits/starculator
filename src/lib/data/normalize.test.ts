@@ -11,10 +11,12 @@ import {
 import {
 	IngestError,
 	matchHardpoints,
-	normalizeVehicle
+	normalizeVehicle,
+	positionWords
 } from '../../../scripts/ingest/normalize.ts';
 import type { RawCargoGrid, RawPort, RawVehicle } from '../../../scripts/ingest/raw.ts';
-import { assignSlugs, foldVariants } from '../../../scripts/ingest/variants.ts';
+import { shipWords } from '../../../scripts/ingest/naming.ts';
+import { assignSlugs, disambiguateNames, foldVariants } from '../../../scripts/ingest/variants.ts';
 
 /* ---------- inline raw sample: Drake Caterpillar (4.10.1) ---------- */
 
@@ -341,6 +343,234 @@ describe('slugs and variant folding', () => {
 		expect(variants.map((v) => `${v.slug}->${v.variantOf}`)).toEqual([
 			'drake-caterpillar-boarded->drake-caterpillar',
 			'drake-caterpillar-pirate->drake-caterpillar'
+		]);
+	});
+});
+
+/* ---------- position words from hardpoints ---------- */
+
+const MAKERS: Readonly<Record<string, string>> = {
+	DRAK: 'Drake Interplanetary',
+	MISC: 'Musashi Industrial and Starflight Concern',
+	RSI: 'Roberts Space Industries',
+	ANVL: 'Anvil Aerospace',
+	AEGS: 'Aegis Dynamics'
+};
+
+function simpleShip(
+	className: string,
+	name: string,
+	gridClass: string,
+	hardpoints: readonly string[],
+	dims: [number, number, number] = [2.5, 10, 2.5],
+	overrides: Partial<RawVehicle> = {}
+): RawVehicle {
+	const [X, Y, Z] = dims;
+	const scu = (X / 1.25) * (Y / 1.25) * (Z / 1.25);
+	const code = className.split('_')[0];
+	return {
+		UUID: className,
+		ClassName: className,
+		Name: name,
+		Manufacturer: { Code: code, Name: MAKERS[code] ?? 'Maker' },
+		Length: 50,
+		Width: 20,
+		Height: 10,
+		Cargo: scu * hardpoints.length,
+		IsSpaceship: true,
+		CargoGrids: hardpoints.map(() => ({ Class: gridClass, SCU: scu, X, Y, Z })),
+		Systems: {
+			CargoGrids: {
+				Ports: hardpoints.map((h) => ({ HardpointName: h, ClassName: `${gridClass}_Port` }))
+			}
+		},
+		...overrides
+	};
+}
+
+describe('grid labels from hardpoint positions', () => {
+	it('Hull B: sixteen identical grids named by position, stacked racks share a bay', () => {
+		const sides = ['bottom', 'top'].flatMap((v) =>
+			['front', 'rear'].flatMap((f) =>
+				['left', 'right'].flatMap((s) =>
+					['lower', 'upper'].map((l) => `hardpoint_cargogrid_${v}_${f}_${s}_${l}`)
+				)
+			)
+		);
+		const { ship } = normalizeVehicle(
+			simpleShip('MISC_Hull_B', 'MISC Hull B', 'MISC_Hull_B_CargoGrid', sides)
+		);
+		expect(ship.grids.map((g) => g.id)).toEqual(
+			sides.map((h) => h.replace('hardpoint_cargogrid_', '').replaceAll('_', '-'))
+		);
+		expect(ship.grids[0].name).toBe('Bottom front left lower');
+		expect(ship.grids[0].bay).toBe('bottom-front-left');
+		expect(ship.grids[1].bay).toBe('bottom-front-left');
+		expect(new Set(ship.grids.map((g) => g.bay)).size).toBe(8);
+	});
+
+	it('Carrack: words every hardpoint of a class shares are dropped, class tokens kept', () => {
+		const large = ['front', 'mid', 'rear'].flatMap((f) => [
+			`hardpoint_cargo_${f}_left`,
+			`hardpoint_cargo_${f}_right`
+		]);
+		const medium = ['front', 'mid', 'rear'].map((f) => `hardpoint_cargo_${f}_mid`);
+		const raw = simpleShip('ANVL_Carrack', 'Anvil Carrack', 'ANVL_Carrack_CargoGrid_Large', large);
+		raw.CargoGrids!.push(
+			...medium.map(() => ({
+				Class: 'ANVL_Carrack_CargoGrid_Medium',
+				SCU: 8,
+				X: 2.5,
+				Y: 5,
+				Z: 1.25
+			}))
+		);
+		raw.Systems!.CargoGrids!.Ports!.push(
+			...medium.map((h) => ({ HardpointName: h, ClassName: 'ANVL_Carrack_CargoGrid_Medium' }))
+		);
+		raw.Cargo = raw.CargoGrids!.reduce((sum, g) => sum + g.SCU, 0);
+		const { ship } = normalizeVehicle(raw);
+		const names = ship.grids.map((g) => g.name);
+		expect(names.slice(0, 6)).toEqual([
+			'Large front left',
+			'Large front right',
+			'Large mid left',
+			'Large mid right',
+			'Large rear left',
+			'Large rear right'
+		]);
+		expect(names.slice(6)).toEqual(['Medium front', 'Medium mid', 'Medium rear']);
+	});
+
+	it('Starlancer MAX: the edition token stays on the second family, l/r are expanded', () => {
+		const raw = simpleShip(
+			'MISC_Starlancer_Max',
+			'MISC Starlancer MAX',
+			'MISC_Starlancer_CargoGrid_Template',
+			['hardpoint_cargogrid_left', 'hardpoint_cargogrid_right'],
+			[2.5, 10, 3.75]
+		);
+		raw.CargoGrids!.push(
+			{ Class: 'MISC_Starlancer_CargoGrid_Max_Template', SCU: 64, X: 2.5, Y: 20, Z: 2.5 },
+			{ Class: 'MISC_Starlancer_CargoGrid_Max_Template', SCU: 64, X: 2.5, Y: 20, Z: 2.5 }
+		);
+		raw.Systems!.CargoGrids!.Ports!.push(
+			{ HardpointName: 'cargo_grid_l', ClassName: 'MISC_Starlancer_CargoGrid_Max_Template' },
+			{ HardpointName: 'cargo_grid_r', ClassName: 'MISC_Starlancer_CargoGrid_Max_Template' }
+		);
+		raw.Cargo = 48 * 2 + 64 * 2;
+		const { ship } = normalizeVehicle(raw);
+		expect(ship.grids.map((g) => `${g.id}=${g.name}`)).toEqual([
+			'left=Left',
+			'right=Right',
+			'max-left=Max left',
+			'max-right=Max right'
+		]);
+	});
+
+	it('Reliant Kore: words of the published Name are stripped from the grid class', () => {
+		const { ship } = normalizeVehicle(
+			simpleShip('MISC_Reliant', 'MISC Reliant Kore', 'MISC_Reliant_CargoGrid_KORE', [
+				'hardpoint_cargogrid_left',
+				'hardpoint_cargogrid_right'
+			])
+		);
+		expect(ship.grids.map((g) => g.id)).toEqual(['left', 'right']);
+	});
+
+	it('Idris hangar: repeated positions get a running number per side', () => {
+		const left = ['CargoGrid_Hangar_Left', 'CargoGrid_Hangar_Left_2', 'CargoGrid_Hangar_Left_3'];
+		const right = ['CargoGrid_Hangar_Right', 'CargoGrid_Hangar_Right_2'];
+		const { ship } = normalizeVehicle(
+			simpleShip('AEGS_Idris_P', 'Aegis Idris-P', 'AEGS_Idris_CargoGrid_Hangar', [
+				...left,
+				...right
+			])
+		);
+		expect(ship.grids.map((g) => g.name)).toEqual([
+			'Hangar left 1',
+			'Hangar left 2',
+			'Hangar left 3',
+			'Hangar right 1',
+			'Hangar right 2'
+		]);
+	});
+
+	it('falls back to numbering for identical or numeric-only hardpoints', () => {
+		const ship = shipWords('X_Ship', 'X Ship');
+		expect(positionWords(['Hardpoint_Cargo', 'Hardpoint_Cargo'], ship)).toBeNull();
+		expect(positionWords(['hp_module_01', 'hp_module_02'], ship)).toBeNull();
+		expect(positionWords(['hp_left', null], ship)).toBeNull();
+		expect(positionWords(['hp_left'], ship)).toBeNull();
+		expect(
+			positionWords(
+				['hardpoint_cargo_left_hermes', 'hardpoint_cargo_right_hermes'],
+				shipWords('RSI_Hermes', 'RSI Hermes')
+			)?.words
+		).toEqual([['left'], ['right']]);
+	});
+
+	it('warns about a 1 SCU MaxSize on a large grid', () => {
+		const raw = simpleShip('RSI_Hermes', 'RSI Hermes', 'RSI_Hermes_CargoInventory_Main', [
+			'hardpoint_cargo_left_hermes',
+			'hardpoint_cargo_right_hermes'
+		]);
+		for (const g of raw.CargoGrids!) g.MaxSize = unit;
+		const { ship, warnings } = normalizeVehicle(raw);
+		expect(ship.grids.map((g) => g.id)).toEqual(['main-left', 'main-right']);
+		expect(warnings.filter((w) => /MaxSize is 1 SCU/.test(w))).toHaveLength(2);
+	});
+});
+
+/* ---------- names, prefixes and representatives ---------- */
+
+describe('edition names and representatives', () => {
+	const exec = (className: string) =>
+		normalizeVehicle(
+			simpleShip(className, 'Cutlass Black PYAM Exec', 'DRAK_Cutlass_Black_CargoGrid', ['hp'])
+		).ship;
+
+	it('adds the manufacturer prefix the game left out', () => {
+		const ship = exec('DRAK_Cutlass_Black_Exec_Military');
+		expect(ship.fullName).toBe('Drake Cutlass Black PYAM Exec');
+		expect(ship.name).toBe('Cutlass Black PYAM Exec');
+		expect(ship.slug).toBe('drake-cutlass-black-pyam-exec');
+	});
+
+	it('tells sibling editions with one published name apart, leaving base-hull re-releases alone', () => {
+		const [military, stealth] = disambiguateNames([
+			exec('DRAK_Cutlass_Black_Exec_Military'),
+			exec('DRAK_Cutlass_Black_Exec_StealthIndustrial')
+		]);
+		expect(military.fullName).toBe('Drake Cutlass Black PYAM Exec Military');
+		expect(stealth.fullName).toBe('Drake Cutlass Black PYAM Exec Stealth Industrial');
+		expect(stealth.name).toBe('Cutlass Black PYAM Exec Stealth Industrial');
+		const base = normalizeVehicle(caterpillar()).ship;
+		const boarded = normalizeVehicle(
+			caterpillar({ ClassName: 'DRAK_Caterpillar_Boarded', UUID: 'b' })
+		).ship;
+		expect(disambiguateNames([base, boarded]).map((s) => s.fullName)).toEqual([
+			'Drake Caterpillar',
+			'Drake Caterpillar'
+		]);
+	});
+
+	it('a preferred hull represents its fold group even when a sibling has the shorter class name', () => {
+		const grid = 'RSI_Constellation_CargoGrid_Main';
+		const aquila = normalizeVehicle(
+			simpleShip('RSI_Constellation_Aquila', 'RSI Constellation Aquila', grid, [
+				'hardpoint_cargogrid'
+			])
+		).ship;
+		const andromeda = normalizeVehicle(
+			simpleShip('RSI_Constellation_Andromeda', 'RSI Constellation Andromeda', grid, [
+				'hardpoint_cargogrid'
+			])
+		).ship;
+		const { representatives, variants } = foldVariants(assignSlugs([aquila, andromeda]));
+		expect(representatives.map((r) => r.slug)).toEqual(['rsi-constellation-andromeda']);
+		expect(variants.map((v) => `${v.slug}->${v.variantOf}`)).toEqual([
+			'rsi-constellation-aquila->rsi-constellation-andromeda'
 		]);
 	});
 });

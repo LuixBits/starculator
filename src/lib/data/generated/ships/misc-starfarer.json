@@ -57,8 +57,8 @@
       "door": null
     },
     {
-      "id": "side-1",
-      "name": "Side 1",
+      "id": "side-left",
+      "name": "Side left",
       "className": "MISC_Starfarer_CargoGrid_Side",
       "cells": {
         "x": 5,
@@ -90,13 +90,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_left",
-      "bay": "side-1",
+      "bay": "side-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "side-1-alcove",
-      "name": "Side 1 alcove",
+      "id": "side-alcove-left",
+      "name": "Side alcove left",
       "className": "MISC_Starfarer_CargoGrid_Side_Alcove",
       "cells": {
         "x": 2,
@@ -127,13 +127,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_left_alcove",
-      "bay": "side-1",
+      "bay": "side-left",
       "offset": null,
       "door": null
     },
     {
-      "id": "side-2",
-      "name": "Side 2",
+      "id": "side-right",
+      "name": "Side right",
       "className": "MISC_Starfarer_CargoGrid_Side",
       "cells": {
         "x": 5,
@@ -165,13 +165,13 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_right",
-      "bay": "side-2",
+      "bay": "side-right",
       "offset": null,
       "door": null
     },
     {
-      "id": "side-2-alcove",
-      "name": "Side 2 alcove",
+      "id": "side-alcove-right",
+      "name": "Side alcove right",
       "className": "MISC_Starfarer_CargoGrid_Side_Alcove",
       "cells": {
         "x": 2,
@@ -202,7 +202,7 @@
       ],
       "external": false,
       "hardpoint": "hardpoint_cargogrid_right_alcove",
-      "bay": "side-2",
+      "bay": "side-right",
       "offset": null,
       "door": null
     }

@@ -19,7 +19,7 @@
   "cargoScu": 640,
   "grids": [
     {
-      "id": "is-64-1",
+      "id": "is-64-left",
       "name": "Left side rack",
       "className": "GAMA_Railen_CargoGrid_IS_64",
       "cells": {
@@ -59,7 +59,7 @@
       "door": null
     },
     {
-      "id": "is-64-2",
+      "id": "is-64-right",
       "name": "Right side rack",
       "className": "GAMA_Railen_CargoGrid_IS_64",
       "cells": {
@@ -99,7 +99,7 @@
       "door": null
     },
     {
-      "id": "is-128-1",
+      "id": "is-128-left-bottom",
       "name": "Left bottom rack",
       "className": "GAMA_Railen_CargoGrid_IS_128",
       "cells": {
@@ -139,7 +139,7 @@
       "door": null
     },
     {
-      "id": "is-128-2",
+      "id": "is-128-left-top",
       "name": "Left top rack",
       "className": "GAMA_Railen_CargoGrid_IS_128",
       "cells": {
@@ -179,7 +179,7 @@
       "door": null
     },
     {
-      "id": "is-128-3",
+      "id": "is-128-right-bottom",
       "name": "Right bottom rack",
       "className": "GAMA_Railen_CargoGrid_IS_128",
       "cells": {
@@ -219,7 +219,7 @@
       "door": null
     },
     {
-      "id": "is-128-4",
+      "id": "is-128-right-top",
       "name": "Right top rack",
       "className": "GAMA_Railen_CargoGrid_IS_128",
       "cells": {

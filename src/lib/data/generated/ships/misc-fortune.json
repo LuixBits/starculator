@@ -53,8 +53,8 @@
       "door": null
     },
     {
-      "id": "side-1",
-      "name": "Side 1",
+      "id": "side-left",
+      "name": "Side left",
       "className": "MISC_Fortune_CargoGrid_Side",
       "cells": {
         "x": 2,
@@ -87,8 +87,8 @@
       "door": null
     },
     {
-      "id": "side-2",
-      "name": "Side 2",
+      "id": "side-right",
+      "name": "Side right",
       "className": "MISC_Fortune_CargoGrid_Side",
       "cells": {
         "x": 2,

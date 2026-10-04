@@ -151,7 +151,7 @@
 	}
 	.big {
 		font-family: var(--font-display);
-		font-size: var(--fs-h1);
+		font-size: var(--fs-title);
 		line-height: 1;
 		color: var(--neon-cyan);
 		text-shadow:

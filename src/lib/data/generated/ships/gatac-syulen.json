@@ -228,7 +228,7 @@
   "isGroundVehicle": false,
   "variantOf": null,
   "variants": [
-    "syulen-pyam-exec",
-    "syulen-pyam-exec-military"
+    "gatac-syulen-pyam-exec-military",
+    "gatac-syulen-pyam-exec-stealth"
   ]
 }

@@ -4,15 +4,21 @@
 	 * (oriented dims, colour) pair so the emissive tint can match the group
 	 * colour. Boxes drop into place in loading order; the selected box is
 	 * lifted slightly and outlined.
+	 *
+	 * The bucket shells come from a per-instance cache (buckets.ts), so a
+	 * re-pack that keeps the same dims/colour/capacity hands the keyed each
+	 * block the very same shell object: Svelte sees no change, Threlte keeps
+	 * the BoxGeometry and material, and only the Instance positions move.
 	 */
 	import { T, useTask } from '@threlte/core';
 	import { Edges, Instance, InstancedMesh, type IntersectionEvent } from '@threlte/extras';
 	import { browser } from '$app/env';
 	import { cubicOut } from 'svelte/easing';
-	import type { CellVec, PackGroup, PackItem, Placement } from '../data/types.ts';
+	import type { PackGroup, PackItem, Placement } from '../data/types.ts';
+	import { BucketCache, groupPlacements, type BoxInstance, type BucketShell } from './buckets.ts';
 	import type { HoldLayout } from './layout.ts';
-	import { crateColor, desaturateHex, mixHex, SCENE_COLORS } from './palette.ts';
-	import { cellBoxToWorld, type WorldTuple } from './space.ts';
+	import { desaturateHex, mixHex, SCENE_COLORS } from './palette.ts';
+	import type { WorldTuple } from './space.ts';
 
 	interface Props {
 		placements: Placement[];
@@ -25,74 +31,25 @@
 
 	let { placements, items, groups, layout, selectedItemId = null, onselect }: Props = $props();
 
-	interface Box {
-		itemId: string;
-		center: WorldTuple;
-		/** 0-based rank in loading order (drives the drop stagger). */
-		rank: number;
-	}
-
-	interface Bucket {
-		key: string;
-		size: WorldTuple;
-		color: string;
-		/** Capacity of the InstancedMesh; part of the key so growth re-creates it. */
-		limit: number;
-		boxes: Box[];
-	}
-
 	const STAGGER_MS = 40;
 	const DROP_MS = 300;
 	const DROP_HEIGHT_M = 2.5;
 	const SELECT_LIFT_M = 0.15;
-	/** Seam between flush containers so a full grid still reads as separate boxes. */
-	const SEAM_M = 0.12;
-	/** Alternate boxes in loading order are shaded a little darker, for the same reason. */
+	/** Alternate boxes in loading order are shaded a little darker so flush boxes stay distinct. */
 	const ALT_SHADE = 0.16;
 
-	const colorByGroup = $derived(new Map(groups.map((g) => [g.id, crateColor(g.colorIndex)])));
-	const groupByItem = $derived(new Map(items.map((i) => [i.id, i.group])));
+	const cache = new BucketCache();
+	const buckets = $derived(groupPlacements({ placements, items, groups, layout }, cache));
 
-	function dimsKey(d: CellVec): string {
-		return `${d.x}x${d.y}x${d.z}`;
+	function boxesOf(shell: BucketShell): BoxInstance[] {
+		return buckets.boxes.get(shell.key) ?? [];
 	}
-
-	function limitFor(count: number): number {
-		let limit = 16;
-		while (limit < count) limit *= 2;
-		return limit;
-	}
-
-	const buckets = $derived.by<Bucket[]>(() => {
-		const ordered = [...placements].sort((a, b) => a.order - b.order);
-		// A plain record keyed by "dims|colour"; a Map would trip svelte/prefer-svelte-reactivity.
-		const byKey: Record<string, { size: WorldTuple; color: string; boxes: Box[] }> =
-			Object.create(null);
-		ordered.forEach((p, rank) => {
-			const slot = layout.byId.get(p.gridId);
-			if (!slot) return;
-			const color = colorByGroup.get(groupByItem.get(p.itemId) ?? '') ?? crateColor(0);
-			const key = `${dimsKey(p.dims)}|${color}`;
-			const world = cellBoxToWorld(
-				{ x: slot.origin.x + p.at.x, y: slot.origin.y + p.at.y, z: slot.origin.z + p.at.z },
-				p.dims
-			);
-			const box: Box = { itemId: p.itemId, center: world.center, rank };
-			const bucket = byKey[key];
-			if (bucket) bucket.boxes.push(box);
-			else byKey[key] = { size: world.size, color, boxes: [box] };
-		});
-		return Object.entries(byKey).map(([key, b]) => {
-			const limit = limitFor(b.boxes.length);
-			return { key: `${key}|${limit}`, limit, ...b };
-		});
-	});
 
 	const selected = $derived.by(() => {
 		if (!selectedItemId) return null;
-		for (const bucket of buckets) {
-			const box = bucket.boxes.find((b) => b.itemId === selectedItemId);
-			if (box) return { box, size: bucket.size };
+		for (const shell of buckets.shells) {
+			const box = boxesOf(shell).find((b) => b.itemId === selectedItemId);
+			if (box) return { box, size: shell.size };
 		}
 		return null;
 	});
@@ -136,23 +93,19 @@
 		{ running: () => animating }
 	);
 
-	function lift(box: Box): number {
+	function lift(box: BoxInstance): number {
 		const t = Math.min(1, Math.max(0, (clockMs - box.rank * STAGGER_MS) / DROP_MS));
 		const drop = (1 - cubicOut(t)) * DROP_HEIGHT_M;
 		return drop + (box.itemId === selectedItemId ? SELECT_LIFT_M : 0);
 	}
 
-	function positionOf(box: Box): WorldTuple {
+	function positionOf(box: BoxInstance): WorldTuple {
 		return [box.center[0], box.center[1] + lift(box), box.center[2]];
 	}
 
-	function seamed(size: WorldTuple): WorldTuple {
-		return [size[0] - SEAM_M, size[1] - SEAM_M, size[2] - SEAM_M];
-	}
-
 	/** Per-instance tint (multiplies the white material colour). */
-	function tintOf(bucket: Bucket, box: Box): string {
-		const body = desaturateHex(bucket.color, 0.12);
+	function tintOf(shell: BucketShell, box: BoxInstance): string {
+		const body = desaturateHex(shell.color, 0.12);
 		return box.rank % 2 === 0 ? body : mixHex(body, '#000000', ALT_SHADE);
 	}
 
@@ -177,20 +130,20 @@
 
 <T.Group onpointermissed={onMissed} />
 
-{#each buckets as bucket (bucket.key)}
-	<InstancedMesh limit={bucket.limit} range={bucket.boxes.length} frustumCulled={false}>
-		<T.BoxGeometry args={seamed(bucket.size)} />
+{#each buckets.shells as shell (shell.key)}
+	<InstancedMesh limit={shell.limit} range={boxesOf(shell).length} frustumCulled={false}>
+		<T.BoxGeometry args={shell.args} />
 		<T.MeshStandardMaterial
 			color="#ffffff"
-			emissive={bucket.color}
+			emissive={shell.color}
 			emissiveIntensity={0.3}
 			roughness={0.6}
 			metalness={0.1}
 		/>
-		{#each bucket.boxes as box (box.itemId)}
+		{#each boxesOf(shell) as box (box.itemId)}
 			<Instance
 				position={positionOf(box)}
-				color={tintOf(bucket, box)}
+				color={tintOf(shell, box)}
 				onclick={(e: IntersectionEvent<MouseEvent>) => {
 					e.stopPropagation();
 					onBoxClick(box.itemId);

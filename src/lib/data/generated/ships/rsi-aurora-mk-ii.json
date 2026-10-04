@@ -19,8 +19,8 @@
   "cargoScu": 2,
   "grids": [
     {
-      "id": "main-1",
-      "name": "Main 1",
+      "id": "left",
+      "name": "Left",
       "className": "RSI_Aurora_Mk2_CargoGrid",
       "cells": {
         "x": 1,
@@ -53,8 +53,8 @@
       "door": null
     },
     {
-      "id": "main-2",
-      "name": "Main 2",
+      "id": "right",
+      "name": "Right",
       "className": "RSI_Aurora_Mk2_CargoGrid",
       "cells": {
         "x": 1,

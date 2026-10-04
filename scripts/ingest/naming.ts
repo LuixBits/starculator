@@ -35,8 +35,20 @@ export function stripNoise(tokens: readonly string[]): string[] {
 	return tokens.filter((t) => !NOISE.test(t));
 }
 
-export function stripShipTokens(tokens: readonly string[], shipClassName: string): string[] {
-	const ship = new Set(classTokens(shipClassName).map((t) => t.toLowerCase()));
+/**
+ * Lower-case words that identify the ship itself: its ClassName tokens plus the
+ * words of its published Name (the Reliant Kore is MISC_Reliant, so "Kore" only
+ * appears in the Name). Single letters are left out ("Hull C", "C.O.").
+ */
+export function shipWords(shipClassName: string, shipName = ''): Set<string> {
+	const fromName = shipName
+		.toLowerCase()
+		.split(/[^a-z0-9]+/)
+		.filter((w) => w.length >= 2);
+	return new Set([...classTokens(shipClassName).map((t) => t.toLowerCase()), ...fromName]);
+}
+
+export function stripShipTokens(tokens: readonly string[], ship: ReadonlySet<string>): string[] {
 	return tokens.filter((t) => !ship.has(t.toLowerCase()));
 }
 
@@ -75,6 +87,13 @@ export function humanize(tokens: readonly string[]): string {
 		.join(' ');
 }
 
+/** Title-case words for ship names: ["StealthIndustrial"] → "Stealth Industrial"; acronyms stay. */
+export function titleCase(tokens: readonly string[]): string {
+	return words(tokens)
+		.map((w) => (isAcronym(w) ? w : capitalize(w)))
+		.join(' ');
+}
+
 /** Lower-case words joined by hyphens: ["Nose", "Access"] → "nose-access". */
 export function kebab(tokens: readonly string[]): string {
 	return words(tokens)
@@ -97,12 +116,8 @@ const MANUFACTURER_ALIASES: Readonly<Record<string, readonly string[]>> = {
 	RSI: ['RSI']
 };
 
-/** Removes the manufacturer prefix from a published name: "Drake Cutlass Black" → "Cutlass Black". */
-export function stripManufacturer(
-	name: string,
-	manufacturer: { code: string; name: string }
-): string {
-	const candidates = [
+function manufacturerPrefixes(manufacturer: { code: string; name: string }): string[] {
+	return [
 		manufacturer.name,
 		manufacturer.name.split(' ')[0],
 		manufacturer.code,
@@ -110,8 +125,31 @@ export function stripManufacturer(
 	]
 		.filter((c) => c.length > 0)
 		.sort((a, b) => b.length - a.length);
+}
+
+/** True when a published name starts with one of the manufacturer's prefixes. */
+export function hasManufacturerPrefix(
+	name: string,
+	manufacturer: { code: string; name: string }
+): boolean {
+	return stripManufacturer(name, manufacturer) !== name;
+}
+
+/**
+ * The prefix the game uses for this manufacturer's other ships: the alias
+ * (C.O., MISC, RSI) when there is one, else the first word of the name (Drake, Gatac).
+ */
+export function manufacturerPrefix(manufacturer: { code: string; name: string }): string {
+	return MANUFACTURER_ALIASES[manufacturer.code]?.[0] ?? manufacturer.name.split(' ')[0];
+}
+
+/** Removes the manufacturer prefix from a published name: "Drake Cutlass Black" → "Cutlass Black". */
+export function stripManufacturer(
+	name: string,
+	manufacturer: { code: string; name: string }
+): string {
 	const lower = name.toLowerCase();
-	for (const candidate of candidates) {
+	for (const candidate of manufacturerPrefixes(manufacturer)) {
 		const prefix = candidate.toLowerCase() + ' ';
 		if (lower.startsWith(prefix)) return name.slice(prefix.length).trim();
 	}
