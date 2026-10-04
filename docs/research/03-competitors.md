@@ -1,0 +1,128 @@
+# Research: Star Citizen community-tool landscape and cargo-planner competitors
+
+> Research snapshot taken 2026-10-04 (Star Citizen Alpha 4.10.1 LIVE). Produced by an automated research pass; items marked *unverified* could not be checked against the live site because the research sandbox's network policy blocked most third-party domains. GitHub-hosted projects were read directly and their metadata (stars, last push, license) is reliable.
+
+## 0. Game state and method
+
+- Star Citizen is on **Alpha 4.10.1 LIVE**, with 4.10.2 expected mid/late October 2026. 4.10.1 rebalanced hydrogen/quantum fuel and made claim timers scale with ship value. Hauling in 4.10 is reported as far more stable (Pyro multi-stop works; freight-elevator capacity bugs fixed). "Cargo grid too small or oddly shaped for the assigned box sizes" is still a commonly cited pain point.
+- Sources: RSI Spectrum 4.10 hotfix thread, starcitizen.tools `Update:Star_Citizen_Alpha_4.10.0`, mmopixel 4.10 cargo-hauling guide.
+
+## 1. General community tools (non-cargo)
+
+Legend for the cargo column: **3D-pack** = places containers in a 3D hold; **3D-view** = 3D grid viewer / fit check; **2D** = 2D grid or static image; **SCU-math** = capacity arithmetic only; **—** = none. Maintained: ✅ active (updated in the last ~3 months), ⚠️ unclear, ❌ dead.
+
+| Tool | Focus | Cargo-grid feature | Open source | Monetization | Maintained |
+|---|---|---|---|---|---|
+| [erkul.games](https://erkul.games) | Ship loadouts / DPS, power, cooling; hangar; build sharing; shop prices | — (capacity stat only; CSV shopping-list export consumed by hauling tools) | No | Free, no ads; Patreon (~260 members) + Ko-fi | ✅ v5 rebuilt ~Jul 2026 |
+| [uexcorp.space](https://uexcorp.space) | Trade prices, multi-stop routes, marketplace (incl. "Hauling" listings), mining/refineries, vehicles, fleet, crew, wallet; **public API 2.0** | — (SCU capacities per vehicle, no grid) | No (API public) | Patreon from $1/mo, Ko-fi | ✅ shows "4.10.1 LIVE" |
+| [sc-trade.tools](https://sc-trade.tools) | Trade routes, "En Route" opportunistic cargo, Item Finder, analytics; desktop + Android price submitter; REST API + MCP (token, Patreon tiers) | — (filters by capacity; "adjust capacity by box sizes" is an open issue) | Issues-only repo | Patreon + Ko-fi | ✅ v11.3.4 |
+| [regolith.rocks](https://regolith.rocks) | Collaborative mining | — | Partially (TS common lib) | Donations | ❌ **shut down 2026-06-01** (patch churn + server costs). Successor: [Motherlode](https://cryon.rocks) |
+| [fleetyards.net](https://fleetyards.net) | Ship DB + hangar/fleet management, RSI hangar sync, widgets; **Tools: Cargo Grid Viewer (3D), Item Finder, UEX prices, Hauler/route profit**; inventories, mission catalogue | **3D-view + fit**: 3D cargo grid viewer "showing cargo hold dimensions and container fitting for all ships"; compare up to 4 ships; container counts in URL (`containers=32x1,4x1`); decomposes inventory volume into 8/4-SCU boxes | **Yes**, GPL-3.0, Rails 6 + Vue 2 ([repo](https://github.com/fleetyards/fleetyards), 62★, pushed 2026-10-04) | Patreon, Ko-fi, PayPal; free | ✅ cargo-grid PRs Aug–Sep 2026 |
+| [finder.cstone.space](https://finder.cstone.space) | Universal item finder (crowdsourced shop inventories) | — | No | Patreon | ⚠️ |
+| [starcitizen.tools](https://starcitizen.tools) (wiki) | Encyclopedia; ship pages list cargo grids (e.g. C2: 480 + 216 SCU grids, 32-SCU max); Wiki3D extension; **api.star-citizen.wiki** (vehicles, items, missions, commodities; OpenAPI); scunpacked-data | 2D/text | Yes ([API](https://github.com/StarCitizenWiki/API) MIT 58★; [scunpacked-data](https://github.com/StarCitizenWiki/scunpacked-data) 54★, pushed 2026-09-22) | Patreon | ✅ |
+| [starship42.com](https://starship42.com) | 3D fleet viewer | — | No | — | ❌ **retired 2025-10-22**. Successors: [myfleet.gg](https://myfleet.gg), StarJump fleetviewer on hangar.link |
+| [hangar.link](https://hangar.link) | Fleet list sharing; hosts StarJump Fleetviewer (3D size comparison) | — | No | Free | ✅ |
+| [ccugame.app](https://ccugame.app) | Pledge/CCU-chain optimizer, hangar import via browser extension | — | No | Free | ✅ |
+| [gallog.co](https://gallog.co) | Org site: commodity charts, trade routes, starmap, mining tool | — | No | Sign-in | ⚠️ indexed data looks ~Jan 2025 |
+| [verseguide.com](https://verseguide.com) | Location/travel guide, route planning, 3D system maps | — | No | Patreon | ✅ |
+| snareplan.dolus.eu | Quantum-snare (Mantis) planner | — | No | Free | ⚠️ |
+| [sc-market.space](https://sc-market.space) | Player marketplace + contracted services | — | Yes, AGPL-3.0 TS | Free | ✅ |
+| starcitizen-api.com | Unofficial REST API (RSI site + p4k) | — | No | Key; 1000 req/day | ⚠️ |
+| [GameGlass](https://gameglass.gg) | Touch-screen controls / second-screen shards; overlay | — | No | Freemium ($4.99 shards, $3.59/mo pass) | ✅ |
+| SC Ship Database (Android/iOS) | Ship catalog, loadout builder, fleet | SCU-math | No | Free | ✅ |
+| [SC-LOADMASTER](https://apps.apple.com/it/app/sc-loadmaster/id6759680432) (iOS, €2.99) | Cargo-pilot companion: manifest builder, container breakdown (16/8/4/2/1), run log | SCU-math (no grid) | No | Paid | ✅ |
+| hubcitizen.com | All-in-one (loadouts, commodities, contracts planner, org tools) | SCU-math (unverified) | No | Unknown | ⚠️ |
+| Overlays: [Arkanis Overlay](https://arkanis.cc/overlay), SC Overlay, SC Toolbox, mobiOverlay, VerseKit, QuantumWake | In-game overlay search/trade/mining | — | Mixed | Free | ✅ |
+| Org tools: scorg.tools, scorg.org, StarOrg.tools (hauler OCR+TSP), simonknittel/sam | Org dashboards, fleets, Discord webhooks | route only | Mixed | Free | ✅ |
+| Hangar import: HangarXPLOR (MIT), [Open Hangar](https://openhangar.space) | RSI hangar export to JSON | — | Mixed | Ko-fi | ✅ |
+| hardpoint.io, spviewer.eu | Loadout compare; ship performance (fuel, endurance) | — | No | — | ⚠️ / ✅ |
+
+## 2. Direct cargo-grid / hauling competitors
+
+| Tool | What it does | Grid feature | Open source / stack | Monetization | Maintained |
+|---|---|---|---|---|---|
+| [sc-cargo.space](https://sc-cargo.space) "Cargo Grid Viewer" (Mar 2025) | Interactive 3D viewer of every PU vehicle cargo grid; enter containers → fits?; **Finder** (which ships hold this set); multi-ship canvas; off-grid areas for Vulture, C1, Starlancer, Corsair | **3D-view + fit** | Closed; stack unverified | None found | ⚠️ |
+| [sc-hauling.tools](https://sc-hauling.tools) (Heyrros) | Multi-system multi-mission route optimizer; mission types Direct / Multi-Drop / Multi-Pickup / Free Shopping; **OCR mobiGlas import**, CSV import (Erkul); 2D/3D star map; container decomposition; **Expert Mode = 3D bin-packing that checks actual placement**; per-stop load plan with checkboxes; **Live Session** co-op | **3D-pack** (Expert mode) | Closed | Free, no account, hobby project | ✅ |
+| [Schaulers](https://schaulers.space/app) | UEX-powered routes + "Command Deck" career tracker (20 ranks, achievements), circuit planner, price alerts; **Cargo Hold Builder**: user builds hold as named areas, then loads via 2D grid or interactive 3D builder (drag, stack, snap); Cargo Library of shared layouts; convoy manifests | **3D-pack (manual)** | Closed | Free, Ko-fi | ✅ v6.18 Sep 2026 |
+| [SC Hauler Helper](https://sc-haulerhelper.com) | OCR of contract previews; stacks compatible missions for max payout under capacity/cap; route sequencing; **Cargo Visualizer box-by-box** with loaded-state ticking; preloaded C2, Hull A/B/C, RAFT, Caterpillar, Cutlass Black, Freelancer MAX | Box list visualizer | Closed | Free, no account | ✅ |
+| "SC Hauler Planner — 3D cargo + auto route" ([RSI community hub](https://robertsspaceindustries.com/community-hub/post/sc-hauler-planner-3-d-cargo-auto-route-2voyohMLZKuA5)) | Screenshot import → route grouped by moon/planet; **3D view of how cargo packs into grids, LIFO so first drops stay reachable, colour-coded per destination**; in-flight checklist | **3D-pack, LIFO** | Unknown | Unknown | ⚠️ possibly a rebrand |
+| [fleetyards.net Cargo Grid Viewer](https://fleetyards.net/tools/) | Backed by `cargo_hold.rb` models and public API `cargoHolds[]` with `dimensions{x,y,z}`, `offset`, `rotation`, `capacity`, `maxContainerSize` | **3D-view + fit**; max containers per size + fill bars | GPL-3.0 | Donations | ✅ |
+| [SC DataHub Cargo Manager](https://www.sc-datahub.com/tools/cargo) | Web + Windows .NET 8 overlay + iOS; paste mobiGlas screenshot → auto-pack + route; **visual cargo grid matching ship bays, colour per commodity**; mining calc, UEX commodities | Visual grid + auto-pack | Closed | Core free; **AI OCR uses paid credits**; voice £1.99/mo | ✅ |
+| [SC Toolbox](https://github.com/ScPlaceholder/SC-Toolbox-Beta-V2) (CIG Staff Pick) | Windows overlay, 11 tools; **Cargo Loader = isometric 3D grid viewer + container auto-optimizer + commodity assignment; save/share manifests** | **3D-pack (isometric)** | Source on GitHub, Python + Qt, no license file; 60★, pushed 2026-09-27 | Free | ✅ |
+| [sc-cargo-optimizer](https://arkaines.github.io/sc-cargo-optimizer/) (Arkaines) | Static HTML/JS on GitHub Pages; multi-commodity missions, Tesseract.js OCR, optional Discord login + Supabase sync; **Three.js 3D packing using FleetYards `cargoHolds`**; hierarchical scoring (blocking safety → delivery order → stacking → mission grouping → compactness); simulates pickup/drop sequence | **3D-pack, LIFO-aware** | Yes (329 commits, pushed 2026-09-28) | Free | ✅ |
+| [SC-Cargo-Tracker](https://github.com/SloshZA/SC-Cargo-Tracker) | React + Three.js; OCR from video stream; manifest; 3D cargo grid fleet planning | **3D-view/plan** | Yes | Free | ⚠️ |
+| [HAULER OPS](https://github.com/SC-Kayinco/hauler-ops-star-citizen) | Windows app; React + Three.js + Zustand + tesseract.js; OCR, route, **2D + 3D load plan, LIFO**, UEX prices; community-sourced bay layouts | **3D-pack, LIFO** | MIT, pushed 2026-07-19 | Free | ⚠️ |
+| [Starlogger](https://github.com/chrisrico/Starlogger) | Tails Game.log → local dashboard; **isometric 3D loader**; **ship cargo specs extracted from your own Data.p4k via StarBreaker (version-exact)** | **3D (isometric)** | MIT | Free | ✅ |
+| [Ratjack Cargo Grids](https://ratjack.net/Star-Citizen/Cargo-Grids/) + [Will It Fit](https://www.ratjack.net/Star-Citizen/Cargo-Check/) | Static isometric grid images per ship ("Cargo Grids [4.4.0]"); fits? on-grid only | **2D images + SCU-math** | Closed | Free | ⚠️ lags patches |
+| [Shadow Guardians Cargo Grid Viewer](https://sg-cargo-grid.pages.dev) | 91 ships + 3 vehicles, layouts, Stanton/Pyro | **2D** | Closed (Cloudflare Pages) | Free | ⚠️ |
+| [Cargo Grid Reference Guide](https://github.com/frosty024/Cargo_Grid_Reference_Guide) | PDF isometric sheets per ship + freight elevators; hand-measured, "accuracy not guaranteed" | **2D static** | PDF | Free | ⚠️ |
+| [Cargo Deck](https://cargodeck.onrender.com) | Route planner by profit/hour **including loading time and loading order**; grids/box sizes from SC Wiki game data | Loading-order math, no 3D | Client open (C#) | Free | ✅ v1.7.2 |
+| Route-only hauling planners (no grid) | starcitizenplanner.com, carborn.com, route-planner.astrocargo.space, verseplanner.com, [H.E.L.M.](https://sc-cargo-helper.pages.dev), [SC Hauling Tool v3](https://sc-cargohauling.tools), hauler.starorg.tools, SC Haulmaster, Courrier-UEX, mission-planner.org | — | mixed | mostly free | mostly ✅ |
+| GitHub long tail (≤1★) | sc-cargo-planner, scu-laderaum-planer (DE), freight-planner (C# + Android checklist), StarCitizen-Hauling-Optimizer (LP), xattribution/cargo-manifest (**Svelte 5**, localStorage, OCR), sc-cargo-calc (Nuxt), and ~15 more | — | Yes | Free | ⚠️ |
+
+### Assessment of the direct competitors
+
+**Is there already a 3D cargo-hold packing tool?** Yes, several, and the niche became crowded in the last 12 months. The gaps:
+
+- **Exactness.** Only fleetyards (DB-backed `cargoHolds` with offsets and rotation), Starlogger (reads your own Data.p4k) and tools consuming FleetYards (Arkaines) claim exact per-hold geometry. Schaulers makes the *user* build the hold. Ratjack, the Reference Guide and Shadow Guardians are hand-drawn and lag patches. sc-cargo.space's data source is undisclosed.
+- **Workflow.** sc-hauling.tools is the only one combining OCR → route → 3D pack → per-stop checklist → co-op session, but the packer is hidden behind "Expert mode" and the UI is dense. fleetyards' viewer is a "how many of each size fit" calculator inside a large fleet-management site. sc-cargo.space has no mission concept.
+- **Platform.** The best auto-packers (SC Toolbox, HAULER OPS, Freight Planner, SC DataHub overlay) are Windows downloads. Nothing offers a polished touch/tablet 3D experience.
+- **Trust and sustainability.** Most are solo hobby projects. Regolith and starship42 both died within the last year; Regolith explicitly cited patch churn. An API-fed, version-tracked grid model is the defensible answer.
+- **Monetization norms.** Free + Ko-fi/Patreon, no ads, no login is the norm. SC DataHub's paid OCR credits are the exception and a friction point.
+
+## 3. Feature ideas for a multi-tool site
+
+| # | Feature | Why / evidence | Effort | Data dependency |
+|---|---|---|---|---|
+| 1 | **Hauling mission tracker** (contract → pickups/drop-offs, SCU, box cap, payout, status, per-stop checklist) | Core of every competitor; wrapper around the packer | M | UEX `/terminals`, `/planets`, `/space_stations` or SC Wiki API; payouts manual |
+| 2 | **OCR import of mobiGlas contract screenshots** (in-browser Tesseract.js) | Table stakes now; SC DataHub charges for it | M | None (client-side); sample screenshots per UI version |
+| 3 | **Container decomposition / "what to buy"** for Free-Shopping missions, honouring per-contract max box size | SC-LOADMASTER's whole value prop | S | None |
+| 4 | **Unload-order (LIFO) aware packing + per-stop load plan** | Arkaines, HAULER OPS do LIFO; fleetyards, sc-cargo.space do not | L | Grid geometry |
+| 5 | **"Which ship fits this mission" finder + comparison by cargo** (capacity, grid dims, max container, rent/buy price) | sc-cargo.space Finder, fleetyards containerFit; add price/rental angle | S–M | FleetYards `/v1/models`, UEX `/vehicles`, `/vehicles_rentals_prices` |
+| 6 | **Trade-route profit constrained by actual leftover grid space** ("fill the empty cells on the way") | SC Trade Tools "En Route" ignores geometry | M | UEX `/commodities_prices`, `/commodities_routes` |
+| 7 | **Freight-elevator staging planner** (S 6×5×4 = 120 SCU, M 8×7×4 = 224, L 16×14×4 = 896, XL 20×14×4 = 1120) | Players must stage on elevators before loading | S | Static (wiki `Freight_elevator`) |
+| 8 | **Fleet / convoy manifest split** across several ships | Schaulers convoy, sc-hauling.tools live session | M local / L realtime | Hangar import (FleetYards, HangarXPLOR, Open Hangar JSON) |
+| 9 | **Hauling reputation tier tracker + aUEC/hour log** (10-mission cap since 4.8) | Schaulers ranks; guides stress rep | S | Static tier table |
+| 10 | **Shareable plan links** (state in URL) + JSON export + printable load sheet | Cheap, high value for co-op | S | None |
+| 11 | **Second-screen / tablet mode** (PWA, offline, big-touch checklist, QR hand-off) | Nobody in the web tier does this well | M | None |
+| 12 | **Quantum/hydrogen range and refuel planner** | 4.10.1 fuel rebalance makes it newly relevant | M | scunpacked ships/items; UEX `/fuel_prices` |
+| 13 | Mining loadout / salvage value calc | Regolith gone; Motherlode, SC Toolbox cover it | M / S | scunpacked items; UEX prices |
+| 14 | Game.log companion (optional local CLI posting events to the plan) | Starlogger etc. prove feasibility; EAC-safe | L | Local Game.log |
+| 15 | **Game-version badge and data provenance** ("grids from FleetYards snapshot X, game 4.10.1") | Trust gap left by stale tools | S | Version fields |
+| 16 | Localization (DE/FR/ES) | Separate national tools exist | S–M | None |
+| 17 | Bounty tracking / org boards | Weak fit with cargo focus | L | skip |
+
+## 4. Positioning
+
+**What would make a new cargo-focused site stand out**
+
+1. **Exact, version-tracked grid geometry.** Consume FleetYards `cargoHolds` and/or extract from Data.p4k (StarBreaker / ScDataDumper → scunpacked-data) so every ship's cells are right, including multi-grid ships (C2 480+216, Railen, Caterpillar modules) and documented off-grid areas (Vulture, C1, Starlancer, Corsair). Show provenance and game version.
+2. **Mission-driven workflow as the default, not an "Expert mode".** Accept missions → packer → per-stop unload plan (LIFO, ramp-side first drops, colour per destination) → checklist. 3D as the primary surface with an orthographic top-down toggle.
+3. **Mobile/tablet second-screen first-class** (PWA, touch orbit, large checklist, QR hand-off, offline).
+4. **No login, local-first, shareable URLs.** Matches the ecosystem norm. Optional Ko-fi/Patreon only.
+5. **Speed of ship updates** via a data pipeline, plus a visible changelog.
+6. **Interoperability:** import Erkul CSV, FleetYards/HangarXPLOR/Open Hangar fleet JSON; export plans as JSON/PNG; later a small public API so overlays can embed the planner.
+7. **Open source** would be unusual among polished web tools (only fleetyards is) and helps longevity and trust.
+
+**What not to copy**
+
+- Gamification clutter (Schaulers' ranks/achievements) and mega-nav sprawl (fleetyards, UEX, hubcitizen).
+- Hiding the real packer behind "Expert mode" or making the user hand-build the hold.
+- Paid credits for OCR; do it client-side.
+- Windows-only downloads as the only way to get auto-packing.
+- Static PDF/image grids that lag patches.
+- Account walls on core features. Ads.
+
+**Risks:** fleetyards (GPL, active, same `cargoHolds` data) and sc-hauling.tools (full workflow + co-op) are the incumbents most likely to close the gap. Arkaines' sc-cargo-optimizer already implements a strong LIFO packer; borrow algorithm ideas (hierarchical scoring) and credit them.
+
+## 5. Data-source appendix
+
+- **FleetYards API v1** `https://api.fleetyards.net/v1/models?perPage=240&page=N` returns `cargo`, `cargoLabel`, and `cargoHolds[]` {name, dimensions{x,y,z}, rotation, capacity, maxContainerSize.size, offset} (confirmed from Arkaines' `js/fleetyards.js` and the Rails models). GPL-3.0; the data can be self-hosted. Rate limits/auth unverified (appears open for reads).
+- **UEX API 2.0** `https://uexcorp.space/api/documentation/`: Bearer token; 172,800 req/day (120/min); `/vehicles`, `/vehicles_prices`, `/commodities_prices`, `/commodities_routes`, `/terminals`, `/planets`, `/fleet`, `/data_submit`. No grid geometry.
+- **Star Citizen Wiki API** `https://api.star-citizen.wiki` (OpenAPI at `/api/openapi`): vehicles (cargo_capacity, dimensions), items, missions, commodities. Data from ScDataDumper. **scunpacked-data** JSON (ships.json, items.json, starmap, trade_locations, contracts). **StarBreaker** (Rust p4k extractor) for version-exact extraction.
+- **Static reference:** containers from 1/8 SCU (0.5 m cube) to 32 SCU (10 × 2.5 × 2.5 m); 1 SCU ≈ 1.25 m cube; freight-elevator grids S/M/L/XL above; hauling tiers; 10 accepted-mission cap.
+- **Hangar import:** HangarXPLOR (MIT), Open Hangar (JSON export), FleetYards hangar sync, ccugame extension.
+
+## 6. Could not verify
+
+Live UI, stack, ads and last-update of all closed-source sites; Discord sizes; whether "SC Hauler Planner" is distinct; whether UEX has a hauling-mission planner; Reddit/Spectrum feedback; FleetYards rate limits and whether `cargoHolds` is populated for all ships; gallog.co status.
