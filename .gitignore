@@ -1,51 +1,25 @@
-# ----------------------------
-# Root Level Git Ignore
-# ----------------------------
+node_modules
 
-# Environment Variables
-.env
-.env.*
-!.env.example
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
 
-# Docker Files
-docker-compose.override.yml
-*.dockerfile
-
-# Build Outputs
-nginx/html/
-
-# OS-Specific Files
+# OS
 .DS_Store
 Thumbs.db
 
-# IDE/Editor Directories and Files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
 
-# Logs
-logs/
-*.log
-
-# Temporary Files
-tmp/
-temp/
-*.tmp
-
-# Other Temporary or Generated Files
-*.bak
-*.swp
-
-/node_modules
-/node_modules/*
-*/node_modules/*
-
-# Security
-# If config.yml contains sensitive information, consider ignoring it
-# Uncomment the following line if necessary
-# config.yml
-
-# ----------------------------
-# End of Root Level Git Ignore
-# ----------------------------
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+# Playwright
+test-results

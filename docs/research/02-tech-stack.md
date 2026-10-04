@@ -6,34 +6,34 @@
 
 ## 1. Recommended stack
 
-| Layer | Package | Version verified (npm, date) | Why |
-|---|---|---|---|
-| Framework | `svelte` | 5.57.1 (2026-09-18) | Runes stable; required ≥ 5.57.1 by Kit 3 |
-| App framework | `@sveltejs/kit` | 3.0.0 (2026-10-01) | Config in vite.config, `#lib`, better service-worker/env APIs. 2.x latest is 2.70.3 (2026-08-18) if we prefer to wait |
-| Vite plugin | `@sveltejs/vite-plugin-svelte` | 7.3.1 | Required by Kit 3 |
-| Bundler | `vite` | 8.3.2 (2026-10-01) | Rolldown-based; Kit 3 needs ≥ 8.0.12 |
-| Scaffold | `sv` | 1.1.0 (2026-10-04) | `npx sv create` scaffolds Kit 3; `sv migrate sveltekit-3` exists |
-| Language | `typescript` | **6.0.3** (pin `^6.0.3`; npm `latest` is 7.0.2) | Kit 3 peer `^6`; svelte-check peer `^5 ‖ ^6`; typescript-eslint `< 6.1`. TS 7 (Go port) breaks svelte-check without an experimental flag |
-| Runtime | Node | 24.x LTS (maintenance from 2026-10-20); 26.x becomes LTS 2026-10-28 | Kit 3 needs ≥ 22.17 |
-| Adapter (v1) | `@sveltejs/adapter-static` | 4.0.0 | Prerender everything → nginx or Cloudflare static |
-| Adapter (later) | `@sveltejs/adapter-cloudflare` / `adapter-node` | 8.0.0 / 6.0.0 | Workers static assets or Docker |
-| 3D | `three` + `@types/three` | 0.186.1 / 0.186.0 | r186; `three/webgpu`, `three/tsl` exports present |
-| 3D for Svelte | `@threlte/core` | 8.6.1 (peers svelte ≥ 5, three ≥ 0.172) | Svelte-5-native; `@threlte/core/webgpu` entry since 8.6.0 |
-| 3D helpers | `@threlte/extras` | 9.22.0 | InstancedMesh/Instance, OrbitControls, CameraControls, TransformControls, Gizmo, HTML, Grid, Edges, GLTF, interactivity |
-| Styling | `tailwindcss` + `@tailwindcss/vite` | 4.3.3 | CSS-first `@theme` config; `sv add tailwindcss` |
-| Components | `shadcn-svelte` + `bits-ui` | 1.7.0 / 2.19.5 | Runes-native, Tailwind v4, copy-paste ownership; Kit 3 support issue closed 2026-09-01 |
-| Icons | `@lucide/svelte` | 1.52.0 | `lucide-svelte` is deprecated |
-| Tables | `@tanstack/svelte-table` | 9.2.5 | First runes-native adapter |
-| Charts | `layerchart` | 2.5.1 | shadcn-svelte `chart` is built on it |
-| Forms | `sveltekit-superforms` + `formsnap` | 2.31.0 / 2.0.1 | Works client-only for a static site |
-| State persistence | `runed` (PersistedState) or `svelte-persisted-state` | 0.37.1 / 1.4.1 | runes-based; the latter also does IndexedDB |
-| IndexedDB | `dexie` or `idb-keyval` | 4.4.6 / 6.3.0 | Dexie for structured loadouts/missions |
-| Unit tests | `vitest` | 5.0.3 (sv pins `^4.1.8`) | Browser mode via `@vitest/browser-playwright` + `vitest-browser-svelte` 3.1.0 |
-| E2E | `@playwright/test` | 1.63.0 | E2E only; Svelte component testing removed in 1.59 |
-| Type check | `svelte-check` | 4.7.6 | Understands Kit 3 flattened config |
-| Lint/format | `eslint` 10.12, `eslint-plugin-svelte` 3.23, `typescript-eslint` 8.71, `prettier` 3.9.9, `prettier-plugin-svelte` 4.1.1 | current | Flat config from `sv add eslint prettier` |
-| PWA | SvelteKit native `src/service-worker/` | — | `@vite-pwa/sveltekit` 1.1.0 still peers Kit ^1 ‖ ^2 only |
-| Package manager | `pnpm` | 12.9.1 | Cheap path to workspaces later |
+| Layer             | Package                                                                                                                 | Version verified (npm, date)                                        | Why                                                                                                                                      |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework         | `svelte`                                                                                                                | 5.57.1 (2026-09-18)                                                 | Runes stable; required ≥ 5.57.1 by Kit 3                                                                                                 |
+| App framework     | `@sveltejs/kit`                                                                                                         | 3.0.0 (2026-10-01)                                                  | Config in vite.config, `#lib`, better service-worker/env APIs. 2.x latest is 2.70.3 (2026-08-18) if we prefer to wait                    |
+| Vite plugin       | `@sveltejs/vite-plugin-svelte`                                                                                          | 7.3.1                                                               | Required by Kit 3                                                                                                                        |
+| Bundler           | `vite`                                                                                                                  | 8.3.2 (2026-10-01)                                                  | Rolldown-based; Kit 3 needs ≥ 8.0.12                                                                                                     |
+| Scaffold          | `sv`                                                                                                                    | 1.1.0 (2026-10-04)                                                  | `npx sv create` scaffolds Kit 3; `sv migrate sveltekit-3` exists                                                                         |
+| Language          | `typescript`                                                                                                            | **6.0.3** (pin `^6.0.3`; npm `latest` is 7.0.2)                     | Kit 3 peer `^6`; svelte-check peer `^5 ‖ ^6`; typescript-eslint `< 6.1`. TS 7 (Go port) breaks svelte-check without an experimental flag |
+| Runtime           | Node                                                                                                                    | 24.x LTS (maintenance from 2026-10-20); 26.x becomes LTS 2026-10-28 | Kit 3 needs ≥ 22.17                                                                                                                      |
+| Adapter (v1)      | `@sveltejs/adapter-static`                                                                                              | 4.0.0                                                               | Prerender everything → nginx or Cloudflare static                                                                                        |
+| Adapter (later)   | `@sveltejs/adapter-cloudflare` / `adapter-node`                                                                         | 8.0.0 / 6.0.0                                                       | Workers static assets or Docker                                                                                                          |
+| 3D                | `three` + `@types/three`                                                                                                | 0.186.1 / 0.186.0                                                   | r186; `three/webgpu`, `three/tsl` exports present                                                                                        |
+| 3D for Svelte     | `@threlte/core`                                                                                                         | 8.6.1 (peers svelte ≥ 5, three ≥ 0.172)                             | Svelte-5-native; `@threlte/core/webgpu` entry since 8.6.0                                                                                |
+| 3D helpers        | `@threlte/extras`                                                                                                       | 9.22.0                                                              | InstancedMesh/Instance, OrbitControls, CameraControls, TransformControls, Gizmo, HTML, Grid, Edges, GLTF, interactivity                  |
+| Styling           | `tailwindcss` + `@tailwindcss/vite`                                                                                     | 4.3.3                                                               | CSS-first `@theme` config; `sv add tailwindcss`                                                                                          |
+| Components        | `shadcn-svelte` + `bits-ui`                                                                                             | 1.7.0 / 2.19.5                                                      | Runes-native, Tailwind v4, copy-paste ownership; Kit 3 support issue closed 2026-09-01                                                   |
+| Icons             | `@lucide/svelte`                                                                                                        | 1.52.0                                                              | `lucide-svelte` is deprecated                                                                                                            |
+| Tables            | `@tanstack/svelte-table`                                                                                                | 9.2.5                                                               | First runes-native adapter                                                                                                               |
+| Charts            | `layerchart`                                                                                                            | 2.5.1                                                               | shadcn-svelte `chart` is built on it                                                                                                     |
+| Forms             | `sveltekit-superforms` + `formsnap`                                                                                     | 2.31.0 / 2.0.1                                                      | Works client-only for a static site                                                                                                      |
+| State persistence | `runed` (PersistedState) or `svelte-persisted-state`                                                                    | 0.37.1 / 1.4.1                                                      | runes-based; the latter also does IndexedDB                                                                                              |
+| IndexedDB         | `dexie` or `idb-keyval`                                                                                                 | 4.4.6 / 6.3.0                                                       | Dexie for structured loadouts/missions                                                                                                   |
+| Unit tests        | `vitest`                                                                                                                | 5.0.3 (sv pins `^4.1.8`)                                            | Browser mode via `@vitest/browser-playwright` + `vitest-browser-svelte` 3.1.0                                                            |
+| E2E               | `@playwright/test`                                                                                                      | 1.63.0                                                              | E2E only; Svelte component testing removed in 1.59                                                                                       |
+| Type check        | `svelte-check`                                                                                                          | 4.7.6                                                               | Understands Kit 3 flattened config                                                                                                       |
+| Lint/format       | `eslint` 10.12, `eslint-plugin-svelte` 3.23, `typescript-eslint` 8.71, `prettier` 3.9.9, `prettier-plugin-svelte` 4.1.1 | current                                                             | Flat config from `sv add eslint prettier`                                                                                                |
+| PWA               | SvelteKit native `src/service-worker/`                                                                                  | —                                                                   | `@vite-pwa/sveltekit` 1.1.0 still peers Kit ^1 ‖ ^2 only                                                                                 |
+| Package manager   | `pnpm`                                                                                                                  | 12.9.1                                                              | Cheap path to workspaces later                                                                                                           |
 
 **Scaffold command (verified by running it):**
 
@@ -76,11 +76,11 @@ This produced `@sveltejs/kit ^3.0.0`, `vite ^8.3.0`, `typescript ^6.0.3`, `svelt
 
 **Library survey**
 
-| Library | Version | Notes |
-|---|---|---|
-| `binpackingjs` | 4.1.0 (2026-05), MIT, TS | Pivot-based 3D packing, rotations, max weight; rectangular bins only; **no gravity/support**, no per-bin max item size, no multi-compartment |
-| `@0xdoublesharp/bin-packing-wasm` | 0.4.0 (2026-09), MIT, Rust→WASM | 29 algorithms (Extreme Points, Guillotine, layer building, DBLF, FFD/BFD, GRASP, local search); **no gravity/stability, rectangular bins only** |
-| `3d-bin-packing`, `packme`, `bin-packing-3d` | 2017–2023 | abandoned or toys |
+| Library                                      | Version                         | Notes                                                                                                                                           |
+| -------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `binpackingjs`                               | 4.1.0 (2026-05), MIT, TS        | Pivot-based 3D packing, rotations, max weight; rectangular bins only; **no gravity/support**, no per-bin max item size, no multi-compartment    |
+| `@0xdoublesharp/bin-packing-wasm`            | 0.4.0 (2026-09), MIT, Rust→WASM | 29 algorithms (Extreme Points, Guillotine, layer building, DBLF, FFD/BFD, GRASP, local search); **no gravity/stability, rectangular bins only** |
+| `3d-bin-packing`, `packme`, `bin-packing-3d` | 2017–2023                       | abandoned or toys                                                                                                                               |
 
 **Why custom:** the problem is a discrete lattice problem, not continuous 3D bin packing. Every dimension is a multiple of 1.25 m (verified across all 320 ships), there are only 7 item shapes, boxes must rest on the floor or other boxes, each grid has a `MaxSize`, ships have up to 25 separate grids, and loading order should respect the door/ramp. No library models any of that, and a grid of a few hundred cells is tiny enough for brute-force scanning. Keep a library only as an optional cross-check.
 
@@ -89,36 +89,52 @@ This produced `@sveltejs/kit ^3.0.0`, `vite ^8.3.0`, `typescript ^6.0.3`, `svelt
 **Algorithm (First-Fit Decreasing + deepest-bottom-left corner placement with support test, per lattice):**
 
 ```ts
-type Cell = { x: number; y: number; z: number };           // integer lattice coords
-type Grid = { id: string; size: Cell; maxBox: Cell; minBox: Cell;
-              occupied: Uint8Array;                         // size.x*size.y*size.z
-              door?: 'px'|'nx'|'py'|'ny'; mask?: Uint8Array }; // mask supports L-shapes
-type Shape = { scu: 1|2|4|8|16|24|32; dims: Cell };
-type Item  = { id: string; shape: Shape; group?: string; uprightOnly?: boolean };
+type Cell = { x: number; y: number; z: number }; // integer lattice coords
+type Grid = {
+	id: string;
+	size: Cell;
+	maxBox: Cell;
+	minBox: Cell;
+	occupied: Uint8Array; // size.x*size.y*size.z
+	door?: 'px' | 'nx' | 'py' | 'ny';
+	mask?: Uint8Array;
+}; // mask supports L-shapes
+type Shape = { scu: 1 | 2 | 4 | 8 | 16 | 24 | 32; dims: Cell };
+type Item = { id: string; shape: Shape; group?: string; uprightOnly?: boolean };
 type Placement = { itemId: string; gridId: string; at: Cell; dims: Cell };
 
 function pack(grids: Grid[], items: Item[], opts = { support: 1.0, allowRotations: true }) {
-  // 1. Biggest first (FFD), stable by user order; same-SCU boxes stay grouped
-  items.sort((a, b) => b.shape.scu - a.shape.scu);
-  for (const item of items) {
-    let best;
-    for (const g of grids) {                                // 2. grid preference: user order, else largest first
-      for (const dims of orientations(item, g)) {           // axis-aligned permutations filtered by min/maxBox
-        for (const at of candidatePositions(g, dims)) {     // 3. corner points: floor cells + tops of placed boxes
-          if (!fits(g, at, dims)) continue;                 // inside size, mask == 1, no overlap
-          if (supportFraction(g, at, dims) < opts.support) continue;   // 4. gravity
-          const score = [ at.z,                             // lowest first
-                          distanceFromDoor(g, at, dims),    // deepest-from-door first (load back to front)
-                          -contactArea(g, at, dims),        // compactness
-                          at.y, at.x ];                     // deterministic tiebreak
-          if (!best || lexLess(score, best.score)) best = { score, p: { itemId: item.id, gridId: g.id, at, dims } };
-        }
-      }
-      if (best && opts.firstFit) break;
-    }
-    if (best) { mark(grids, best.p); placed.push(best.p); } else unplaced.push(item);
-  }
-  return { placed, unplaced, fill: grids.map(g => occupiedCells(g) / usableCells(g)) };
+	// 1. Biggest first (FFD), stable by user order; same-SCU boxes stay grouped
+	items.sort((a, b) => b.shape.scu - a.shape.scu);
+	for (const item of items) {
+		let best;
+		for (const g of grids) {
+			// 2. grid preference: user order, else largest first
+			for (const dims of orientations(item, g)) {
+				// axis-aligned permutations filtered by min/maxBox
+				for (const at of candidatePositions(g, dims)) {
+					// 3. corner points: floor cells + tops of placed boxes
+					if (!fits(g, at, dims)) continue; // inside size, mask == 1, no overlap
+					if (supportFraction(g, at, dims) < opts.support) continue; // 4. gravity
+					const score = [
+						at.z, // lowest first
+						distanceFromDoor(g, at, dims), // deepest-from-door first (load back to front)
+						-contactArea(g, at, dims), // compactness
+						at.y,
+						at.x
+					]; // deterministic tiebreak
+					if (!best || lexLess(score, best.score))
+						best = { score, p: { itemId: item.id, gridId: g.id, at, dims } };
+				}
+			}
+			if (best && opts.firstFit) break;
+		}
+		if (best) {
+			mark(grids, best.p);
+			placed.push(best.p);
+		} else unplaced.push(item);
+	}
+	return { placed, unplaced, fill: grids.map((g) => occupiedCells(g) / usableCells(g)) };
 }
 // Cost ≈ items × grids × orientations(≤6) × cells(≤500) × fits(≤32) ≈ 1e6–1e7 ops for a few hundred boxes.
 // supportFraction = (# base cells at z-1 that are floor or occupied) / (dims.x*dims.y).
@@ -141,11 +157,11 @@ Design notes: one lattice per `CargoGrid` plus an optional mask; a hand-authored
 
 ## 7. Deployment
 
-| Option | How | Pros | Cons |
-|---|---|---|---|
-| **A. adapter-static behind existing nginx + Cloudflare Tunnel** | `prerender = true` in root layout; copy `build/` into `nginx/html`; `try_files $uri $uri.html $uri/ /200.html` | Zero infra change; Cloudflare already caches | Home-server uptime; manual build/copy; no server routes |
-| B. adapter-node in Docker | `node:24-alpine`, behind the tunnel | Enables `+server.ts`, SSR, cron | Another always-on container; still home-hosted |
-| **C. adapter-cloudflare → Workers static assets** | `sv add sveltekit-adapter="adapter:cloudflare+cfTarget:workers"`, `wrangler deploy` or Workers Builds git integration | Free tier generous, edge, no home server, KV/D1 adjacent; Cloudflare says "start new projects with Workers" | adapter 8 removed platform emulation; 10 ms CPU on free; no Durable Objects via adapter |
+| Option                                                          | How                                                                                                                   | Pros                                                                                                        | Cons                                                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **A. adapter-static behind existing nginx + Cloudflare Tunnel** | `prerender = true` in root layout; copy `build/` into `nginx/html`; `try_files $uri $uri.html $uri/ /200.html`        | Zero infra change; Cloudflare already caches                                                                | Home-server uptime; manual build/copy; no server routes                                 |
+| B. adapter-node in Docker                                       | `node:24-alpine`, behind the tunnel                                                                                   | Enables `+server.ts`, SSR, cron                                                                             | Another always-on container; still home-hosted                                          |
+| **C. adapter-cloudflare → Workers static assets**               | `sv add sveltekit-adapter="adapter:cloudflare+cfTarget:workers"`, `wrangler deploy` or Workers Builds git integration | Free tier generous, edge, no home server, KV/D1 adjacent; Cloudflare says "start new projects with Workers" | adapter 8 removed platform emulation; 10 ms CPU on free; no Durable Objects via adapter |
 
 **Build-time vs runtime data:** ship/grid data changes only per game patch → ingest at build (`scripts/ingest-ships.ts` pulls `ships.json` from scunpacked-data, trims to a few hundred KB, writes versioned JSON, committed for reproducible builds). Volatile data (UEX prices) → runtime fetch, later proxied through a Worker to hide the token and respect UEX's 12 h cache TTL.
 

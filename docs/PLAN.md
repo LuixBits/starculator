@@ -19,7 +19,7 @@
 
 **Why this can win in a crowded niche:** about ten cargo tools already exist, several with 3D. Most hand-draw their grids and lag patches, hide auto-packing behind "expert modes" or Windows downloads, and none offers a polished tablet second-screen experience. We differentiate on exact version-tracked geometry from game data, mission-first workflow, mobile/PWA, and shareable, local-first use.
 
-**Biggest risks:** grid *positions* inside a ship are not in any dataset (needs curation for the popular haulers); some per-grid max-box-size values in the game data are wrong (needs an override file); SvelteKit 3 is three days old (pin versions); the game data is CIG's and has no explicit license (fan-site disclaimer, no meshes).
+**Biggest risks:** grid _positions_ inside a ship are not in any dataset (needs curation for the popular haulers); some per-grid max-box-size values in the game data are wrong (needs an override file); SvelteKit 3 is three days old (pin versions); the game data is CIG's and has no explicit license (fan-site disclaimer, no meshes).
 
 **Decisions I need from you:** listed in §9.
 
@@ -31,18 +31,18 @@
 
 The Star Citizen Wiki team publishes extracted game data to GitHub (`StarCitizenWiki/scunpacked-data`, one commit per game build, latest 4.10.1-LIVE on 2026-09-22). For every vehicle it lists `CargoGrids[]` with exact X/Y/Z in metres, SCU, and min/max permitted container size. My own validation of the current snapshot:
 
-| Check | Result |
-|---|---|
-| Vehicles | 320 (270 spaceships); 145 spaceships with cargo, **all** have grids |
-| Grids | 528 total; up to 25 per ship (Idris-P), 14 on the Caterpillar, 16 on the Hull C |
-| Dimensions that are not a 1.25 m multiple | **0** |
-| Ships where grid SCU sums ≠ ship cargo total | **0** |
+| Check                                        | Result                                                                          |
+| -------------------------------------------- | ------------------------------------------------------------------------------- |
+| Vehicles                                     | 320 (270 spaceships); 145 spaceships with cargo, **all** have grids             |
+| Grids                                        | 528 total; up to 25 per ship (Idris-P), 14 on the Caterpillar, 16 on the Hull C |
+| Dimensions that are not a 1.25 m multiple    | **0**                                                                           |
+| Ships where grid SCU sums ≠ ship cargo total | **0**                                                                           |
 
 So "a hold is a union of axis-aligned 1.25 m cell boxes" holds for every ship, which makes the packer a small discrete problem rather than general 3D bin packing. Irregular holds (Caterpillar module + walkway + ladder, Zeus main + two side grids) are already split into rectangular grids by CIG.
 
 Two gaps: (1) **no grid offsets/rotations** inside the ship, so a correct 3D layout of multi-grid ships needs a curated placement layer (FleetYards maintains hand-curated offsets in its GPL API, usable as a seed); (2) **`MaxSize` is wrong or missing for some ships** (Ironclad main bays claim 1-SCU max, Nomad has none, Cutlass Black looks too restrictive), so we keep a per-ship override file and cross-check against FleetYards and the wiki.
 
-Other sources: the SC Wiki API serves the same data live (useful for a "new game version available" check; its `max_scu_box` field is buggy, compute fit ourselves); UEX API 2.0 gives prices, terminals, rentals, fuel (no grids; bearer token, generous quota); FleetYards gives an independent extraction plus offsets. Mission *templates* (giver, SCU ranges, max container size, reputation rank) exist in the game data and the wiki API; the *actual* boxes of an accepted contract exist in no API, so the user enters them (or, later, OCR / Game.log import).
+Other sources: the SC Wiki API serves the same data live (useful for a "new game version available" check; its `max_scu_box` field is buggy, compute fit ourselves); UEX API 2.0 gives prices, terminals, rentals, fuel (no grids; bearer token, generous quota); FleetYards gives an independent extraction plus offsets. Mission _templates_ (giver, SCU ranges, max container size, reputation rank) exist in the game data and the wiki API; the _actual_ boxes of an accepted contract exist in no API, so the user enters them (or, later, OCR / Game.log import).
 
 ### 2.2 The competition is crowded but beatable
 
@@ -106,7 +106,7 @@ The one feature that must be excellent before anything else ships.
 ### Phase 3: Economy data (M)
 
 - UEX API 2.0 integration at runtime: commodity prices, terminals (freight elevator and max container size), vehicle buy/rent prices and locations. Add to the ship finder ("rentable at …").
-- Trade-route profit using the *actual* leftover grid space and allowed box sizes after the mission cargo is placed.
+- Trade-route profit using the _actual_ leftover grid space and allowed box sizes after the mission cargo is placed.
 - Freight-elevator staging planner (S/M/L/XL elevator grids).
 - Fuel and quantum range estimate per ship (newly relevant after the 4.10.1 fuel rebalance).
 - If UEX requires a token for reads, this is the trigger for the first thin server route (see §5.6).
@@ -178,16 +178,16 @@ Not now. A single SvelteKit app with pnpm. Converting to a pnpm workspace (`apps
 
 ## 6. Stack summary
 
-| Layer | Choice | Pinned version (2026-10-04) |
-|---|---|---|
-| App | SvelteKit 3 + Svelte 5 + TypeScript 6 + Vite 8 | kit 3.0.0, svelte 5.57.1, typescript 6.0.3, vite 8.3.2 |
-| Styling / UI | Tailwind 4, shadcn-svelte on Bits UI, @lucide/svelte, TanStack Table 9, LayerChart | 4.3.3, 1.7.0 / 2.19.5, 1.52.0, 9.2.5, 2.5.1 |
-| 3D | Threlte core + extras on Three.js | 8.6.1 / 9.22.0 on 0.186.1 |
-| State | runes + runed PersistedState + Dexie | 0.37.1, 4.4.6 |
-| Tests | Vitest (browser mode for components), Playwright E2E, svelte-check | 4.1.x (sv default) or 5.0.3, 1.63.0, 4.7.6 |
-| Lint / format | ESLint 10 flat + eslint-plugin-svelte, Prettier 3 + svelte + tailwind plugins | 10.12 / 3.23, 3.9.9 / 4.1.1 |
-| Package manager / runtime | pnpm, Node 24 LTS (26 after 2026-10-28) | 12.9 |
-| Deploy | adapter-static (v1); adapter-cloudflare when a server appears | 4.0.0 / 8.0.0 |
+| Layer                     | Choice                                                                             | Pinned version (2026-10-04)                            |
+| ------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| App                       | SvelteKit 3 + Svelte 5 + TypeScript 6 + Vite 8                                     | kit 3.0.0, svelte 5.57.1, typescript 6.0.3, vite 8.3.2 |
+| Styling / UI              | Tailwind 4, shadcn-svelte on Bits UI, @lucide/svelte, TanStack Table 9, LayerChart | 4.3.3, 1.7.0 / 2.19.5, 1.52.0, 9.2.5, 2.5.1            |
+| 3D                        | Threlte core + extras on Three.js                                                  | 8.6.1 / 9.22.0 on 0.186.1                              |
+| State                     | runes + runed PersistedState + Dexie                                               | 0.37.1, 4.4.6                                          |
+| Tests                     | Vitest (browser mode for components), Playwright E2E, svelte-check                 | 4.1.x (sv default) or 5.0.3, 1.63.0, 4.7.6             |
+| Lint / format             | ESLint 10 flat + eslint-plugin-svelte, Prettier 3 + svelte + tailwind plugins      | 10.12 / 3.23, 3.9.9 / 4.1.1                            |
+| Package manager / runtime | pnpm, Node 24 LTS (26 after 2026-10-28)                                            | 12.9                                                   |
+| Deploy                    | adapter-static (v1); adapter-cloudflare when a server appears                      | 4.0.0 / 8.0.0                                          |
 
 Scaffold command (verified to work today):
 
@@ -201,9 +201,9 @@ npx sv@1.1.0 create starculator --template minimal --types ts \
 
 ## 7. Deployment
 
-| Option | Recommendation |
-|---|---|
-| **A. Keep nginx + Cloudflare Tunnel on your home server** | Lowest change. Static `build/` copied into nginx, `try_files … /200.html`. Keep `dev.starculator.space` for preview builds. Depends on home-server uptime. |
+| Option                                                                    | Recommendation                                                                                                                                                                                          |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Keep nginx + Cloudflare Tunnel on your home server**                 | Lowest change. Static `build/` copied into nginx, `try_files … /200.html`. Keep `dev.starculator.space` for preview builds. Depends on home-server uptime.                                              |
 | **C. Cloudflare Workers static assets** (recommended for the public site) | Free, edge-cached, zero uptime burden, git-integrated builds, and the same Cloudflare account you already use for the tunnel. The adapter swap is one line, and KV/D1 are there when a backend appears. |
 
 Suggested: develop on A (you already have it), publish production on C, or go straight to C and retire the tunnel for the website while keeping it for code-server. Your call (§9).
@@ -212,16 +212,16 @@ Suggested: develop on A (you already have it), publish production on C, or go st
 
 ## 8. Risks and mitigations
 
-| Risk | Impact | Mitigation |
-|---|---|---|
-| Grid positions not in data | Multi-grid ships render as abstract side-by-side boxes until curated | Auto-layout in MVP; curate the top ~30 haulers in Phase 2 (seed from FleetYards offsets with credit); make it clear in the UI which ships are "schematic" |
-| Wrong `MaxSize` in game data (Ironclad, Nomad, Cutlass Black…) | Packer rejects boxes that fit in-game | `overrides.json` + cross-check with FleetYards/wiki + user report link; pipeline fails loudly on unknown shapes |
-| Game data licensing (no explicit permission) | Takedown risk, low given a decade of tolerated community tools | Numbers only, no meshes/textures; fan-site disclaimer; credit the wiki; keep the ingest pipeline so removal of any one source is survivable |
-| SvelteKit 3 is three days old | Peer warnings, small breakages | Pin exact versions; TS pinned to 6.x; fallback: start on Kit 2.70 and run `sv migrate sveltekit-3` later |
-| Threlte on Vite 8 / Kit 3 untested upstream | Build or HMR glitches | Pin exact; smoke test in Phase 0 before writing features |
-| In-game placement rules (overhang, rotation, 1 cm sub-grid) unverified | Packer too strict or too lenient | Configurable support threshold; validate in-game with a few ships; document assumptions |
-| Patch churn (4.10.2 due in weeks) | Stale data kills trust (Regolith lesson) | Automated upstream watcher + PR; version badge; changelog |
-| Solo-dev sustainability | Scope creep | Phase 1 is the only must-have; everything else is optional and independent |
+| Risk                                                                   | Impact                                                               | Mitigation                                                                                                                                                |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Grid positions not in data                                             | Multi-grid ships render as abstract side-by-side boxes until curated | Auto-layout in MVP; curate the top ~30 haulers in Phase 2 (seed from FleetYards offsets with credit); make it clear in the UI which ships are "schematic" |
+| Wrong `MaxSize` in game data (Ironclad, Nomad, Cutlass Black…)         | Packer rejects boxes that fit in-game                                | `overrides.json` + cross-check with FleetYards/wiki + user report link; pipeline fails loudly on unknown shapes                                           |
+| Game data licensing (no explicit permission)                           | Takedown risk, low given a decade of tolerated community tools       | Numbers only, no meshes/textures; fan-site disclaimer; credit the wiki; keep the ingest pipeline so removal of any one source is survivable               |
+| SvelteKit 3 is three days old                                          | Peer warnings, small breakages                                       | Pin exact versions; TS pinned to 6.x; fallback: start on Kit 2.70 and run `sv migrate sveltekit-3` later                                                  |
+| Threlte on Vite 8 / Kit 3 untested upstream                            | Build or HMR glitches                                                | Pin exact; smoke test in Phase 0 before writing features                                                                                                  |
+| In-game placement rules (overhang, rotation, 1 cm sub-grid) unverified | Packer too strict or too lenient                                     | Configurable support threshold; validate in-game with a few ships; document assumptions                                                                   |
+| Patch churn (4.10.2 due in weeks)                                      | Stale data kills trust (Regolith lesson)                             | Automated upstream watcher + PR; version badge; changelog                                                                                                 |
+| Solo-dev sustainability                                                | Scope creep                                                          | Phase 1 is the only must-have; everything else is optional and independent                                                                                |
 
 ---
 
@@ -239,14 +239,14 @@ Suggested: develop on A (you already have it), publish production on C, or go st
 
 ## 10. Milestones
 
-| # | Milestone | Done when |
-|---|---|---|
-| M0 | Reset + scaffold + CI + data pipeline | `pnpm build` produces a static site with a ship list from real 4.10.1 data; CI green |
-| M1 | Hold viewer | Any ship's grids render in 3D with correct cell counts; URL-addressable |
-| M2 | Packer + entry form | Containers auto-pack with fill %, unplaced list; packer tests pass on fixtures |
-| M3 | MVP release | Manual adjust, share URL, save/export, provenance badge, PWA basics; deployed to `starculator.space` |
-| M4 | Mission workflow | Tracker, unload-order packing, per-stop checklist, ship finder, comparison |
-| M5 | Economy | UEX prices, trade profit on leftover space, elevator staging, fuel range |
+| #   | Milestone                             | Done when                                                                                            |
+| --- | ------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| M0  | Reset + scaffold + CI + data pipeline | `pnpm build` produces a static site with a ship list from real 4.10.1 data; CI green                 |
+| M1  | Hold viewer                           | Any ship's grids render in 3D with correct cell counts; URL-addressable                              |
+| M2  | Packer + entry form                   | Containers auto-pack with fill %, unplaced list; packer tests pass on fixtures                       |
+| M3  | MVP release                           | Manual adjust, share URL, save/export, provenance badge, PWA basics; deployed to `starculator.space` |
+| M4  | Mission workflow                      | Tracker, unload-order packing, per-stop checklist, ship finder, comparison                           |
+| M5  | Economy                               | UEX prices, trade profit on leftover space, elevator staging, fuel range                             |
 
 ---
 
