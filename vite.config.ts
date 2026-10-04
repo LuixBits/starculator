@@ -13,6 +13,7 @@ const preinstalledChromium =
 const executablePath = existsSync(preinstalledChromium) ? preinstalledChromium : undefined;
 
 export default defineConfig({
+	optimizeDeps: { include: ['three', '@threlte/core', '@threlte/extras', 'dexie'] },
 	plugins: [
 		tailwindcss(),
 		sveltekit({
