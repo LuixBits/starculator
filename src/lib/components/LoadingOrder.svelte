@@ -12,6 +12,23 @@
 	const uid = $props.id();
 	const gridName = $derived(Object.fromEntries(ship.grids.map((g) => [g.id, g.name])));
 	const rows = $derived([...plan.placements].sort((a, b) => a.order - b.order));
+
+	// A box selected in the 3D view scrolls its row into view inside the list only;
+	// the page itself must not jump away from the hold.
+	let list = $state<HTMLOListElement>();
+	$effect(() => {
+		const id = plan.selectedItemId;
+		const el = list;
+		if (!id || !el) return;
+		const row = el.querySelector<HTMLElement>(`[data-item="${CSS.escape(id)}"]`);
+		if (!row) return;
+		// The list is the row's offsetParent (position: relative), so offsetTop is list-relative.
+		const top = row.offsetTop;
+		const bottom = top + row.offsetHeight;
+		if (top < el.scrollTop || bottom > el.scrollTop + el.clientHeight) {
+			el.scrollTop = top - el.clientHeight / 2 + row.offsetHeight / 2;
+		}
+	});
 </script>
 
 <section class="order" aria-labelledby="{uid}-t">
@@ -19,7 +36,7 @@
 	{#if rows.length === 0}
 		<p class="muted small">Run the load plan to get the sequence, first box in to last.</p>
 	{:else}
-		<ol class="list">
+		<ol class="list" bind:this={list}>
 			{#each rows as p (p.itemId)}
 				{@const item = plan.itemsById[p.itemId]}
 				{@const group = item ? plan.groupById(item.group) : undefined}
@@ -30,6 +47,7 @@
 						class="line"
 						class:selected
 						aria-pressed={selected}
+						data-item={p.itemId}
 						style={`--swatch:${crateColor(group?.colorIndex ?? 0)}`}
 						onclick={() => plan.select(selected ? null : p.itemId)}
 					>
@@ -59,6 +77,7 @@
 		margin-bottom: 0.5rem;
 	}
 	.list {
+		position: relative;
 		list-style: none;
 		margin: 0;
 		padding: 0;

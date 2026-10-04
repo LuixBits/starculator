@@ -1,10 +1,10 @@
 <script lang="ts">
 	/**
 	 * The planner for one ship: owns the Plan store, syncs it with the URL and
-	 * IndexedDB, and composes the holo-table, manifest, scale, hazard tags, legend
-	 * and loading order. The page wraps this in {#key ship.slug}.
+	 * IndexedDB, runs the packer whenever the manifest settles, and composes the
+	 * holo-table (3D hold), manifest, scale, hazard tags, legend and loading
+	 * order. The page wraps this in {#key ship.slug}.
 	 */
-	import type { Snippet } from 'svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
@@ -14,10 +14,10 @@
 	import { createDebouncedSaver, loadStoredPlan } from '../state/persist.ts';
 	import { decodePlan, encodePlanQuery } from '../state/url.ts';
 	import type { ViewMode } from '../state/snapshot.ts';
+	import HoldScene from '../three/HoldScene.svelte';
 	import { UNPLACED_REASON } from '../ui/crates.ts';
 	import { formatPercent, formatScu } from '../ui/format.ts';
 	import HoloTable from './HoloTable.svelte';
-	import GridLattice from './GridLattice.svelte';
 	import ManifestSheet from './ManifestSheet.svelte';
 	import CargoScale from './CargoScale.svelte';
 	import HazardTag from './HazardTag.svelte';
@@ -25,23 +25,18 @@
 	import LoadingOrder from './LoadingOrder.svelte';
 	import PlanTools from './PlanTools.svelte';
 
-	let {
-		ship,
-		viewer
-	}: {
-		ship: Ship;
-		/**
-		 * Optional 3D viewer rendered on the holo-table instead of the lattice preview.
-		 * INTEGRATION: the page passes a snippet wrapping #lib/three/HoldScene.svelte.
-		 */
-		viewer?: Snippet<[Plan]>;
-	} = $props();
+	let { ship }: { ship: Ship } = $props();
+
+	/** Quiet time after the last manifest change before the packer runs. */
+	const PACK_DEBOUNCE_MS = 250;
 
 	// svelte-ignore state_referenced_locally (the page re-keys this component per ship)
 	const plan = new Plan(ship.slug);
 	const saver = createDebouncedSaver();
 	let hydrated = $state(false);
 	let orderOpen = $state(true);
+	let packTimer: ReturnType<typeof setTimeout> | null = null;
+	let lastPackedKey = '';
 
 	const shareUrl = $derived.by(() => {
 		const query = encodePlanQuery(plan.snapshot());
@@ -49,6 +44,11 @@
 			? `${page.url.origin}${page.url.pathname}${query}`
 			: `${page.url.pathname}${query}`;
 	});
+	/** Changes exactly when the set of boxes (sizes, counts, groups, order) changes. */
+	const manifestKey = $derived(plan.items.map((i) => i.id).join('|'));
+	const highlightGridId = $derived(plan.selectedPlacement?.gridId ?? null);
+	const schematic = $derived(ship.grids.some((g) => g.offset === null));
+
 	type Reason = keyof typeof UNPLACED_REASON;
 	const unplacedSummary = $derived.by(() => {
 		const byReason: Partial<Record<Reason, { count: number; scu: number; sizes: number[] }>> = {};
@@ -69,7 +69,15 @@
 		});
 	});
 
+	function cancelScheduledPack() {
+		if (packTimer) clearTimeout(packTimer);
+		packTimer = null;
+	}
+
+	/** Packs now (the "Load plan" button, hydration, import). */
 	function runPlan() {
+		cancelScheduledPack();
+		lastPackedKey = manifestKey;
 		void plan.pack(ship.grids);
 	}
 
@@ -83,14 +91,17 @@
 		}
 		if (plan.groups.length === 0) plan.addGroup();
 		orderOpen = !window.matchMedia('(max-width: 60rem)').matches;
-		hydrated = true;
 		if (plan.hasItems) runPlan();
+		hydrated = true;
 	}
 
 	onMount(() => {
 		void hydrate();
 	});
-	onDestroy(() => saver.cancel());
+	onDestroy(() => {
+		saver.cancel();
+		cancelScheduledPack();
+	});
 
 	// Mirror every manifest change into the address bar and the local database.
 	$effect(() => {
@@ -102,6 +113,22 @@
 			void goto(target, { shallow: true, replace: true, state: {} });
 		}
 		saver.save(snapshot);
+	});
+
+	// Re-pack automatically once the manifest has been quiet for a moment.
+	$effect(() => {
+		const key = manifestKey;
+		if (!hydrated || key === lastPackedKey) return;
+		cancelScheduledPack();
+		if (key === '') {
+			// The plan store already dropped the result; nothing to pack.
+			lastPackedKey = '';
+			return;
+		}
+		packTimer = setTimeout(() => {
+			packTimer = null;
+			runPlan();
+		}, PACK_DEBOUNCE_MS);
 	});
 
 	const views: { id: ViewMode; label: string }[] = [
@@ -126,7 +153,9 @@
 	</header>
 
 	<div class="table-col">
-		<HoloTable caption={`${ship.fullName} · hold projection`}>
+		<HoloTable
+			caption={`${ship.fullName} · ${schematic ? 'schematic hold projection' : 'hold projection'}`}
+		>
 			{#snippet controls()}
 				<div class="view-toggle" role="group" aria-label="View">
 					{#each views as v (v.id)}
@@ -138,18 +167,24 @@
 					{/each}
 				</div>
 			{/snippet}
-			{#if viewer}
-				{@render viewer(plan)}
-			{:else}
-				<GridLattice
-					{ship}
-					placements={plan.placements}
-					groups={plan.packGroups}
-					items={plan.items}
-					selectedItemId={plan.selectedItemId}
-					onselect={(id) => plan.select(id)}
-				/>
-			{/if}
+			<div class="stage-idle" aria-hidden="true">
+				<span>Projecting {ship.name} hold…</span>
+			</div>
+			<HoldScene
+				{ship}
+				placements={plan.placements}
+				groups={plan.packGroups}
+				items={plan.items}
+				selectedItemId={plan.selectedItemId}
+				onselect={(id) => plan.select(id)}
+				view={plan.view === 'top' ? 'top' : 'perspective'}
+				{highlightGridId}
+				class="stage-scene"
+			/>
+			<p class="stage-hint small" aria-hidden="true">
+				{#if plan.view === 'top'}drag to pan · pinch or scroll to zoom{:else}drag to orbit · pinch
+					or scroll to zoom · click a box{/if}
+			</p>
 		</HoloTable>
 
 		<!-- Sticky fill summary on narrow screens; hidden on desktop where the scale is in view. -->
@@ -297,6 +332,59 @@
 		background: #35e6e61a;
 		box-shadow: inset 0 -2px 0 var(--accent-2);
 	}
+
+	/* ---- the stage: idle text under the canvas, hint and label styling ---- */
+	.stage-idle {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		color: #8f7cab;
+		font-size: var(--fs-small);
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+	}
+	.planner :global(.stage-scene) {
+		position: absolute;
+		inset: 0;
+	}
+	.stage-hint {
+		position: absolute;
+		left: 0.9rem;
+		bottom: 0.6rem;
+		z-index: 2;
+		color: #8f7cab;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		pointer-events: none;
+	}
+	/* Labels emitted by the hold viewer (<HTML> overlays with class names only). */
+	.planner :global(.hold-label) {
+		display: inline-block;
+		padding: 0.1rem 0.5rem;
+		border-radius: 3px;
+		border: 1px solid #35e6e655;
+		background: #160a30e0;
+		color: var(--fg-muted);
+		font-family: var(--font-body);
+		font-size: var(--fs-small);
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		line-height: 1.3;
+		white-space: nowrap;
+	}
+	.planner :global(.hold-label--door) {
+		border-color: transparent;
+		background: var(--accent);
+		color: var(--bg-deep);
+	}
+	.planner :global(.hold-label--active) {
+		border-color: var(--fg);
+		color: var(--fg);
+		box-shadow: 0 0 12px #ffe9ff66;
+	}
+
 	.fill-strip {
 		display: none;
 	}
@@ -345,6 +433,9 @@
 			min-height: 44px;
 			display: inline-flex;
 			align-items: center;
+		}
+		.stage-hint {
+			display: none;
 		}
 	}
 </style>

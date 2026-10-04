@@ -49,7 +49,7 @@
 </section>
 
 <section class="board-wall">
-	<DepartureBoard entries={data.index} limit={8} moreHref="/ships/" />
+	<DepartureBoard entries={data.index} aliases={data.aliases} limit={8} moreHref="/ships/" />
 </section>
 
 <section class="how" aria-labelledby="how-title">

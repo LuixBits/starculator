@@ -23,3 +23,9 @@ export function formatOrder(order: number, total: number): string {
 	const digits = Math.max(2, String(total).length);
 	return `#${String(order + 1).padStart(digits, '0')}`;
 }
+
+/** Packer timings: sub-millisecond runs keep one decimal, anything else is rounded. */
+export function formatMs(ms: number): string {
+	if (!Number.isFinite(ms) || ms < 0) return '0 ms';
+	return ms < 1 ? `${ms.toFixed(1)} ms` : `${Math.round(ms)} ms`;
+}

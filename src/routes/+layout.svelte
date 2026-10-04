@@ -170,7 +170,9 @@
 		margin-top: 0.5rem;
 	}
 	.foot-links a {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
 		padding: 0.55rem 0;
 		color: var(--neon-cyan);
 	}

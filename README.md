@@ -12,11 +12,34 @@ pnpm dev          # http://localhost:5173
 pnpm check        # svelte-check
 pnpm lint         # prettier + eslint
 pnpm test:unit    # vitest (node + browser projects)
-pnpm build        # static site in build/
-pnpm preview
+pnpm build        # static site in build/ (every /cargo/<ship>/ page is prerendered)
+pnpm preview      # serves build/ on http://localhost:4173
 ```
 
 Requires Node ≥ 22.17 and pnpm 10. Playwright's Chromium is needed for the browser test project (`npx playwright install chromium`).
+
+### Ship data
+
+The ship and cargo-grid data under `src/lib/data/generated/` is committed and produced by
+
+```sh
+node scripts/ingest-ships.ts            # pinned scunpacked-data commit, cached in node_modules/.cache
+node scripts/ingest-ships.ts --sha <commit> --version <game build> --date <iso date>
+```
+
+The script validates every grid (1.25 m multiples, grid SCU sums equal the ship's cargo), folds variants with identical holds under one hull, applies the hand-maintained corrections in `src/lib/data/overrides.json`, and writes `meta.json`, `index.json`, `variants.json` and one file per ship. Run `pnpm vitest run src/lib/data` afterwards: the tests assert the invariants the app relies on.
+
+### Screenshots
+
+`node scripts/screenshot.mjs <url> <out.png> [--width 1440|390 --height 900|844 --full --wait ms]` renders a page in Chromium (software WebGL, so the 3D hold works headless). The prototype screenshots in `docs/screenshots/` were taken this way.
+
+## How it works
+
+- **Data** (`src/lib/data`): typed contracts in `types.ts`, generated JSON, container table and overrides.
+- **Packer** (`src/lib/packer`): a dependency-free lattice packer (first-fit decreasing over 1.25 m cells, gravity, per-grid container sizes, door-aware depth scoring, unload-order grouping, seeded restarts) that runs in a Web Worker in the browser.
+- **Hold viewer** (`src/lib/three`): Threlte scene with the cargo grids as translucent volumes, containers as instanced boxes, a perspective and an orthographic top view. Grid positions inside a ship are not in the game data, so multi-grid ships are laid out schematically until curated offsets exist.
+- **State** (`src/lib/state`): a runes `Plan` store per ship, a compact URL codec (`?g=Covalex:32x4,16x2;Red Wind:8x6&v=top`), IndexedDB persistence (Dexie) and JSON export/import.
+- **UI** (`src/lib/components`, `src/routes`): the "freight deck after hours" shell from `docs/design.md`.
 
 ## Stack
 

@@ -4,9 +4,11 @@
  * Curated data: when every grid carries an `offset`, grids are placed exactly
  * there (relative to the ship origin). Otherwise the hold is schematic: grids
  * line up left → right, grouped by bay, with a 1-cell gap inside a bay and a
- * 2-cell gap between bays, all front faces ('-y' side) aligned and the whole
- * arrangement centred on the origin. Everything here is in cells; space.ts
- * converts to metres.
+ * 2-cell gap between bays, all front faces ('-y' side) aligned. Once a row
+ * would exceed MAX_ROW_CELLS, the next bay starts a new row behind it (3 cells
+ * further from the door), so big ships read as a block instead of a 150 m
+ * line. Rows are centred on x and the whole arrangement on y. Everything here
+ * is in cells; space.ts converts to metres.
  */
 import type { CargoGrid } from '../data/types.ts';
 import type { CellPoint } from './space.ts';
@@ -39,6 +41,9 @@ export interface HoldLayout {
 
 export const BAY_GAP_CELLS = 2;
 export const GRID_GAP_CELLS = 1;
+export const ROW_GAP_CELLS = 3;
+/** A schematic row never grows wider than this (50 m); rows are then balanced below it. */
+export const MAX_ROW_CELLS = 40;
 
 const ZERO: CellPoint = { x: 0, y: 0, z: 0 };
 
@@ -64,26 +69,83 @@ function bayKey(grid: CargoGrid): string {
 	return grid.bay ?? grid.id;
 }
 
-function placeSchematic(grids: readonly CargoGrid[]): GridPlacement[] {
-	const placements: GridPlacement[] = [];
-	let cursor = 0;
-	let previousBay: string | null = null;
+/** Consecutive grids with the same bay key, in input order. */
+function bayRuns(grids: readonly CargoGrid[]): CargoGrid[][] {
+	const runs: CargoGrid[][] = [];
+	let previous: string | null = null;
 	for (const grid of grids) {
 		const key = bayKey(grid);
-		if (previousBay !== null) {
-			cursor += key === previousBay ? GRID_GAP_CELLS : BAY_GAP_CELLS;
+		if (key === previous) runs[runs.length - 1].push(grid);
+		else runs.push([grid]);
+		previous = key;
+	}
+	return runs;
+}
+
+function bayWidth(bay: readonly CargoGrid[]): number {
+	return bay.reduce((sum, g) => sum + g.cells.x, 0) + GRID_GAP_CELLS * (bay.length - 1);
+}
+
+/** Greedily fills rows of at most `limit` cells; a bay wider than that gets its own row. */
+function fillRows(bays: readonly CargoGrid[][], limit: number): CargoGrid[][][] {
+	const rows: CargoGrid[][][] = [];
+	let width = 0;
+	for (const bay of bays) {
+		const w = bayWidth(bay);
+		const current = rows[rows.length - 1];
+		if (current && width + BAY_GAP_CELLS + w <= limit) {
+			current.push(bay);
+			width += BAY_GAP_CELLS + w;
+		} else {
+			rows.push([bay]);
+			width = w;
 		}
-		placements.push({ grid, origin: { x: cursor, y: 0, z: 0 } });
-		cursor += grid.cells.x;
-		previousBay = key;
 	}
-	const depth = Math.max(0, ...placements.map((p) => p.grid.cells.y));
-	const shiftX = cursor / 2;
-	const shiftY = depth / 2;
-	for (const p of placements) {
-		p.origin.x -= shiftX;
-		p.origin.y -= shiftY;
+	return rows;
+}
+
+/**
+ * Rows of at most MAX_ROW_CELLS, balanced: the row limit is lowered as far as
+ * it goes without adding a row, so a 16-grid Hull does not end in one lonely
+ * grid on the last row.
+ */
+function rowsOf(bays: readonly CargoGrid[][]): CargoGrid[][][] {
+	const greedy = fillRows(bays, MAX_ROW_CELLS);
+	if (greedy.length < 2) return greedy;
+	let best = greedy;
+	for (let limit = MAX_ROW_CELLS - 1; limit > 0; limit--) {
+		const rows = fillRows(bays, limit);
+		if (rows.length > greedy.length) break;
+		best = rows;
 	}
+	return best;
+}
+
+function placeSchematic(grids: readonly CargoGrid[]): GridPlacement[] {
+	const placements: GridPlacement[] = [];
+	let cursorY = 0;
+	for (const row of rowsOf(bayRuns(grids))) {
+		const rowStart = placements.length;
+		let cursorX = 0;
+		let depth = 0;
+		row.forEach((bay, bayIndex) => {
+			if (bayIndex > 0) cursorX += BAY_GAP_CELLS;
+			bay.forEach((grid, gridIndex) => {
+				if (gridIndex > 0) cursorX += GRID_GAP_CELLS;
+				placements.push({ grid, origin: { x: cursorX, y: cursorY, z: 0 } });
+				cursorX += grid.cells.x;
+				depth = Math.max(depth, grid.cells.y);
+			});
+		});
+		// Centre this row on x.
+		const shiftX = cursorX / 2;
+		for (let i = rowStart; i < placements.length; i++) placements[i].origin.x -= shiftX;
+		cursorY += depth + ROW_GAP_CELLS;
+	}
+	// Centre the block of rows on y (the door side stays at the front).
+	const totalDepth = Math.max(0, cursorY - ROW_GAP_CELLS);
+	const shiftY = totalDepth / 2;
+	for (const p of placements) p.origin.y -= shiftY;
 	return placements;
 }
 

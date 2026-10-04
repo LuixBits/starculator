@@ -2,8 +2,7 @@
 	/**
 	 * The holo-table: a drawn table with a dark bezel, cyan edge light, four feet
 	 * and a projection gradient rising from its surface. Whatever is rendered in
-	 * `children` (the 3D canvas, or the lattice preview for now) sits in the
-	 * projection area.
+	 * `children` (the Threlte hold viewer) sits in the projection area.
 	 */
 	import type { Snippet } from 'svelte';
 

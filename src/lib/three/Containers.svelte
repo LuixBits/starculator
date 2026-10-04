@@ -11,7 +11,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import type { CellVec, PackGroup, PackItem, Placement } from '../data/types.ts';
 	import type { HoldLayout } from './layout.ts';
-	import { crateColor, desaturateHex, SCENE_COLORS } from './palette.ts';
+	import { crateColor, desaturateHex, mixHex, SCENE_COLORS } from './palette.ts';
 	import { cellBoxToWorld, type WorldTuple } from './space.ts';
 
 	interface Props {
@@ -45,6 +45,10 @@
 	const DROP_MS = 300;
 	const DROP_HEIGHT_M = 2.5;
 	const SELECT_LIFT_M = 0.15;
+	/** Seam between flush containers so a full grid still reads as separate boxes. */
+	const SEAM_M = 0.12;
+	/** Alternate boxes in loading order are shaded a little darker, for the same reason. */
+	const ALT_SHADE = 0.16;
 
 	const colorByGroup = $derived(new Map(groups.map((g) => [g.id, crateColor(g.colorIndex)])));
 	const groupByItem = $derived(new Map(items.map((i) => [i.id, i.group])));
@@ -142,6 +146,16 @@
 		return [box.center[0], box.center[1] + lift(box), box.center[2]];
 	}
 
+	function seamed(size: WorldTuple): WorldTuple {
+		return [size[0] - SEAM_M, size[1] - SEAM_M, size[2] - SEAM_M];
+	}
+
+	/** Per-instance tint (multiplies the white material colour). */
+	function tintOf(bucket: Bucket, box: Box): string {
+		const body = desaturateHex(bucket.color, 0.12);
+		return box.rank % 2 === 0 ? body : mixHex(body, '#000000', ALT_SHADE);
+	}
+
 	/* ---- selection ---- */
 
 	// `pointermissed` fires before the hit dispatch, so defer the deselect one
@@ -165,17 +179,18 @@
 
 {#each buckets as bucket (bucket.key)}
 	<InstancedMesh limit={bucket.limit} range={bucket.boxes.length} frustumCulled={false}>
-		<T.BoxGeometry args={bucket.size} />
+		<T.BoxGeometry args={seamed(bucket.size)} />
 		<T.MeshStandardMaterial
-			color={desaturateHex(bucket.color, 0.12)}
+			color="#ffffff"
 			emissive={bucket.color}
-			emissiveIntensity={0.38}
+			emissiveIntensity={0.3}
 			roughness={0.6}
 			metalness={0.1}
 		/>
 		{#each bucket.boxes as box (box.itemId)}
 			<Instance
 				position={positionOf(box)}
+				color={tintOf(bucket, box)}
 				onclick={(e: IntersectionEvent<MouseEvent>) => {
 					e.stopPropagation();
 					onBoxClick(box.itemId);

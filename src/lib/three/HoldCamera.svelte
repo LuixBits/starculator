@@ -104,8 +104,10 @@
 
 	$effect(() => {
 		const c = controls;
-		const key = `${fitKey}|${view}`;
-		const ready = size.current.width > 0 && size.current.height > 0;
+		const { width, height } = size.current;
+		// The size is part of the key so a rotated phone or resized window re-frames the hold.
+		const key = `${fitKey}|${view}|${Math.round(width)}x${Math.round(height)}`;
+		const ready = width > 0 && height > 0;
 		if (!c || !ready || lastFit === key) return;
 		lastFit = key;
 		untrack(() => (view === 'top' ? fitTop(c) : fitPerspective(c)));

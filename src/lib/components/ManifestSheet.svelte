@@ -9,7 +9,7 @@
 	import type { Plan } from '../state/plan.svelte.ts';
 	import { MAX_GROUPS, totalScu } from '../state/snapshot.ts';
 	import { crateColor, crateFootprint } from '../ui/crates.ts';
-	import { formatScu } from '../ui/format.ts';
+	import { formatMs, formatScu } from '../ui/format.ts';
 	import CrateIcon from './CrateIcon.svelte';
 	import Stamp from './Stamp.svelte';
 
@@ -50,10 +50,10 @@
 				return 'Packing…';
 			case 'ready':
 				return plan.result && plan.result.unplaced.length > 0
-					? `${plan.result.unplaced.length} not placed`
-					: `Packed in ${plan.result?.elapsedMs ?? 0} ms`;
+					? `${plan.result.unplaced.length} not placed · packed in ${formatMs(plan.result.elapsedMs)}`
+					: `Packed in ${formatMs(plan.result?.elapsedMs ?? 0)}`;
 			case 'stale':
-				return 'Manifest changed · run the plan again';
+				return 'Manifest changed · re-planning…';
 			case 'error':
 				return plan.error ?? 'Packing failed';
 			default:

@@ -73,6 +73,13 @@
 		min-height: 0;
 		touch-action: none;
 		overflow: hidden;
-		background: #160a30;
+	}
+	/*
+	 * <HTML> overlays are portalled next to the canvas. Without `transform`,
+	 * @threlte/extras does not apply its pointerEvents prop, so the tags would
+	 * swallow clicks meant for the boxes behind them.
+	 */
+	.hold-scene :global(canvas ~ div) {
+		pointer-events: none;
 	}
 </style>

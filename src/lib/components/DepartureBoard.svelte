@@ -14,9 +14,12 @@
 		limit,
 		sortable = false,
 		initialSort = 'name',
-		moreHref
+		moreHref,
+		aliases = {}
 	}: {
 		entries: ShipIndexEntry[];
+		/** Folded variant names per representative slug; searchable and shown under the ship name. */
+		aliases?: Record<string, string[]>;
 		title?: string;
 		/** Show at most this many rows (landing page). */
 		limit?: number;
@@ -47,7 +50,7 @@
 			if (fits32 && e.maxContainer !== 32) return false;
 			if (words.length === 0) return true;
 			const hay = normalised(
-				`${e.fullName} ${e.manufacturer.code} ${e.manufacturer.name} ${e.role ?? ''}`
+				`${e.fullName} ${e.manufacturer.code} ${e.manufacturer.name} ${e.role ?? ''} ${(aliases[e.slug] ?? []).join(' ')}`
 			);
 			return words.every((w) => hay.includes(w));
 		});
@@ -135,7 +138,10 @@
 							<span class="code" aria-hidden="true">{ship.manufacturer.code}</span>
 							<span class="visually-hidden">{ship.manufacturer.name}</span>
 						</span>
-						<span class="c-ship">{ship.name}</span>
+						<span class="c-ship"
+							>{ship.name}{#if aliases[ship.slug]?.length}
+								<span class="aliases small">also {aliases[ship.slug].join(' · ')}</span>{/if}</span
+						>
 						<span class="c-scu num">{formatScu(ship.cargoScu)}</span>
 						<span class="c-grids num">{ship.gridCount}</span>
 						<span class="c-box num">{ship.maxContainer ?? '—'}<span class="unit"> SCU</span></span>
@@ -337,6 +343,12 @@
 	.c-ship {
 		font-weight: 700;
 		overflow-wrap: anywhere;
+	}
+	.aliases {
+		display: block;
+		font-weight: 400;
+		color: #8f7cab;
+		line-height: 1.3;
 	}
 	.unit {
 		color: #8f7cab;
